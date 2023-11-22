@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/logIn.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/logIn_and_register.css">
     <title>Log In</title>
 </head>
 <body>
     <div class="log_in_container">
         <!-- ============================= LOG IN ============================= -->
         <form action="/login" method="post" class="logIn_form">
-            <img src="../static/imgs/matcha_logo/Screenshot 2023-11-18 at 4.15.30 PM.png" alt="matcha_logo" class="matcha_logo">
+            <img src="../static/imgs/matcha_logo/matcha_logo3.png" alt="matcha_logo" class="matcha_logo_logIn">
             <div class="email_form">
                 <input type="text" name="text" placeholder="email" class="email_input">
             </div>
@@ -19,6 +20,7 @@
             </div>
             <div class="log_in_button_container">
                 <button type="submit" class="log_in_button">Log In</button>
+                <a href="./register" class="register_transfer_link">Join</a>
             </div>
         </form>
     </div>

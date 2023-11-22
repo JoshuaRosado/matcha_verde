@@ -6,10 +6,11 @@
 }
 
 .container_index_page{
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.111), rgba(0, 0, 0, 0.609)), url(../imgs/index_bg/pexels-roman-odintsov-5976082.jpg);
+    background: url(../imgs/index_bg/pexels-darina-belonogova-8004570.jpg);
     overflow: hidden;
-    background-position: 65%;
+    background-position: center;
     background-size: cover;
+    object-fit: cover;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -23,13 +24,16 @@
 }
 
 .matcha_logo{
-    margin-top: 3rem;
-    height:12rem;
-    width: 12rem;
+    margin-top: -85px;
+    height:16rem;
+    width: 16rem;
     object-fit: cover;
     backdrop-filter: blur(10px);
-    border: 1.2rem solid rgba(134, 134, 134, 0.283);
-    border-radius: 20%;
+    border-radius: 50%;
+    padding: 1rem;
+    box-shadow: 5px 5px 3px 1px rgba(38, 56, 12, 0.10),
+    2px 2px 5px 3px rgba(0, 0, 0, 0.200);
+
 }
 
 .logIn_or_signUp{
@@ -41,17 +45,18 @@
 }
 
 .logIn_link, .signUp_link{
-    height: 4rem;
+    height: 3rem;
+    width: 7rem;
+    margin-top: 14rem;
     font-weight: 600;
     font-size: 1.2rem;
-    width: 6rem;
-    color: white;
-    box-shadow: 1px 1px 1px .5px rgba(255, 255, 255, 0.755),
-    10px 10px 5px 1px rgba(38, 56, 12, 0.38);
-    border: .3rem solid rgba(134, 134, 134, 0.383);
-    border-radius: 1.3rem;
-    background-color: rgba(255, 255, 255, 0.138);
-    backdrop-filter: blur(50px);
+    box-shadow: 5px 5px 3px 1px rgba(38, 56, 12, 0.10),
+    2px 2px 1px 1px rgba(255, 255, 255, 0.200);
+    border: none;
+    border-radius: 5rem;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(50px);
 
 }
