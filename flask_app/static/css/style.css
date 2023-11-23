@@ -54,10 +54,11 @@
     2px 2px 1px 1px rgba(255, 255, 255, 0.200);
     border: none;
     border-radius: 5rem;
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.100);
+    color: white;
+    text-shadow: 1px 0px 1px rgb(163, 162, 162);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(10px);
 
 }
 
