@@ -6,7 +6,7 @@
 }
 
 .container_index_page{
-    background: url(../imgs/index_bg/pexels-darina-belonogova-8004570.jpg);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.050), rgba(0, 0, 0, 0.5)), url(../imgs/index_bg/pexels-darina-belonogova-8004570.jpg);
     overflow: hidden;
     background-position: center;
     background-size: cover;
@@ -62,6 +62,58 @@
 
 }
 
+/* ============================= LANDSCAPE VIEW ================================= */
+                             /* +++++++++++++++++ */
+@media (orientation: landscape) and (max-height: 450px) and (max-width: 844px) {
+    .container_index_page{
+        flex-direction: row;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imgs/index_bg/pexels-eva-bronzini-6833704.jpg);
+        background-position: 30%;
+        background-size: cover;
 
 
+        
+    }
+    .matcha_logo{
+        margin-top: 2rem;
+        box-shadow: 5px 5px 3px 1px rgba(255, 255, 255, 0.1),
+    2px 2px 5px 3px rgba(255, 255, 255, 0.2);
 
+
+    }
+
+    .logIn_or_signUp{
+        all: unset;
+        display: flex;
+        height: 100vh;
+        width: 18rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logIn_link,.signUp_link{
+        background: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-device-width: 850px){
+    .container_index_page{
+        justify-content: center;
+    }
+    .matcha_logo{
+        height: 29rem;
+        width: 29rem;
+    }
+    .logIn_or_signUp{
+        justify-content: space-around;
+        width: 80rem;
+    }
+    .logIn_link, .signUp_link{
+        background: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        font-size: 1.4rem;
+    }
+}
