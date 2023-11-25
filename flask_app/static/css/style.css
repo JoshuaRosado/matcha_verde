@@ -97,23 +97,68 @@
         margin-bottom: 1rem;
     }
 }
-
+/* ===================== LAPTOP VIEW ======================= */
 @media screen and (min-device-width: 850px){
     .container_index_page{
-        justify-content: center;
+        all: unset;
+        height: 100vh;
+        width: 100vw;
     }
-    .matcha_logo{
-        height: 29rem;
-        width: 29rem;
+    body{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.400), rgba(0, 0, 0, 0.050)), url(../imgs/index_bg/pexels-nataliya-vaitkevich-5078583.jpg);
+        background-position: center;
+        background-size: cover;
+        display:flex ;
     }
     .logIn_or_signUp{
-        justify-content: space-around;
-        width: 80rem;
+        width: 98vw;
+        justify-content: right;
+        height: 12vh;
+        z-index: 2;
+    }
+    .matcha_logo{
+        height: 10rem;
+        width: 10rem;
+        padding: .6rem;
+        margin-top: -4rem;
+        margin-left: 2rem;
+        z-index: 3;
     }
     .logIn_link, .signUp_link{
         background: none;
+        margin-top: 1rem;
+        margin-right: 0rem;
         backdrop-filter: none;
         box-shadow: none;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255);
+        cursor: pointer;
+    }
+    .logIn_link:hover, .signUp_link:hover {
+        animation: nav_links_hover .8s linear infinite;
+    }
+    .main_title{
+        height: 100vh;
+        color: white;
+        text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.397);
+        font-size: 6rem;
+        font-family: 'BertSansRegular';
+        font-weight: normal;
+        font-weight: 900;
+        font-style: normal;
+        display: flex;
+        justify-content: center;
+        align-items: top;
+    }
+
+    @keyframes nav_links_hover {
+        0%{color: rgb(170, 209, 145);}
+        50%{color: rgb(255, 255, 255);}
+        100%{color: rgb(170, 209, 145);}
+        
     }
 }
