@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .index_page_title{
@@ -60,6 +60,9 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
+}
+.main_title{
+    display: none;
 }
 
 /* ============================= LANDSCAPE VIEW ================================= */
@@ -142,6 +145,7 @@
         animation: nav_links_hover .8s linear infinite;
     }
     .main_title{
+        display: block;
         height: 100vh;
         color: white;
         text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.397);
@@ -150,6 +154,7 @@
         font-weight: normal;
         font-weight: 900;
         font-style: normal;
+        margin-bottom: 12rem;
         display: flex;
         justify-content: center;
         align-items: top;
