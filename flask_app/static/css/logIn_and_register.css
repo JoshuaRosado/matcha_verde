@@ -5,8 +5,14 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+body{
+    background: none;
+}
+
 .log_in_container, .sign_up_container{
     display: flex;
+    background: rgb(255, 255, 255);
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -22,6 +28,10 @@
 
 .log_in_title, .sign_up_title{
     font-size: 2rem;
+}
+.email_input::placeholder, .password_input::placeholder, .sign_in_first_name::placeholder, .sign_in_last_name::placeholder, .sign_in_email::placeholder,.sign_in_password::placeholder, .sign_in_confirm_password::placeholder{
+    text-align: start;
+    padding-left: .3rem;
 }
 
 .email_input, .password_input, .sign_in_first_name, .sign_in_last_name, .sign_in_email,.sign_in_password, .sign_in_confirm_password {
@@ -40,8 +50,9 @@
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
 }   input[type="email"], input[type="password"], input[type="text"]{
-    padding: 1rem;
+    padding: 1.2rem;
     font-size: 1rem; 
+    text-align: center;
 }
 
 .sign_in_first_name, .sign_in_last_name, .sign_in_email,.sign_in_password, .sign_in_confirm_password{
@@ -95,6 +106,7 @@
     color: rgb(86, 86, 114);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
+    cursor: pointer;
 }
 .sign_up_button{
     margin-top: 1rem;
@@ -115,4 +127,65 @@
     margin-bottom: 2rem;
     
 }
+/* =========================== LANDSCAPE VIEW ========================== */
+@media (orientation: landscape) and (max-height: 450px) and (max-width: 844px) {
+    .log_in_container,.sign_up_container{
+        height: 200vh;
+        width: 100vw;
+    }
+}
 
+@media screen and (min-device-width: 850px){
+    .matcha_logo_container{
+        width: 25vw;
+        display: flex;
+        justify-content: center;
+    }
+    .matcha_logo_logIn{
+        height: 17rem
+    }
+    .matcha_logo_signUp{
+        height: 20rem;
+        margin-bottom: 10rem;
+    }
+    .email_input, .password_input,.sign_in_first_name, .sign_in_last_name, .sign_in_email,.sign_in_password, .sign_in_confirm_password{
+        margin:1rem;
+        height: 3.5rem;
+        width: 20rem;
+    }
+    .signUp_form{
+        margin-top: 12rem;
+        width: 25vw;
+        height: 100vh;
+    }
+    .sign_up_container{
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        justify-content: space-evenly;
+    }
+    .sign_up_button_container{
+        margin-top: 2rem;
+    }
+
+    .log_in_button, .sign_up_button{
+        height: 6rem;
+        width: 6rem;
+        font-size: 1.3rem;
+    }
+
+    .log_in_button:hover, .sign_up_button:hover{
+        box-shadow: 5px 5px 3px 1px white,
+        inset 5px 5px 5px 5px rgba(0, 0, 0, 0.043);
+        color: rgb(104, 159, 85);
+    }
+    .logIn_transfer_link,.register_transfer_link{
+        font-size: 1rem;
+    }
+    .logIn_transfer_link:hover,.register_transfer_link:hover{
+        color: rgb(148, 204, 130);
+        font-weight: 600;
+    }
+    
+}
