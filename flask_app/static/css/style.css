@@ -112,7 +112,7 @@
         width: 100vw;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(to left, rgba(0, 0, 0, 0.100), rgba(0, 0, 0, 0.800)), url(../imgs/index_bg/clay-banks-Q3DaZ8vmBAA-unsplash\ \(1\).jpg);
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.100), rgba(0, 0, 0, 0.800)), url(../imgs/index_bg/clay-banks-Q3DaZ8vmBAA-unsplash.jpg);
         background-position: center;
         background-size: cover;
         display:flex ;
