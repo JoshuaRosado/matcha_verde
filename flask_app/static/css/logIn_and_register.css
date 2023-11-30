@@ -8,11 +8,49 @@
 body{
     background: none;
 }
+.fa-regular{
+    color: rgb(255, 0, 0);
+    margin-top: 5rem;
+    position: absolute;
+    
+
+}
+/* ======================== DARK MODE SECTION ==================== */
+.dark_mode_btn{
+    height: 2rem;
+    position: absolute;
+    margin-right: 1rem;
+    right: 0%;
+    width: 5rem;
+    position: absolute;
+    top: 1rem;
+    background-color:rgb(0, 0, 0);
+    border-radius: 10%;
+    box-shadow: inset 5px 5px 3px 2px rgba(255, 255, 255, 0.327);
+}
+.dark_mode{
+    background: rgb(18, 31, 16);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    transition: 2s ease-in-out;
+}
+
+.input_dark_mode{
+    background: black;
+    color: rgb(223, 223, 224);
+    transition: background 2.5s ease-in-out;
+    
+}
+
+
+/* ===================================================== */
+
 
 .log_in_container, .sign_up_container{
     display: flex;
-    background: white;
     flex-direction: column;
+    background-size: contain;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -34,7 +72,8 @@ body{
     padding-left: .3rem;
 }
 
-.email_input, .password_input, .sign_in_first_name, .sign_in_last_name, .sign_in_email,.sign_in_password, .sign_in_confirm_password {
+
+.email_input, .password_input,.input_class {
     height: 3.2rem;
     text-align: left;
     width: 17rem;
@@ -47,8 +86,6 @@ body{
     8px 100px 10px 1px rgba(38, 56, 12, 0),
     inset 5px 5px 5px rgba(0, 0, 0, 0.058);
     border-radius: 1.3rem;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
 }   input[type="email"], input[type="password"], input[type="text"]{
     padding: 1.2rem;
     font-size: 1rem; 
@@ -66,7 +103,6 @@ body{
     box-shadow:
     3px 3px 5px 2px rgba(0, 0, 0, 0.055),
     5px 5px 2px 2px rgb(174, 134, 134,.030);
-    color: black;
 }
 
 .sign_up_button_container, .log_in_button_container{

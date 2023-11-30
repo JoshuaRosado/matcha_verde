@@ -36,7 +36,7 @@
 
 }
 
-.logIn_or_signUp{
+.logIn_or_signUp_section{
     display: flex;
     justify-content: space-around;
     height: 10rem;
@@ -82,10 +82,9 @@
         box-shadow: 5px 5px 3px 1px rgba(255, 255, 255, 0.1),
     2px 2px 5px 3px rgba(255, 255, 255, 0.2);
 
-
     }
 
-    .logIn_or_signUp{
+    .logIn_or_signUp_section{
         all: unset;
         display: flex;
         height: 100vh;
@@ -106,6 +105,9 @@
         all: unset;
         height: 100vh;
         width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     body{
         height: 100vh;
@@ -117,32 +119,52 @@
         background-size: cover;
         display:flex ;
     }
-    .logIn_or_signUp{
-        width: 98vw;
+    .logIn_or_signUp_section{
+        width: 100vw;
+        flex-direction: column;
         justify-content: right;
-        height: 12vh;
+        align-items: baseline;
         z-index: 2;
     }
     .matcha_logo{
-        height: 4rem;
-        width: 4rem;
+        height: 7rem;
+        width: 7rem;
         padding: .3rem;
-        margin-bottom: 1rem;
-        margin-left: 2rem;
+        margin-bottom: 2rem;
+        margin-left: 1.3rem;
+        border: 3px solid rgba(255, 255, 255, 0.506);
         z-index: 3;
+        transition: .8s ease-out;
+        transform: translate(0,0);
+    }
+    .matcha_logo_click{
+        transform: translate(9.8rem,215px);
+        transition: 1s ease-in-out;
+        height: 15rem;
+        width: 15rem;
+        border: 8px solid rgba(255, 255, 255, 0.350);
+
     }
     .logIn_link, .signUp_link{
         background: none;
+        border-radius: 0%;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         margin-top: 1rem;
         margin-right: 0rem;
+        margin-left: 1rem;
         backdrop-filter: none;
         box-shadow: none;
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255);
+        font-size: 1.1rem;
+        color: rgb(236, 226, 226);
         cursor: pointer;
+        transition: .4s ease-in-out;
     }
+
     .logIn_link:hover, .signUp_link:hover {
-        animation: nav_links_hover .8s linear infinite;
+        transition: 1s ease-in-out;
+        padding-left: 3.5rem;
+        padding-bottom: .5rem;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.561);
     }
     .main_title{
         display: block;
@@ -165,11 +187,5 @@
         transition: 1.5s ease-in-out;
         text-shadow: 1px 1px 1px rgb(170, 209, 145);
     }
-
-    @keyframes nav_links_hover {
-        0%{color: rgb(170, 209, 145);}
-        50%{color: rgb(255, 255, 255);}
-        100%{color: rgb(170, 209, 145);}
-        
-    }
+    
 }

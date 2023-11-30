@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/logIn_and_register.css">
     <title>Log In</title>
 </head>
 <body>
     <div class="log_in_container">
+        <button class="dark_mode_btn" onclick="darkMode()"></button>
         <!-- ============================= LOG IN ============================= -->
         <img src="../static/imgs/matcha_logo/matcha_verde.png" alt="matcha_logo" class="matcha_logo_logIn">
         <form action="/login" method="post" class="logIn_form">
@@ -24,5 +26,6 @@
             </div>
         </form>
     </div>
+    <script src="../static/js/script.js"></script>
 </body>
 </html>
