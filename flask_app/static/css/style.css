@@ -106,52 +106,42 @@
         height: 100vh;
         width: 100vw;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
     }
     body{
         height: 100vh;
         width: 100vw;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(to left, rgba(0, 0, 0, 0.100), rgba(0, 0, 0, 0.800)), url(../imgs/index_bg/clay-banks-Q3DaZ8vmBAA-unsplash.jpg);
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.300), rgba(0, 0, 0, 0.800)), url(../imgs/index_bg/clay-banks-Q3DaZ8vmBAA-unsplash.jpg);
         background-position: center;
         background-size: cover;
         display:flex ;
     }
     .logIn_or_signUp_section{
+        all: unset;
         width: 100vw;
-        flex-direction: column;
+        display: flex;
+        margin-right: 2rem;
+        flex-direction: row;
         justify-content: right;
-        align-items: baseline;
         z-index: 2;
     }
     .matcha_logo{
         height: 7rem;
         width: 7rem;
         padding: .3rem;
-        margin-bottom: 2rem;
-        margin-left: 1.3rem;
+        margin-top: 1rem;
+        margin-left: 2rem;
         border: 3px solid rgba(255, 255, 255, 0.506);
         z-index: 3;
-        transition: .8s ease-out;
-        transform: translate(0,0);
-    }
-    .matcha_logo_click{
-        transform: translate(9.8rem,215px);
-        transition: 1s ease-in-out;
-        height: 15rem;
-        width: 15rem;
-        border: 8px solid rgba(255, 255, 255, 0.350);
-
     }
     .logIn_link, .signUp_link{
         background: none;
         border-radius: 0%;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        margin-top: 1rem;
-        margin-right: 0rem;
-        margin-left: 1rem;
+        margin: 1.2rem 1rem 0rem 1rem;
         backdrop-filter: none;
         box-shadow: none;
         font-size: 1.1rem;
@@ -161,10 +151,9 @@
     }
 
     .logIn_link:hover, .signUp_link:hover {
-        transition: 1s ease-in-out;
-        padding-left: 3.5rem;
-        padding-bottom: .5rem;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.561);
+        transition: .2s ease-in-out;
+        color: rgb(170, 209, 145);
+        border-top: 4px solid rgb(170, 209, 145);
     }
     .main_title{
         display: block;

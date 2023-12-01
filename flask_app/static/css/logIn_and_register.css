@@ -6,7 +6,8 @@
 }
 
 body{
-    background: none;
+    background: rgb(154, 179, 154);
+    background: white;
 }
 .fa-regular{
     color: rgb(255, 0, 0);
@@ -29,7 +30,7 @@ body{
     box-shadow: inset 5px 5px 3px 2px rgba(255, 255, 255, 0.327);
 }
 .dark_mode{
-    background: rgb(18, 31, 16);
+    background: rgb(37, 42, 37);
     background-position: center;
     background-size: cover;
     color: white;
@@ -77,6 +78,7 @@ body{
     height: 3.2rem;
     text-align: left;
     width: 17rem;
+    background-color: rgb(233, 228, 224);
     font-size: 1rem;
     font-weight: 600;
     border: none;
@@ -84,7 +86,7 @@ body{
     border-radius: 1.4rem;
     box-shadow: 1px 1px 1px .5px rgba(255, 255, 255, 0.755),
     8px 100px 10px 1px rgba(38, 56, 12, 0),
-    inset 5px 5px 5px rgba(0, 0, 0, 0.058);
+    inset 5px 5px 5px rgba(0, 0, 0, 0.3);
     border-radius: 1.3rem;
 }   input[type="email"], input[type="password"], input[type="text"]{
     padding: 1.2rem;

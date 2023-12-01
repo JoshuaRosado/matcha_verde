@@ -19,7 +19,5 @@ const matchaLogo = document.querySelector('.matcha_logo');
 
     function darkMode(){
         const element = document.body;
-        const inputs = document.querySelectorAll(".input_class");
         element.classList.toggle("dark_mode");
-        inputs.classList.toggle("input_dark_mode");
     }
