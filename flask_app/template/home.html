@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_mobile.css">
-    <link rel="stylesheet" href="style_landscape.css">
-    <link rel="stylesheet" href="style_laptop.css">
+    <link rel="stylesheet" href="../static/css/style_mobile.css">
+    <!-- <link rel="stylesheet" href="style_landscape.css">
+    <link rel="stylesheet" href="style_laptop.css"> -->
     <title>MatchaVerde</title>
 </head>
 <body>
     <div class="home_container">
         <!-- =======================    NAV     =========================== -->
         <div class="nav">
-            <div class="nav_first_row">
-                <div class="nav_left_side">
-                    <h4 class="matcha_title">Matcha Verde</h4>
-                    <img src="#" alt="matcha_logo" class="home_matcha_logo">
-                </div>
-                <div class="nav_rightSide">
-                    <a href="about">About</a>
-                    <a href="/blog">Blog</a>
-                    <a href="/recipes">Recipes</a>
-                    <a href="/frequently_asked_questions">FAQ</a>
-                    <!-- <a href="/bag">Bag</a>
-                    <a href="/account">Account</a> -->
-                </div>
-            </div>
-            <div class="nav_second_row">
+            <label for="nav_toggle" class="nav_toggle_label">
+                <input type="checkbox" id="nav_toggle" class="nav_toggle">
+            </label>
+            <aside class="nav_block" id="nav_block">
+                <h4 class="matcha_title">Matcha Verde</h4>
+                <img src="../static/imgs/matcha_logo/matcha_verde.png" alt="matcha_logo" class="home_matcha_logo">
+                <a href="about">About</a>
+                <a href="/blog">Blog</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/frequently_asked_questions">FAQ</a>
                 <a href="/matcha">Matcha</a>
                 <a href="/organic">Organic</a>
                 <a href="/utensils">Utensils</a>
+            </aside>
+            <div class="nav_account_section">
+                <a href="/bag">Bag</a>
+                <a href="/account">Account</a>
             </div>
         </div>
+
         <!-- ======================= SLIDE SHOW SECTION =========================== -->
         <div class="slide_show_area">
             <div class="slide_show_container">
@@ -116,7 +116,7 @@
         </div>
         <!-- ======================= ABOUT SECTION =========================== -->
         <div class="about_container">
-            <img src="logo" alt="logo_img" class="about_container_logo_img">
+            <img src="#" alt="logo_img" class="about_container_logo_img">
             <h2 class="about_container_title title">About Matcha Verde</h2>
             <p class="about_container_paragraph paragraph">We are a family-run tea company founded in 2020, in the heart of Kyoto. For generations, we have upheld a tradition of aromatic, well-balanced teas by carefully selecting, blending, and crafting each of our 30+ blends.</p>
             <div class="about_btn_container">
@@ -180,6 +180,6 @@
             <p class="bottom_paragraph2">© 2023, Matcha Verde</p>
         </div>
     </div>
-    
+    <script src="../static/js/script.js"></script>
 </body>
 </html>

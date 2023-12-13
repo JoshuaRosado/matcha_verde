@@ -18,9 +18,9 @@ class Matcha:
         
 seasons = ["Fall", "Summer", "Winter", "Spring"]
 
-my_matcha = Matcha("Hatsu", 8, "40g", "Astrigent",[seasons[0], seasons[2]], 10.00)
-my_matcha2 = Matcha("Hatsu", 8, "40g", "Astrigent",[seasons[0], seasons[2]], 10.00)
-my_matcha3 = Matcha("Waikiki", 6, "40g", "Astrigent",[seasons[0], seasons[2]], 10.00)
+my_matcha = Matcha("Hatsu", 8, "40g", "Astrigent",seasons[1], 25.00)
+my_matcha2 = Matcha("Hatsu", 8, "40g", "Astrigent",seasons[2], 10.00)
+my_matcha3 = Matcha("Waikiki", 6, "40g", "Astrigent",[seasons[0], seasons[3]], 46.00)
 
 
 print(f"I just ordered 160g of {my_matcha.name} matcha")
@@ -31,10 +31,13 @@ class User:
         self.money = money
         self.current_season = current_season
         
-me = User()
+user = User("Leya", 100.00, "Winter")
+print(f"{user.first_name} spent ${user.money:,.2f} on this {user.current_season} matcha season. ")
+
+
         
-    def buy_matcha(self, money, current_season):
-        pass
+    # def buy_matcha(self, money, current_season):
+    #     pass
     
     
 # class Work:
