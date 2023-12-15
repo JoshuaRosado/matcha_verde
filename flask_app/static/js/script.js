@@ -1,4 +1,4 @@
-let slides = document.querySelector(".slide");
+let slides = document.querySelectorAll(".slide");
 const checkBox = document.querySelector(".nav_toggle_label");
 const mainTitle = document.querySelector('.main_title');
 const matchaLogo = document.querySelector('.matcha_logo');
@@ -34,26 +34,27 @@ current = 0
             slider[i].style.display = "none";
         }
     }
+
     function startSlide(){
         reset();
         slider[0].style.display = "block";
-        slider[0].classList.add("fade_in");
     }
 
     function slidePrev(){
         reset();
         slider[current - 1].style.display = "block";
+        slider[current - 1].classList.add('fade_in');
         current--;
     }
 
     function slideNext(){
         reset();
-        slider[current + 1].style.display = "block";
-        current++;
+            slider[current + 1].style.display = "block";
+            slider[current + 1].classList.add('fade_in');
+            current++;
     }
     leftArrow.addEventListener("click", function(){
         if (current === 0 ){
-
             current = slider.length;
         }
         slidePrev();
@@ -65,6 +66,18 @@ current = 0
         }
         slideNext();
     });
+
+
+// =============== AUTO SLIDE EVERY 5s =======================
+
+    setInterval(function() {
+        if (current === slider.length - 1){
+            current = -1
+        }
+        slideNext()
+    }, 5000);
+// ==========================================================
+
 
 startSlide();
 
