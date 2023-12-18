@@ -232,18 +232,18 @@
 /* ========================= HELP AREA ================================= */
 .help_container{
     display: flex;
+    background-color: black;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
-    height: 60vh;
-    border: 2px solid red;
+    padding: 1rem 1rem 4rem;
+    height: 100vh;
     width: 100vw;
     color: rgba(219, 217, 217, 0.895)
 }
 
 .help_title{
     font-size: 2.4rem;
-    padding: 3rem 0rem 1rem;
+    padding: 1rem 0rem;
 }
 
 .help_start_quiz_btn{
@@ -259,6 +259,33 @@
     margin-right: .4rem;
 }
 
+.help_matcha_img{
+    margin-top: 2.5rem;
 
+}
+
+/* ================================================================= */
+/* ========================= ABOUT AREA ============================ */
+.about_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(219, 217, 217, 0.895);
+    height: 90vh;
+    width: 100vw;
+    background: rgb(31, 31, 31);
+    
+}
+.about_logo{
+    display: flex;
+    position: relative;
+    top: -3rem;
+    justify-content: center;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1.2rem solid rgb(31, 31, 31);
+    height: 8rem;
+    width: 8rem;
+}
 /* ================================================================= */
 
