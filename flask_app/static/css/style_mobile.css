@@ -4,7 +4,7 @@
     font-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .home_container{
@@ -326,10 +326,101 @@
 }
 
 .more_about_us_btn{
-    border: 2px solid white;
+    border: 1px solid white;
     background: none;
     color: rgba(219, 217, 217, 0.895)
     ;
 }
+/* ================================================================= */
+/* ===========================TOP RANK AREA =============================== */
+
+.top_rank_container{
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    color: rgba(219, 217, 217, 0.895);
+    display: flex ;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem 4rem;
+}
+
+.top_rank_container_title{
+    margin: 1rem 0rem 3.5rem;
+}
+
+.top_rank_items_main_container{
+    display: flex;
+    justify-content:center;
+}
+
+.top_rank_item_container{
+    height: 18rem;
+    padding: .5rem ;
+}
+
+.top_rank_imgs{
+    height: 6rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+
+.top_rank_title{
+    margin-bottom: 0rem;
+}
+.top_rank_subtitle{
+    color: rgba(219, 217, 217, 0.595);
+    margin-bottom: 0rem;
+}
+
+.add_to_bag_btn{
+    font-size: .8rem;
+    border-radius: 5rem;
+    padding: 0.3rem ;
+    height: 2rem;
+    width: 7rem;
+}
+
+.add_to_bag_icon{
+    height: .8rem;
+    margin-bottom: .2rem;
+}
+
+/* ================================================================= */
+
+/* ====================== MATCHA RECIPES AREA ================================== */
+.matcha_recipes_container{
+    height: 120vh;
+    width: 100vw;
+    margin-top: 20rem;
+    background: rgb(31, 31, 31);
+    padding: 1rem;
+    color: rgba(219, 217, 217, 0.895);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+
+}
+
+.matcha_recipes_title{
+    margin-top: 2rem;
+}
+
+.matcha_recipe_block{
+    height: 20rem;
+    margin: 1.2rem 0rem;
+    border: 2px solid red ;
+}
+
+.matcha_recipes_container_img{
+    height: 10rem;
+    border-radius: 2rem;
+    object-fit: cover;
+    width: 20rem;
+}
+
+
 /* ================================================================= */
 
