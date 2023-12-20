@@ -398,9 +398,9 @@
 
 /* ====================== MATCHA RECIPES AREA ================================== */
 .matcha_recipes_container{
-    height: 120vh;
+    height: 175vh;
     width: 100vw;
-    margin-top: 20rem;
+    margin-top: 30rem;
     background: rgb(31, 31, 31);
     padding: 1rem;
     color: rgba(219, 217, 217, 0.895);
@@ -422,11 +422,12 @@
 }
 
 .matcha_recipes_container_img{
-    height: 10rem;
+    height: 14rem;
     border-radius: 2rem;
     object-fit: cover;
     width: 20rem;
 }
+
 
 
 /* ================================================================= */
