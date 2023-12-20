@@ -342,7 +342,7 @@
 /* ===========================TOP RANK AREA =============================== */
 
 .top_rank_container{
-    height: 100vh;
+    height: auto;
     width: 100vw;
     background: black;
     color: rgba(219, 217, 217, 0.895);
@@ -394,13 +394,19 @@
     margin-bottom: .2rem;
 }
 
+.top_rank_container_footer{
+    height: 15rem;
+    background: rgb(31, 31, 31);
+    border-radius:0rem 5rem 0rem 0rem
+}
+
 /* ================================================================= */
 
 /* ====================== MATCHA RECIPES AREA ================================== */
 .matcha_recipes_container{
-    height: 175vh;
+    height: 200vh;
     width: 100vw;
-    margin-top: 30rem;
+    margin-top: -12rem;
     background: rgb(31, 31, 31);
     padding: 1rem;
     color: rgba(219, 217, 217, 0.895);
@@ -412,13 +418,18 @@
 }
 
 .matcha_recipes_title{
-    margin-top: 2rem;
+    margin: -1.5rem 0rem -5.5rem;
+}
+.matcha_recipes_browse{
+    margin-bottom: -5rem;
+    text-decoration: none;
+    color: rgba(219, 217, 217, 0.895);
 }
 
 .matcha_recipe_block{
     height: 20rem;
-    margin: 1.2rem 0rem;
-    border: 2px solid red ;
+    margin: .2rem 0rem;
+
 }
 
 .matcha_recipes_container_img{
@@ -426,6 +437,7 @@
     border-radius: 2rem;
     object-fit: cover;
     width: 20rem;
+    margin-bottom: 1.2rem;
 }
 
 
