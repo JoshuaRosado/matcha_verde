@@ -1,0 +1,57 @@
+@media (orientation: landscape) and (max-height: 450px) and (max-width: 844px) {
+
+    * , *::before, *::after{
+        margin: 0;
+        padding: 0;
+        font-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+    .nav{
+        position: relative;
+        justify-content: right;
+        flex-direction: row;
+        align-items: center;
+        height: 4rem;
+    }
+
+    .nav_block{
+        background: none;
+        font-size: .9rem;
+        translate: none;
+        height: 4rem;
+        width: 100vw;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        padding: 0;
+        margin-top: 0rem;
+        margin-left: 0rem;
+    }
+    .nav_block a{
+        margin: 0rem 1rem;
+    }
+
+    .nav_account_section{
+        width: 12vw;
+        margin-top: -3.9rem;
+        justify-content: space-around;
+    }
+
+    .nav_toggle_label, .menu_title{
+        display: none;
+    }
+
+    .home_matcha_logo{
+        display: none;
+    }
+    
+    .home_matcha_logo_no_title{
+        display: flex;
+        margin-bottom: .8rem;
+        height: 6rem;
+        width: 6rem;
+    }
+
+}

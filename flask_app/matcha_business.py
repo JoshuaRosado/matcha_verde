@@ -30,11 +30,20 @@ class User:
         self.first_name = first_name
         self.money = money
         self.current_season = current_season
+        self.own_matcha = Matcha("Hatsu", 8, "40g", "astrigent", seasons, 10.00)
+        self.own_store = Store("Matcha Verde", "Matcha", "Nashville, TN")
         
+        
+    def open_store(self, name, item, location):
+        open_my_store = Store(name = "name", item ="item", location= "location")
+        self.own_matcha = open_my_store
+        return self
+    
 user = User("Leya", 100.00, "Winter")
 print(f"{user.first_name} spent ${user.money:,.2f} on this {user.current_season} matcha season. ")
 
-
+user.open_store("Matcha Verde", "Matcha", "Nashville, TN")
+print(user.own_store.name)
         
     # def buy_matcha(self, money, current_season):
     #     pass

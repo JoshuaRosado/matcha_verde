@@ -94,6 +94,7 @@ html{
     width: 12rem;
     translate: -100%;
     padding: 5rem;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
     height: 100vh;
     font-size: 1.1rem;
     display: flex;
@@ -159,7 +160,11 @@ html{
 
 }
 
-.nav_block img{
+.home_matcha_logo_no_title{
+    display: none;
+}
+
+.home_matcha_logo{
     height: 7.5rem;
     width: 7.5rem;
     object-fit: cover;
