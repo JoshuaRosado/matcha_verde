@@ -141,7 +141,7 @@ html{
     position: fixed;
     height: 3.5rem;
     width: 100%;
-    z-index: 4;
+    z-index: 10;
     margin-bottom: 5rem;
     background-color: rgb(17, 11, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.171);
@@ -189,15 +189,15 @@ html{
     width: 100vw;
     display: flex;
     flex-direction: row;
-    scroll-snap-type: both mandatory;
+    /* scroll-snap-type: both mandatory;
     overflow-y: hidden;
-    overflow-x: auto;
+    overflow-x: auto; */
 }
 .slide{
     object-fit: cover;;
     height: 100vh;
-    width: 100vw;
-    scroll-snap-align: start;
+    width: 100%;
+    /* scroll-snap-align: start; */
 }
 
 
@@ -211,38 +211,77 @@ html{
 
 
 .slide_img_selection{
-    height: 25vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
-    margin-top: 3rem;
+    margin-top: 0rem;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.7);
+    /* backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); */
     font-size: 2rem;
     color: rgba(219, 217, 217, 0.895);
     position: absolute;
     z-index: 3;
 }
+
+.slide_add_to_bag_btn, .slide_view_item_btn, .slide_shop_now_btn{
+    font-size: 1.2rem;
+    border: .2rem solid rgba(104, 104, 104, 0.455);
+    background-color: rgba(255, 255, 255, 0.8) ;
+    border-radius: 4rem;
+    width: 15rem;
+    height: 2.5rem;
+    margin: .5rem;
+}
+
+.slide_view_item_btn{
+    background-color: rgba(65, 65, 65, 0.5);
+    color: rgba(219, 217, 217, 0.895);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
 .items_name{
     font-size: 2rem;
-    margin-top: -1rem;
-}
-.matcha_v_name{
-    font-size: 3rem;
+    margin: -1rem 0rem 1rem;
 }
 
 .slide_item_description{
     font-size: 1rem;
+    color: rgba(219, 217, 217, 0.695);
 }
+/*  -========================= MAIN SLIDE ======================= */
+.slide_item_description_main{
+    font-size: 1.2rem;
+    margin-top: -4rem;
+
+}
+.matcha_name_main{
+    font-size: 4rem;
+    text-align: center;
+    margin: 8rem 0rem 2rem;
+    color: rgb(183, 223, 158);
+}
+
+.slide_shop_now_btn{
+    margin-top: 1rem;
+}
+
+/* =========================================================== */
+
+
+
 
 
 .fade_in{
     animation: fade_in .6s linear;
-    transform-origin: center;
 }
 
 @keyframes fade_in {
-    0%{opacity: 0%}
+    0%{opacity: 0%; padding: .1rem;}
     100%{opacity: 100%;}
     
 }
@@ -253,7 +292,7 @@ html{
     position: absolute;
     width: 100vw;
     height: 100vh;
-    padding: 2rem;
+    padding: 1rem;
     justify-content: space-between;
 }
 
@@ -261,9 +300,9 @@ html{
     align-items: center;
     background: none;
     z-index: 5;
-    font-size: 2rem;
+    font-size: 2.4rem;
     border: none;
-    color: rgba(255, 255, 255, 0.402);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* ================================================================= */
