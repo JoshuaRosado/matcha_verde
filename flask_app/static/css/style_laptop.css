@@ -1,0 +1,59 @@
+@media screen and (min-device-width: 850px){
+    .nav{
+        position: relative;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+        height: 4rem;
+        border: none;
+    }
+
+    .nav_block{
+        font-size: .9rem;
+        border: none;
+        translate: none;
+        height: 3.4rem;
+        width: 50vw;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0;
+        margin-top: 0rem;
+        margin-left: 0rem;
+    }
+    .nav_block a{
+        font-size: 1rem;
+    }
+
+    .nav_account_section{
+        width: 8.2vw;
+        justify-content: space-around;
+    }
+
+    .nav_account_section a{
+        font-weight: 600;
+    }
+
+    .nav_toggle_label, .menu_title{
+        display: none;
+    }
+    .home_matcha_logo{
+        display: none;
+    }
+    .home_matcha_logo_laptop{
+        display: block;
+        margin-top:.6rem;
+        align-items: center;
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+        border: 3px solid rgb(112, 95, 95);
+        padding: .2rem;
+        box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.36),
+        1px 1px 1px 14px rgb(17, 11, 1);
+    }
+
+    
+
+
+}

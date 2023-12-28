@@ -93,10 +93,9 @@ html{
     transition: 200ms ease-in-out;
     width: 12rem;
     translate: -100%;
-    padding: 5rem;
-    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 6rem 0rem 10rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.171);
     height: 101vh;
-    font-size: 1.1rem;
     display: flex;
     justify-content: space-around;
     text-align: center;
@@ -113,28 +112,31 @@ html{
 .nav_toggle_label:has(input:checked) + aside{
     translate: 0;
 }
+
 /* ================================================================= */
 /* ============================== NAV ================================ */
 .nav_account_section{
     width: 8rem;
     height: 3.5rem;
-    font-size: .8rem;
+    font-size: .9rem;
     text-align: center;
-    margin-right: .5rem;
-    margin-top: .1rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
 .nav_account_section a{
-    color: rgba(219, 217, 217, 0.495);
+    color: rgba(219, 217, 217, 0.6);
     text-decoration: none;
+
 }
 
 
 .nav_account_section a:hover{
     color: white;
+}
+.account_section_icons{
+    color: rgba(219, 217, 217, 0.3);
 }
 
 .nav{
@@ -144,7 +146,7 @@ html{
     z-index: 10;
     margin-bottom: 5rem;
     background-color: rgb(17, 11, 1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.171);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.171);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     display: flex;
@@ -152,18 +154,25 @@ html{
 }
 
 .nav_block a {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(219, 217, 217, 0.6);
     text-decoration: none;
+    font-size: 1.2rem;
+    height: 2rem;
+    width: 6rem;
+    border-top: 3px solid rgba(255, 255, 255, 0);
+    text-align: center;
 }
 .nav_block a:hover{
     color: white;
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.127);
+    border-radius: .5rem;
+    transition: .3s ease-in-out;
+    border-top: 3px solid rgba(255, 255, 255, 0.2);
 
 }
-
-.home_matcha_logo_no_title{
+.home_matcha_logo_laptop{
     display: none;
 }
-
 .home_matcha_logo{
     height: 7.5rem;
     width: 7.5rem;
