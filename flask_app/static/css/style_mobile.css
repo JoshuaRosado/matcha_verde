@@ -131,12 +131,12 @@ html{
 
 }
 
+.account_section_icons{
+    color: rgba(219, 217, 217, 0.3);
+}
 
 .nav_account_section a:hover{
     color: white;
-}
-.account_section_icons{
-    color: rgba(219, 217, 217, 0.3);
 }
 
 .nav{
@@ -158,18 +158,14 @@ html{
     text-decoration: none;
     font-size: 1.2rem;
     height: 2rem;
+    padding-top: 0rem;
     width: 6rem;
-    border-top: 3px solid rgba(255, 255, 255, 0);
+    border-top: 1px solid rgba(255, 255, 255, 0);
     text-align: center;
+    transition: .2s ease-in-out;
 }
-.nav_block a:hover{
-    color: white;
-    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.127);
-    border-radius: .5rem;
-    transition: .3s ease-in-out;
-    border-top: 3px solid rgba(255, 255, 255, 0.2);
 
-}
+
 .home_matcha_logo_laptop{
     display: none;
 }
@@ -198,9 +194,6 @@ html{
     width: 101vw;
     display: flex;
     flex-direction: row;
-    /* scroll-snap-type: both mandatory;
-    overflow-y: hidden;
-    overflow-x: auto; */
 }
 .slide{
     object-fit: cover;;
@@ -218,6 +211,11 @@ html{
     object-fit: cover;
 }
 
+.matcha_item_shadow,
+.slide_img_selection img{
+    display: none;
+}
+
 
 .slide_img_selection{
     height: 101vh;
@@ -232,6 +230,7 @@ html{
     /* backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px); */
     font-size: 2rem;
+    padding-top: 10rem;
     color: rgba(219, 217, 217, 0.895);
     position: absolute;
     z-index: 3;
@@ -265,7 +264,7 @@ html{
 /*  -========================= MAIN SLIDE ======================= */
 .slide_item_description_main{
     font-size: 1.2rem;
-    margin-top: -4rem;
+    margin-top: -10rem;
 
 }
 .matcha_name_main{

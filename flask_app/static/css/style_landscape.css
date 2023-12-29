@@ -27,13 +27,19 @@
         height: 100vh;
         object-fit: cover;
     }
+
+    .slide_img_selection{
+        padding-bottom: 4rem;
+    }
+
     .slide_item_description_main{
-        margin-top: 3rem;
+        margin-top: -5rem;
     }
 
     .matcha_name_main{
         margin: .3rem;
     }
+
  /* ============================================================ */
  /* ======================== HELP/ QUIZ AREA ========================= */
     .help_container{
