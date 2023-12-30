@@ -8,12 +8,12 @@
 }
 
 html{
-    background:rgb(17, 11, 1);
+    background:rgb(21, 13, 0);
 
 }
 
 .home_container{
-    background: linear-gradient(to bottom, rgb(17,11,1), rgb(17,10,1));
+    background: linear-gradient(to bottom, rgb(21, 13, 0), rgb(20, 13, 0));
 }
 .title{
     font-size: 2.4rem;
@@ -101,7 +101,7 @@ html{
     text-align: center;
     align-items: center;
     flex-direction: column; 
-    background-color: rgb(17, 11, 1);
+    background-color: rgb(21, 13, 0);
 }
 
 .home_matcha_logo{
@@ -141,16 +141,56 @@ html{
 
 .nav{
     position: fixed;
+    top: 1.8rem;
     height: 3.5rem;
     width: 100%;
     z-index: 10;
     margin-bottom: 5rem;
-    background-color: rgb(17, 11, 1);
+    background-color: rgb(21, 13, 0);
     border-bottom: 2px solid rgba(255, 255, 255, 0.171);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     display: flex;
     justify-content: space-between;
+}
+
+.special_announcement_bar{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(30, 19, 0);
+    width: 101svw;
+    font-size: .8rem;
+    text-align: center;
+    height: 1.8rem;
+    z-index: 11;
+}
+
+.special_msg:hover{
+    animation: cup_anim 4s linear infinite;
+}
+
+.special_msg_cup{
+    color: rgb(183, 223, 158);
+    margin: 1rem;
+    animation: cup_anim 4s linear ;
+}
+
+
+@keyframes cup_anim {
+    0%{color: rgb(183, 223, 158);}
+    15%{color: black;}
+    30%{color: rgb(183, 223, 158);}
+    45%{color: black;}
+    60%{color: rgb(183, 223, 158);}
+    75%{color: black;}
+    100%{color: rgb(183, 223, 158);}
+}
+
+.special_msg{
+    text-decoration: none;
+    color: rgba(219, 217, 217, 0.895);
 }
 
 .nav_block a {
@@ -183,12 +223,12 @@ html{
 /* ================================================================= */
 
 /* ======================== SLIDESHOW AREA =============================== */
-.slide_show_area{
+.slide_show_container{
     height: 100vh;
     width: 101vw;
 }
 
-.slide_imgs{
+.slide_imgs_container{
     position: absolute;
     height: 100vh;
     width: 101vw;
@@ -212,12 +252,12 @@ html{
 }
 
 .matcha_item_shadow,
-.slide_img_selection img{
+.slide_info img{
     display: none;
 }
 
 
-.slide_img_selection{
+.slide_info{
     height: 101vh;
     display: flex;
     flex-direction: column;
@@ -226,19 +266,17 @@ html{
     width: 101vw;
     margin-top: 0rem;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px); */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.650) 40%, rgba(0,0,0,0.5));
     font-size: 2rem;
     padding-top: 10rem;
-    color: rgba(219, 217, 217, 0.895);
+    color: rgba(219, 217, 217, 0.950);
     position: absolute;
     z-index: 3;
 }
 
 .slide_add_to_bag_btn, .slide_view_item_btn, .slide_shop_now_btn{
     font-size: 1rem;
-    border: .2rem solid rgba(104, 104, 104, 0.455);
+    border: .2rem solid rgba(104, 104, 104, 0.6);
     background-color: rgba(255, 255, 255, 0.8) ;
     border-radius: 4rem;
     width: 15rem;
@@ -248,7 +286,7 @@ html{
 
 .slide_view_item_btn{
     background-color: rgba(65, 65, 65, 0.5);
-    color: rgba(219, 217, 217, 0.895);
+    color: rgba(219, 217, 217, 0.950);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
 }
@@ -260,6 +298,12 @@ html{
 .slide_item_description{
     font-size: 1rem;
     color: rgba(219, 217, 217, 0.695);
+}
+
+.description_container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 /*  -========================= MAIN SLIDE ======================= */
 .slide_item_description_main{
@@ -317,7 +361,7 @@ html{
 /* ========================= HELP AREA ================================= */
 .help_container{
     display: flex;
-    background-color: rgb(17, 11, 1);
+    background-color: rgb(21, 13, 0);
     flex-direction: column;
     padding: 2rem 1rem;
     height: 105vh;
@@ -426,7 +470,7 @@ html{
 .top_rank_container{
     height: auto;
     width: 101vw;
-    background: rgb(17, 11, 1);
+    background: rgb(21, 13, 0);
     color: rgba(219, 217, 217, 0.895);
     display: flex ;
     flex-direction: column;
@@ -559,7 +603,7 @@ html{
 .footer_container{
     height: 75vh;
     width: 101vw;
-    background: rgb(17, 11, 1);
+    background: rgb(21, 13, 0);
     display: flex;
     flex-direction: column;
     justify-content: space-around;

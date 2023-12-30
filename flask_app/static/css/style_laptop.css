@@ -5,8 +5,14 @@
         flex-direction: row;
         align-items: center;
         height: 4rem;
+        top: 1.8rem;
         border: none;
     }
+    .special_announcement_bar{
+        display: flex;
+        position: absolute;
+    }
+
 
     .nav_block{
         font-size: .9rem;
@@ -68,14 +74,25 @@
     /* ================================================================= */
     
     /* ============================= SLIDE AREA ================================= */
-    .slide_img_selection {
+    .slide_info {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
         padding: 0;
     }
-    .slide_show_area, .slide_imgs, .slide img, .slide_img_selection,.slide_show_arrows{
+    .main_slide{
+        flex-direction: column;
+    }
+
+    .slide_item_description_main{
+        margin: 0rem 0rem -5rem;
+        font-size: 1.5rem;
+    }
+    .matcha_name_main{
+        font-size: 6rem;
+    }
+    .slide_show_container, .slide_imgs_container, .slide img, .slide_info,.slide_show_arrows{
         height: 50svh;
     }
 
@@ -84,7 +101,7 @@
         flex-direction: column;
         text-align: center;
     }
-    .slide_item_img_container{
+    .slide_img_container{
         height: 50svh;
         width: 25svw;
         display: flex;
@@ -95,22 +112,36 @@
     }
     
 
-    .slide_item_img_container img{
+    .slide_img_container img{
         display:block;
         height: 12rem;
         width: 12rem;
         position: relative;
     }
-    .matcha_item_shadow{
+    .matcha_item_shadow, .matcha_item_shadow_circ, .matcha_item_shadow_bag{
         display: block;
         height: 2rem;
         border-radius: 10%;
         width: 9rem;
         background-color: rgba(0, 0, 0, 0.8);
         box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.8);
-
     }
-    .slide_imgs{
+
+    .matcha_item_shadow_circ{
+        border-radius: 50%;
+    }
+    .matcha_item_shadow_bag{
+        border-radius: 15%;
+        width: 10rem;
+        margin-top: .8rem;
+    }
+
+    #sayaka_img{
+        height: 16rem;
+    }
+
+
+    .slide_imgs_container{
         background: linear-gradient(to left, black, rgba(255, 255, 255, 0.218));
     }
 

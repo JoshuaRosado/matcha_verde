@@ -20,15 +20,21 @@
         width: 30vw;
 
     }
+    .nav{
+        top: 0rem;
+    }
+    .special_announcement_bar{
+        display: none;
+    }
 /* ========================================================================= */
 /* ======================== SLIDE IMGS ========================= */
-    .slide_show_area, .slide_imgs, .slide, .slide img{
+    .slide_show_container, .slide_imgs_container, .slide, .slide img{
         width: 101vw;
         height: 100vh;
         object-fit: cover;
     }
 
-    .slide_img_selection{
+    .slide_info{
         padding-bottom: 4rem;
     }
 
