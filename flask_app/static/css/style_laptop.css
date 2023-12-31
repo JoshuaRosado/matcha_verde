@@ -1,6 +1,7 @@
 @media screen and (min-device-width: 850px){
     .nav{
         position: relative;
+        width: 100svw;
         justify-content: space-around;
         flex-direction: row;
         align-items: center;
@@ -75,6 +76,7 @@
     
     /* ============================= SLIDE AREA ================================= */
     .slide_info {
+        width: 100svw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -93,7 +95,12 @@
         font-size: 6rem;
     }
     .slide_show_container, .slide_imgs_container, .slide img, .slide_info,.slide_show_arrows{
-        height: 50svh;
+        height: 60svh;
+        width: 100svw;
+    }
+
+    .special_announcement_bar, .help_container,.about_container, .about_container_footer,.top_rank_container, .top_rank_container_footer,.matcha_recipes_container, .recipe_footer, .footer_container{
+        width: 100svw;
     }
 
     .description_container{
@@ -102,7 +109,7 @@
         text-align: center;
     }
     .slide_img_container{
-        height: 50svh;
+        height: 60svh;
         width: 25svw;
         display: flex;
         align-items: center;
@@ -147,5 +154,137 @@
 
      /* ================================================================= */
 
+     /* ============================HELP CONTAINER AREA ========================= */
 
+    .help_container{
+        height: 65svh;
+        flex-direction: row;
+        padding: 0rem 10rem;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .start_quiz_block{
+        height: 20rem;
+        width: 28rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+    .help_matcha_img{
+        height: 21rem;
+        margin: 0;
+        padding: 0;
+    }
+
+     /* ================================================================= */
+      /* ========================== ABOUT CONTAINER AREA ============================= */
+    .about_container{
+        height: 30svh;
+        padding: 0rem 20rem;
+    }
+
+    .about_btn_container{
+        margin-top: 2rem;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 35rem;
+    }
+
+    .about_container_footer{
+        border-radius: 0rem;
+    }
+      /* ================================================================= */
+        /* ===========================TOP RANK AREA ================================== */
+    .top_rank_items_main_container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .top_rank_first_row,.top_rank_second_row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 60rem;
+        height: 14rem;
+    }
+
+    .top_rank_item_container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 14rem;
+        width: 20rem;
+    }
+
+    .top_rank_imgs{
+        height: 8rem;
+    }
+
+    .top_rank_container_footer{
+        border-radius: 0;
+    }
+
+  /* ================================================================= */
+    /* ======================= FEATURED RECIPES AREA ============================ */
+    .matcha_recipes_container{
+        height: 70svh;
+        padding: 4rem 2rem 6rem;
+    }
+    .matcha_recipes_block_container{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+    .matcha_recipe_block{
+        height:25rem;
+        width: 30rem;
+    }
+
+    .matcha_recipes_container_img{
+        width: 25rem;
+    }
+
+    .recipe_footer{
+        border-radius: 0;
+        height: 0rem;
+    }
+    /* ================================================================= */
+     /* ====================== FOOTER CONTAINER AREA ========================== */
+    .footer_container{
+        flex-direction: row-reverse;
+        height: 40svh;
+        justify-content: space-evenly;
+        background: linear-gradient(to bottom, rgb(21, 13, 0), rgb(30, 19, 0));
+    }
+    .footer_matcha_logo_container{
+        display: none;
+    }
+    .footer_matcha_logo_laptop{
+        display: block;
+        height: 10rem;
+        margin: 1rem 0rem 3rem;
+        box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.36),
+        3px 3px 3px 5px rgb(0, 0, 0);
+        border: .4rem solid rgba(255, 255, 255, 0.272);
+        padding: .4rem;
+        border-radius: 50%;
+    }
+
+    .account_and_guide_container{
+        margin-top: -3rem;
+    }
+
+    .bottom_container{
+        margin-top: 0;
+        background: rgb(30, 19, 0);
+    }
+
+     /* ================================================================= */
 }

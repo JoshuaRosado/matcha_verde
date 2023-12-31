@@ -70,12 +70,12 @@ current = 0
 
 // =============== AUTO SLIDE EVERY 5s =======================
 
-    // setInterval(function() {
-    //     if (current === slider.length - 1){
-    //         current = -1
-    //     }
-    //     slideNext()
-    // }, 6000);
+    setInterval(function() {
+        if (current === slider.length - 1){
+            current = -1
+        }
+        slideNext()
+    }, 6000);
 // ==========================================================
 
 

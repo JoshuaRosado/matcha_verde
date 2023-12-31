@@ -324,10 +324,6 @@ html{
 
 /* =========================================================== */
 
-
-
-
-
 .fade_in{
     animation: fade_in .6s linear;
 }
@@ -337,7 +333,6 @@ html{
     100%{opacity: 100%;}
     
 }
-
 
 .slide_show_arrows{
     display: flex;
@@ -652,6 +647,10 @@ html{
     border: .4rem solid rgba(255, 255, 255, 0.272);
     padding: .4rem;
     border-radius: 50%;
+}
+
+.footer_matcha_logo_laptop{
+    display: none;
 }
 
 /* ======================= PAYMENT METHOD AREA ================================ */
