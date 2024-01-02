@@ -10,9 +10,7 @@
 /*  ======================= MOBILE VIEW =============================== */
 
 /* ========================== VIDEO BG AREA ========================= */
-body, html{
-    background:rgb(21, 13, 0);
-}
+body, html,
 .video_container, .video_block{
     background-color: rgb(21, 13, 0);
     height: 100svh;
@@ -58,20 +56,20 @@ video{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     height: auto;
     width: 100svw;
-    padding: 2rem;
+    padding: 1rem;
     color: rgba(219, 217, 217, 0.895);
 }
 .about_upper_info_title, .about_lower_info_title{
     font-size: 2rem;
     margin: 1rem 0rem;
+    
 }
 
 .about_upper_info_paragraph,.about_lower_info_paragraph{
-    font-size: 1.1rem;
-    font-weight: 100;
+    font-size: 1rem;
     margin: .4rem 0rem;
 }
 
@@ -80,8 +78,9 @@ video{
 }
 .about_upper_img, .about_lower_img{
     margin: 2rem 0rem;
-    height: 20rem;
-    width: 20rem;
+    padding: 0rem;
+    max-height: 100svh;
+    max-width: 94svw;
     object-fit: cover;
     border-radius: .5rem;
 }
@@ -94,7 +93,7 @@ video{
         background:rgb(21, 13, 0);
     }
     .video_container, .video_block, video,.video_text{
-        height: 125svh;
+        height: 130svh;
     }
 
 
@@ -104,9 +103,10 @@ video{
     }
 
     .about_upper_img, .about_lower_img{
-        height: 25rem;
-        width: 39rem;
+        width: 90svw;
+        object-fit: cover;
     }
+
 
 
 
