@@ -1,0 +1,117 @@
+* , *::before, *::after{
+    margin: 0;
+    padding: 0;
+    font-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/*  ======================= MOBILE VIEW =============================== */
+
+/* ========================== VIDEO BG AREA ========================= */
+body, html{
+    background:rgb(21, 13, 0);
+}
+.video_container, .video_block{
+    background-color: rgb(21, 13, 0);
+    height: 100svh;
+    width: 100svw;
+}
+video{
+    height: 100svh;
+    width: 100svw;
+    object-fit: cover;
+    z-index: 2;
+    position: absolute;
+}
+
+.video_text{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100svh;
+    width: 100svw;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 3;
+}
+
+.video_title{
+    font-size: 2rem;
+    padding: 4rem 2rem 0rem;
+}
+.video_paragraph{
+    font-size: 1.1rem;
+    padding: 2rem;
+}
+
+/* ================================================================= */
+
+/* ========================ABOUT UPPER CONTAINER AREA ========================= */
+
+.about_page_upper_container, .about_page_lower_container{
+    background-color: rgb(21, 13, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100svw;
+    padding: 2rem;
+    color: rgba(219, 217, 217, 0.895);
+}
+.about_upper_info_title, .about_lower_info_title{
+    font-size: 2rem;
+    margin: 1rem 0rem;
+}
+
+.about_upper_info_paragraph,.about_lower_info_paragraph{
+    font-size: 1.1rem;
+    font-weight: 100;
+    margin: .4rem 0rem;
+}
+
+.about_upper_img_container{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.about_upper_img, .about_lower_img{
+    margin: 2rem 0rem;
+    height: 20rem;
+    width: 20rem;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+/* ==================================================================== */
+
+/* ========================== LANDSCAPE VIEW ============================ */
+
+@media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
+    body{
+        background:rgb(21, 13, 0);
+    }
+    .video_container, .video_block, video,.video_text{
+        height: 125svh;
+    }
+
+
+    .about_page_upper_container, .about_page_lower_container{
+        padding: 2rem 3rem;
+        color: rgba(219, 217, 217, 0.895);
+    }
+
+    .about_upper_img, .about_lower_img{
+        height: 25rem;
+        width: 39rem;
+    }
+
+
+
+
+
+
+
+}

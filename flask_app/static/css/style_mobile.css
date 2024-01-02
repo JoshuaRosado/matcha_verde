@@ -7,14 +7,11 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-html{
+html,.home_container{
     background:rgb(21, 13, 0);
 
 }
 
-.home_container{
-    background: linear-gradient(to bottom, rgb(21, 13, 0), rgb(20, 13, 0));
-}
 .title{
     font-size: 2.4rem;
 }
@@ -361,7 +358,7 @@ html{
     padding: 2rem 1rem;
     height: 105vh;
     width: 100vw;
-    color: rgba(219, 217, 217, 0.895)
+    color: rgba(219, 217, 217, 0.895);
 }
 .quiz_btn_container{
     text-align: center;
@@ -585,24 +582,24 @@ html{
 }
 
 .recipe_footer{
-    height: 8rem;
+    height: 8em;
     width: 101vw;
     background:  rgb(25, 25, 25);
     border-radius: 0rem 0rem 5rem 0rem;
-    margin-bottom: 5rem;
+    margin-bottom: 0rem;
 }
 
 
 /* ================================================================= */
 /* ====================== FOOTER AREA ============================== */
 .footer_container{
-    height: 75vh;
+    height: 100vh;
     width: 101vw;
     background: rgb(21, 13, 0);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 1rem;
+    padding: 3rem 1rem;
 }
 
 .footer_matcha_logo{
@@ -612,6 +609,8 @@ html{
 .account_and_guide_container{
     display: flex;
     flex-direction: row;
+    justify-content:center ;
+    padding: 0rem .5rem 2rem;
 }
 
 .account_col, .guide_col{
@@ -667,7 +666,6 @@ html{
     height: 2rem;
     margin: .2rem;
     width: 3.7rem;
-    border: 2px solid white;
     border-radius: 10%;
     object-fit: cover;
     padding: .2rem;
@@ -678,9 +676,10 @@ html{
 
 .bottom_container{
     text-align: center;
+    background:rgb(21, 13, 0);
     color: rgba(219, 217, 217, 0.495);
     padding: 2rem 0rem 1rem;
-    margin-top: 2rem;
+    margin-top: 0rem;
     height: 6rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }

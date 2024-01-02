@@ -8,6 +8,7 @@
         box-sizing: border-box;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     }
+
 /* ======================== NO TOGGLE NAV ========================= */
     .home_matcha_logo{
     height: 5rem;
@@ -136,7 +137,7 @@
     /* =================== MATCHA RECIPES AREA ============================== */
 
     .matcha_recipes_container{
-        height: 130vh;
+        height: 150vh;
         justify-content: center;
         align-items: center;
     }
