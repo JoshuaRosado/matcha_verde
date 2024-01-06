@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Item</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header_container">
+                <h4 class="type"> Matcha </h4>
+                <h5 class="matcha_small_name"> Hatsu - 40g </h5>
+            </div>
+            <div class="item_container">
+                <div class="item_img_block">
+                    <img src="" alt="main_img" class="main_img">
+                    <div class="row_img_group">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                    </div>
+                </div>
+                <div class="item_description_block">
+                    <p class="taste_description">Light & Astringent</p>
+                    <h2 class="matcha_name">Hatsu - 40g</h2>
+                    <p class="review_stars">***** <span class="review_count">(59)</span></p>
+                    <p class="item_price"> $10 </p>
+                    <div class="btn_options">
+                        <span class="minus ">-</span>
+                        <input type="number" class="count" name="qty" value="1">
+                        <span class="plus ">+</span>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        
+    </body>
+    </html>
+    {%endblock%}
