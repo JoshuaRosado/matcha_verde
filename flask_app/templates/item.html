@@ -30,17 +30,15 @@
                     <p class="review_stars">***** <span class="review_count">(59)</span></p>
                     <p class="item_price"> $10 </p>
                     <div class="btn_options">
-                        <span class="minus ">-</span>
-                        <input type="number" class="count" name="qty" value="1">
-                        <span class="plus ">+</span>
-
+                        <label class="count_num">1</label>
+                        <button id="minus" onclick="decreaseBtn()">-</button>
+                        <input type="number" id="count" name="count" value="1">
+                        <button id="plus" onclick="increaseBtn()">+</button>
                     </div>
-
                 </div>
             </div>
-
         </div>
-        
+        <script src="../static/js/item.js"></script>
     </body>
     </html>
-    {%endblock%}
+{%endblock%}

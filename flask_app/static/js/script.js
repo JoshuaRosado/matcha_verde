@@ -1,7 +1,6 @@
-let slides = document.querySelectorAll(".slide");
-const checkBox = document.querySelector(".nav_toggle_label");
-const mainTitle = document.querySelector('.main_title');
-const matchaLogo = document.querySelector('.matcha_logo');
+var checkBox = document.querySelector(".nav_toggle_label");
+var mainTitle = document.querySelector('.main_title');
+var matchaLogo = document.querySelector('.matcha_logo');
 
 
     function TitleColorAnim(){
@@ -71,7 +70,7 @@ current = 0
 // =============== AUTO SLIDE EVERY 5s =======================
 
     setInterval(function() {
-        if (current === slider.length - 1){
+        if (current === slider.length -1){
             current = -1
         }
         slideNext()
@@ -93,4 +92,21 @@ startSlide();
     // }
 
 
-//============================= COUNTER =================
+
+    var decrease = document.getElementById("minus");
+    var increase = document.getElementById("plus");
+    const countNum = document.getElementById("count");
+    const inputValue = document.getElementsByTagName("input");
+    const label = document.querySelector(".count_num");
+    let count = 0;
+    
+    function increaseBtn(){
+        count++;
+        label.innerText = count;
+    }
+    
+    function decreaseBtn(){
+        count--;
+        label.textContent = count;
+    
+    }
