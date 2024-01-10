@@ -1,3 +1,7 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+}
 /*========================= CONTAINER ============================*/
 .container, html{
     background:rgb(21, 13, 0);
@@ -37,6 +41,7 @@ details span::before, details span::after{
     font-weight: 600;
     font-size: 1.2rem;
 }
+
 /* ====================================================================== */
 
 /* ======================== RATING STARS =============================== */
@@ -49,6 +54,50 @@ details span::before, details span::after{
     color: rgb(183, 223, 158);
 
 }
+
+/* ===================================================================== */
+
+/* ============================ REVIEWS =============================== */
+.review_container{
+    background-color: rgb(25, 25, 25);
+    padding: 1rem;
+}
+
+.review_header{
+    height: 15svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.review_header h4{
+    font-size: 1.6rem;
+
+}
+.review_blocks{
+    display: flex ;
+    justify-content: space-between;
+    height: 40svh;
+    padding: .5rem;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.info, .message{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.info{
+    width: 30svw;
+}
+.message{
+    width: 50svw;
+}
+
+
+
 
 
 
