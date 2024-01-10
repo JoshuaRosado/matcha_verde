@@ -1,0 +1,96 @@
+{% extends 'base.html'%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/item.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Item</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header_container">
+                <h4 class="type"> Matcha </h4>
+                <h5 class="matcha_small_name"> Hatsu - 40g </h5>
+            </div>
+            <div class="item_container">
+                <div class="item_img_block">
+                    <img src="" alt="main_img" class="main_img">
+                    <div class="row_img_group">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                        <img src="" alt="small_matcha_img" class="small_img">
+                    </div>
+                </div>
+                <div class="item_description_block">
+                    <p class="taste_description">Light & Astringent</p>
+                    <h2 class="matcha_name">Hatsu - 40g</h2>
+                    <p class="review_stars">***** <span class="review_count">(59)</span></p>
+                    <p class="item_price"> $10 </p>
+                    <div class="btn_options_row">
+                        <div class="counter">
+                            <label class="count_num">1</label>
+                            <button id="minus" onclick="decreaseBtn()">-</button>
+                            <input type="number" id="count" name="count" value="1">
+                            <button id="plus" onclick="increaseBtn()">+</button>
+                        </div>
+                        <div class="add_to_bag_container">
+                            <button class="item_add_to_bag_btn">Add to bag</button>
+                        </div>
+                    </div>
+                    <button class="subscribe_btn">Subscribe</button>
+                    <p class="bellow_item_description"> With its fresh astringency and light presence, Hatsu is a good choice for simple everyday drinking, baking, lattes and other uses.</p>
+                    <details class="specification">
+                        <summary> Specifications <span></span></summary>
+                            <h5>Size</h5>
+                            <p>2" x2" x 2.6"</p>
+                            <h5>Net weight</h5>
+                            <p>1.4oz (40g)</p>
+                    </details>
+                    <details class="taste_notes">
+                        <summary> Taste Notes <span></span></summary>
+                            <h5>Hatsu is the lightest character blend in our regular matcha lineup. Its taste is highlighted by astringency and a short aftertaste, and it has a refreshingly sharp personality when prepared straight as usucha. With a soft green color, it can also be a smart choice for people who enjoy using matcha in baking or in making lattes.</h5>
+                            
+                    </details>
+                </div>
+            </div>
+            <div class="review_container">
+                <div class="review_header">
+                    <h4>Customer Reviews</h4>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>4.92 out of 5 based on 59 reviews</p>
+                </div>
+                <div class="review_blocks">
+                    <div class="info">
+                        <h5 class="user_name">John Doe</h5>
+                        <p class="date_posted">Dec 27, 2023</p>
+                        <div class="stars_rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <h5 class="msg_title">Nice product</h5>
+                        <p class="msg_content">
+                            Great flavor, not too strong and goes so well with almond milk. Absolutely love it</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/item.js"></script>
+    </body>
+    </html>
+{%endblock%}

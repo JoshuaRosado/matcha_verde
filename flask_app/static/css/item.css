@@ -1,0 +1,57 @@
+/*========================= CONTAINER ============================*/
+.container, html{
+    background:rgb(21, 13, 0);
+    color: white;
+}
+
+
+/* ================================================================= */
+
+
+/* ======================== DETAIL TAG =============================== */
+details > summary{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+summary span::before{
+    content: '+';
+
+}
+details[open] > summary span::after{
+    content: '-';
+}
+details[open] > summary span::before{
+    content: '';
+}
+details{
+    display: flex;
+    background-color: rgba(132, 132, 132, 0.15);
+    border-radius: .5rem;
+    color: white;
+    padding: .8rem ;
+    margin: .5rem .5rem;
+}
+details span::before, details span::after{
+    color: white ;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+/* ====================================================================== */
+
+/* ======================== RATING STARS =============================== */
+.stars i {
+    color: rgba(255, 255, 255, 0.25);
+    transition: .8s ease-in-out;
+}
+
+.stars i.active{
+    color: rgb(183, 223, 158);
+
+}
+
+
+
+
+/* ===================================================================== */
+
