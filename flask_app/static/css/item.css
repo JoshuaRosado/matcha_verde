@@ -1,10 +1,13 @@
 *, *::before, *::after{
-    padding: 0;
+    padding: 0rem;
     margin: 0;
+    font-weight: lighter;
 }
+
 /*========================= CONTAINER ============================*/
 .container, html{
     background:rgb(21, 13, 0);
+    padding: 0;
     color: white;
 }
 
@@ -47,7 +50,8 @@ details span::before, details span::after{
 /* ======================== RATING STARS =============================== */
 .stars i {
     color: rgba(255, 255, 255, 0.25);
-    transition: .8s ease-in-out;
+    transition: .6s ease-in-out;
+    font-size: 1.4rem;
 }
 
 .stars i.active{
@@ -61,10 +65,12 @@ details span::before, details span::after{
 .review_container{
     background-color: rgb(25, 25, 25);
     padding: 1rem;
+    margin: 0rem;
 }
 
 .review_header{
     height: 15svh;
+    font-size: 1.1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,25 +82,46 @@ details span::before, details span::after{
 }
 .review_blocks{
     display: flex ;
-    justify-content: space-between;
-    height: 40svh;
-    padding: .5rem;
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
+    height: auto;
+    padding: 3rem 0rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .info, .message{
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin: .2rem;
 }
+/* =============== INFO BLOCK ==================*/
 .info{
-    width: 30svw;
+    width: 25svw;
 }
+.stars_rate{
+    font-size: .7rem;
+}
+.user_name{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* ============================================== */
+/* =============== MESSAGE BLOCK ==================*/
 .message{
-    width: 50svw;
+    height: auto;
+    width: 60svw;
 }
+.msg_title{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.msg_content{
+    word-wrap: break-word;
+    margin-top: .3rem;
+    
+}
+
 
 
 

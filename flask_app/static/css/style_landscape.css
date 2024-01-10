@@ -83,7 +83,7 @@
 
     /* ====================== ABOUT AREA =========================== */
     .about_container{
-        height: 60vh;
+        height: 125svh;
         margin: 0;
     }
     /* ============================================================== */
@@ -142,24 +142,24 @@
     }
 
     .matcha_recipes_block_container{
-        margin-bottom: -10rem;
+        margin-bottom: -5rem;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         width: 100vw;
     }
 
     .matcha_recipe_block{
-        padding: 0rem .5rem;
-        width: 31%;
+        padding: .2rem;
+        width: 30svw;
     }
 
     .matcha_recipes_container_img{
-        width: 12rem;
-        height: 13rem;
+        width: 11rem;
+        height: 11rem;
     }
 
     .matcha_recipes_title{
-        margin-top: -10rem;
+        margin-top: -2rem;
     }
 
     .matcha_recipes_browse{

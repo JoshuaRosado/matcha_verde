@@ -4,6 +4,9 @@
     font-style: none;
     text-decoration: none;
     box-sizing: border-box;
+}
+*:not(.stars, .stars_rate){
+    word-spacing: 1px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -356,7 +359,7 @@ html,.home_container{
     background-color: rgb(21, 13, 0);
     flex-direction: column;
     padding: 2rem 1rem;
-    height: 105vh;
+    height: 95vh;
     width: 100vw;
     color: rgba(219, 217, 217, 0.895);
 }
@@ -396,8 +399,8 @@ html,.home_container{
     align-items: center;
     padding: 1rem;
     color: rgba(219, 217, 217, 0.895);
-    height: 50vh;
-    width: 101vw;
+    height: 75vh;
+    width: 100vw;
     background:  rgb(25, 25, 25);
     
 }
@@ -449,13 +452,13 @@ html,.home_container{
     ;
 }
 
-.about_container_footer{
+/* .about_container_footer{
     height: 15rem;
     width: 101vw;
     border-radius: 0rem 0rem 0rem 5rem;
     background:  rgb(25, 25, 25);
 
-}
+} */
 /* ================================================================= */
 /* ===========================TOP RANK AREA =============================== */
 
@@ -512,27 +515,18 @@ html,.home_container{
     margin-bottom: .2rem;
 }
 
-.top_rank_container_footer{
-    height: 15rem;
-    width: 101vw;
-    background: rgb(25, 25, 25);
-    border-radius:0rem 3rem 0rem 0rem;
-}
-
 /* ================================================================= */
 
 /* ====================== MATCHA RECIPES AREA ================================== */
 .matcha_recipes_container{
     height: 200vh;
     width: 101vw;
-    margin-top: -12rem;
     background:  rgb(25, 25, 25);
     padding: 1rem;
     color: rgba(219, 217, 217, 0.895);
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: space-around;
 
 }
 
@@ -545,7 +539,7 @@ html,.home_container{
     margin: 3rem 0rem 0rem;
 }
 .matcha_recipes_browse{
-    margin-bottom: 0rem;
+    margin:0;
     text-decoration: none;
     color: rgba(219, 217, 217, 0.895);
 }
