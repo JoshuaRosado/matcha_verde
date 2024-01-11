@@ -5,12 +5,112 @@
 }
 
 /*========================= CONTAINER ============================*/
-.container, html{
+.container, html,body{
     background:rgb(21, 13, 0);
     padding: 0;
     color: white;
 }
 
+/* ================================================================= */
+
+
+/* ======================== HEADER CONTAINER=============================== */
+.header_container{
+    height: 10rem;
+    width: 100svw;
+    padding-top: 5.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.matcha_small_name, .taste_description{
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+.type{
+    font-weight: 900;
+    color: white;
+}
+
+/* ================================================================= */
+
+/* ======================== ITEM CONTAINER ============================= */
+.item_container{
+    height: auto;
+    width: 100svw;
+    padding: 1rem;
+}
+
+.item_img_block{
+    display: flex;
+    flex-direction: column;
+}
+
+.main_img{
+    height: 20rem;
+    object-fit: cover;
+}
+
+.row_img_group{
+    display: flex ;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: .5rem;
+    height: 4.5rem;
+}
+.small_img{
+    height: 3.8rem;
+    border-radius: .3rem;
+}
+
+/* ================================================================= */
+/* ======================= ITEM DESCRIPTION BLOCK =============================== */
+.item_description_block{
+    margin-top: 1rem;
+}
+
+.matcha_name{
+    font-size: 1.8rem;
+    margin-top: -.4rem;
+}
+
+.btn_options_row{
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.subscribe_btn, .item_add_to_bag_btn{
+    border-radius: 5rem;
+    height: 3rem;
+    width: 21rem;
+    background-color: rgb(223, 223, 223);
+}
+
+.counter{
+    border: 2px solid white;
+    border-radius: 5rem;
+    height: 3rem;
+    width: 21rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#count, #plus, #minus{
+    background:none;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#count{
+    text-align: center;
+}
 
 /* ================================================================= */
 

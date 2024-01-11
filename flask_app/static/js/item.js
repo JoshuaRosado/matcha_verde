@@ -1,24 +1,26 @@
 // ======================== COUNTER =========================
 
 
-
-var decrease = document.getElementById("minus");
-var increase = document.getElementById("plus");
-const countNum = document.getElementById("count");
-const inputValue = document.getElementsByTagName("input");
-const label = document.querySelector(".count_num");
 let count = 0;
 
-function increaseBtn(){
-    count++;
-    label.innerText = count;
+
+function increaseBtn(a, b) {
+    var input = b.previousElementSibling;
+    var value = parseInt(input.value,10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    input.value = value;
 }
 
-function decreaseBtn(){
-    count--;
-    label.textContent = count;
-
-}
+function decreaseBtn(a, b) {
+    var input = b.nextElementSibling;
+    var value = parseInt(input.value, 10);
+    if (value > 1) {
+    value = isNaN(value) ? 0 : value;
+    value--;
+    input.value = value;
+    }
+zź}
 // =============================================================
 // ======================== STAR RATING =========================
 

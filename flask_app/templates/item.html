@@ -11,37 +11,42 @@
     <body>
         <div class="container">
             <div class="header_container">
-                <h4 class="type"> Matcha </h4>
+                <h5 class="type"> Matcha </h5>
                 <h5 class="matcha_small_name"> Hatsu - 40g </h5>
             </div>
             <div class="item_container">
                 <div class="item_img_block">
-                    <img src="" alt="main_img" class="main_img">
+                    <img src="../static/imgs/matcha_types_imgs/hatsu.png" alt="main_img" class="main_img">
                     <div class="row_img_group">
-                        <img src="" alt="small_matcha_img" class="small_img">
-                        <img src="" alt="small_matcha_img" class="small_img">
-                        <img src="" alt="small_matcha_img" class="small_img">
-                        <img src="" alt="small_matcha_img" class="small_img">
-                        <img src="" alt="small_matcha_img" class="small_img">
+                        <img src="../static/imgs/matcha_types_imgs/hatsu.png" alt="small_matcha_img" class="small_img">
+                        <img src="../static/imgs/item_imgs/hatsu_back.webp" alt="small_matcha_img" class="small_img">
+                        <img src="../static/imgs/item_imgs/hatsu_powder.png" alt="small_matcha_img" class="small_img">
+                        <img src="../static/imgs/item_imgs/hatsu_bowl.png" alt="small_matcha_img" class="small_img">
+                        <img src="../static/imgs/item_imgs/hatsu_serving.png" alt="small_matcha_img" class="small_img">
                     </div>
                 </div>
                 <div class="item_description_block">
                     <p class="taste_description">Light & Astringent</p>
                     <h2 class="matcha_name">Hatsu - 40g</h2>
-                    <p class="review_stars">***** <span class="review_count">(59)</span></p>
+                    <p class="review_stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    <span class="review_count">(59)</span></p>
                     <p class="item_price"> $10 </p>
                     <div class="btn_options_row">
                         <div class="counter">
-                            <label class="count_num">1</label>
-                            <button id="minus" onclick="decreaseBtn()">-</button>
+                            <button id="minus" onclick="decreaseBtn(event, this)">-</button>
                             <input type="number" id="count" name="count" value="1">
-                            <button id="plus" onclick="increaseBtn()">+</button>
+                            <button id="plus" onclick="increaseBtn(event, this)">+</button>
                         </div>
                         <div class="add_to_bag_container">
                             <button class="item_add_to_bag_btn">Add to bag</button>
                         </div>
+                        <button class="subscribe_btn">Subscribe</button>
                     </div>
-                    <button class="subscribe_btn">Subscribe</button>
                     <p class="bellow_item_description"> With its fresh astringency and light presence, Hatsu is a good choice for simple everyday drinking, baking, lattes and other uses.</p>
                     <details class="specification">
                         <summary> Specifications <span></span></summary>
