@@ -41,17 +41,21 @@
     height: auto;
     width: 100svw;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .item_img_block{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .main_img{
     height: 20rem;
-    object-fit: cover;
+    width: 20rem;
+    border-radius: 1rem;
 }
+
 
 .row_img_group{
     display: flex ;
@@ -59,6 +63,7 @@
     align-items: center;
     margin-top: .5rem;
     height: 4.5rem;
+    width: 95svw;
 }
 .small_img{
     height: 3.8rem;
@@ -112,6 +117,9 @@
     text-align: center;
 }
 
+.bellow_item_description{
+    padding: .5rem;
+}
 /* ================================================================= */
 
 
@@ -119,6 +127,9 @@
 details > summary{
     list-style-type: none;
     display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
     justify-content: space-between;
 }
 summary span::before{
@@ -131,18 +142,27 @@ details[open] > summary span::after{
 details[open] > summary span::before{
     content: '';
 }
+
+details[open] > .details_info {
+    margin-top: .6rem;
+}
+
+details[open] > summary {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.424);
+}
 details{
     display: flex;
     background-color: rgba(132, 132, 132, 0.15);
     border-radius: .5rem;
     color: white;
-    padding: .8rem ;
-    margin: .5rem .5rem;
+    padding: .4rem 1.4rem;
+    margin-top: 1rem ;
 }
 details span::before, details span::after{
+    display: flex;
     color: white ;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 /* ====================================================================== */
@@ -196,6 +216,10 @@ details span::before, details span::after{
 /* =============== INFO BLOCK ==================*/
 .info{
     width: 25svw;
+    padding: 4rem 0rem;
+    margin-bottom: 1.5rem;
+    margin-right: 1rem;
+
 }
 .stars_rate{
     font-size: .7rem;
