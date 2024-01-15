@@ -1,5 +1,5 @@
 *, *::before, *::after{
-    padding: 0rem;
+    padding: 0;
     margin: 0;
     font-weight: lighter;
 }
@@ -7,17 +7,25 @@
 /*========================= CONTAINER ============================*/
 .container, html,body{
     background:rgb(21, 13, 0);
-    padding: 0;
     color: white;
+    overflow-x: hidden;
 }
 
+.container{
+    width: 100vw;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 /* ================================================================= */
 
 
 /* ======================== HEADER CONTAINER=============================== */
 .header_container{
     height: 10rem;
-    width: 100svw;
+    width: 100vw;
     padding-top: 5.5rem;
     display: flex;
     flex-direction: column;
@@ -39,7 +47,7 @@
 /* ======================== ITEM CONTAINER ============================= */
 .item_container{
     height: auto;
-    width: 100svw;
+    width: 100vw;
     padding: 1rem;
     margin-bottom: 1rem;
 }
@@ -59,14 +67,15 @@
 
 .row_img_group{
     display: flex ;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: .5rem;
     height: 4.5rem;
-    width: 95svw;
+    width: 90vw;
 }
 .small_img{
     height: 3.8rem;
+    width: 3.8rem;
     border-radius: .3rem;
 }
 
@@ -245,13 +254,38 @@ details span::before, details span::after{
     margin-top: .3rem;
     
 }
-
-
-
-
-
-
-
-
 /* ===================================================================== */
 
+
+@media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
+
+    .container,html, body,.review_container{
+        margin: 0;
+        padding: 1;
+        width: 100svw;
+    }
+
+    .header_container{
+        padding-top: 3rem;
+    }
+    .item_container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .item_img_block, .item_description_block, .row_img_group{
+        width: 40svw;
+    }
+    .item_description_block{
+        text-align: center;
+    }
+/* ===================================================================== */
+/* =========================REVIEW CONTAINER============================ */
+.review_container{
+    width: 100vw;
+
+}
+
+/* ===================================================================== */
+}
