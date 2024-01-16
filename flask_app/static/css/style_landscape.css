@@ -6,7 +6,6 @@
         font-style: none;
         text-decoration: none;
         box-sizing: border-box;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     }
 /* ======================== NO TOGGLE NAV ========================= */
     .home_matcha_logo{
@@ -29,8 +28,8 @@
 /* ========================================================================= */
 /* ======================== SLIDE IMGS ========================= */
     .slide_show_container, .slide_imgs_container, .slide, .slide img{
-        width: 101vw;
-        height: 100vh;
+        width: 100svw;
+        height: 100svh;
         object-fit: cover;
     }
 
@@ -49,8 +48,8 @@
  /* ============================================================ */
  /* ======================== HELP/ QUIZ AREA ========================= */
     .help_container{
-        height: 100vh;
-        width: 101vw;
+        height: 100svh;
+        width: 100svw;
         padding: 1rem;
         margin-bottom: 2rem;
         display: flex;
@@ -95,7 +94,7 @@
         align-items: center;
     }
     .top_rank_items_main_container{
-        width: 90vw;
+        width: 90svw;
     }
     .top_rank_first_row, .top_rank_second_row{
         width: 23rem;
@@ -136,7 +135,7 @@
     /* =================== MATCHA RECIPES AREA ============================== */
 
     .matcha_recipes_container{
-        height: 130vh;
+        height: 130svh;
         justify-content: center;
         align-items: center;
     }
@@ -145,7 +144,7 @@
         margin-bottom: -5rem;
         flex-direction: row;
         justify-content: center;
-        width: 100vw;
+        width: 100svw;
     }
 
     .matcha_recipe_block{
@@ -174,12 +173,12 @@
     /* ============================== FOOTER AREA ================================== */
     .footer_container{
         margin-top: 7rem;
-        height: 100vh;
+        height: 100svh;
         padding: 0;
     }
 
     .account_and_guide_container{
-        width: 101vw;
+        width: 100svw;
         justify-content: space-evenly;
     }
 
