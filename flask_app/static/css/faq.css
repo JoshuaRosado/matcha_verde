@@ -1,0 +1,32 @@
+*, *::before, ::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:rgb(21, 13, 0);
+}
+/* .faq_container{
+} */
+.header{
+    width: 100svw;
+    height: 40svh;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 29rem;
+    border: 2px solid red;
+}
+
+.header{
+    height: 100svh;
+    width: 100svw;
+    background-position: center;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-image: url(../imgs/slide_imgs/slide/marek-piwnicki-4ypXMUtbJug-unsplash.jpg);
+}
+
+img{
+    display: none;
+}

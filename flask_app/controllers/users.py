@@ -4,4 +4,4 @@ from flask_app import app
 
 @app.route('/')
 def index():
-    return render_template('item.html')
+    return render_template('faq.html')
