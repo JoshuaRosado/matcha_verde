@@ -7,26 +7,39 @@
 body{
     background:rgb(21, 13, 0);
 }
-/* .faq_container{
-} */
+
 .header{
-    width: 100svw;
-    height: 40svh;
+    width: 101svw;
+    height: 100svh;
     display: flex;
     flex-direction: column-reverse;
-    padding-top: 29rem;
-    border: 2px solid red;
+    padding-top: 3rem;
 }
 
-.header{
+.header img{
     height: 100svh;
     width: 100svw;
-    background-position: center;
-    background-size: contain;
-    background-repeat:no-repeat;
-    background-image: url(../imgs/slide_imgs/slide/marek-piwnicki-4ypXMUtbJug-unsplash.jpg);
+    object-fit: cover;
+    z-index: 0;
+    position: relative;
+}
+.faq_img_container{
+    z-index: 1;
+    height: 100svh;
+    width: 100svw;
+    background: linear-gradient(to top, black, rgba(255, 255, 255, 0.314));
+    position: absolute;
+}
+.img_shadow{
+    height: 100svh;
+    width: 100svw;
+    z-index: 2;
+    position: absolute;
+    background: linear-gradient(to top, rgb(35, 35, 35) 5rem, rgba(255, 255, 255, 0));
 }
 
-img{
-    display: none;
+.general_info_block{
+    position: absolute;
+    z-index: 2;
+    color: white;
 }
