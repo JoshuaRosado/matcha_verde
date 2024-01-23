@@ -58,6 +58,7 @@
     align-items: center;
 }
 
+
 .main_img{
     height: 20rem;
     width: 20rem;
@@ -328,6 +329,7 @@ details span::before, details span::after{
     }
     .item_img_block{
         min-height: 100dvh;
+        margin-bottom: 12rem;
     }
     .small_img{
         min-height: 15dvh;

@@ -135,7 +135,7 @@
     /* =================== MATCHA RECIPES AREA ============================== */
 
     .matcha_recipes_container{
-        height: 130svh;
+        height: 165svh;
         justify-content: center;
         align-items: center;
     }
@@ -158,14 +158,11 @@
     }
 
     .matcha_recipes_title{
-        margin-top: -2rem;
+        margin-top: -10rem;
     }
 
     .matcha_recipes_browse{
         margin-bottom: -1rem;
-    }
-    .recipe_footer{
-        margin: 0;
     }
 
     /* ============================================================== */

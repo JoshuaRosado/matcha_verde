@@ -4,30 +4,30 @@
     box-sizing: border-box;
 }
 
-body{
+body, html, .container{
     background:rgb(21, 13, 0);
+    overflow-x: hidden;
 }
 
+/* ===================== IMG BG CONTAINER ===================================== */
 .header{
-    width: 101svw;
-    height: 100svh;
+    width: 100svw;
+    margin-top: 11rem;
+    height: 65svh;
     display: flex;
     flex-direction: column-reverse;
-    padding-top: 3rem;
 }
 
 .header img{
-    height: 100svh;
+    margin-top: 3.5rem;
+    height: 90svh;
     width: 100svw;
     object-fit: cover;
-    z-index: 0;
-    position: relative;
 }
 .faq_img_container{
     z-index: 1;
     height: 100svh;
     width: 100svw;
-    background: linear-gradient(to top, black, rgba(255, 255, 255, 0.314));
     position: absolute;
 }
 .img_shadow{
@@ -35,11 +35,67 @@ body{
     width: 100svw;
     z-index: 2;
     position: absolute;
-    background: linear-gradient(to top, rgb(35, 35, 35) 5rem, rgba(255, 255, 255, 0));
+    background: linear-gradient(to top, rgba(35, 35, 35) 25%, rgba(255, 255, 255, 0)50%);
 }
+/* ============================================================= */
+/* ======================= GENERAL INFO ============================ */
 
 .general_info_block{
     position: absolute;
     z-index: 2;
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
 }
+
+/* ============================================================= */
+/* ====================== DETAILS TAGS ========================= */
+
+.details_container{
+    padding: 4rem .5rem;
+}
+
+details{
+    color: rgba(255, 255, 255, 0.9);
+    margin: .5rem 1rem;
+    padding: 0rem;
+    display: flex;
+}
+summary{
+    padding: 1rem;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.grey_details{
+    background: rgba(35, 35, 35, 0.7);
+}
+
+summary span::before{
+    content: '+';
+
+}
+details[open] > summary span::after{
+    content: '-';
+    margin-top: .1rem;
+}
+details[open] > summary span::before{
+    content: '';
+}
+
+details[open] > .p{
+    padding: 0rem 1rem;
+}
+
+details span::before, details span::after{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    color: white ;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-left: 2rem;
+}
+
+/* ============================================================= */
+
