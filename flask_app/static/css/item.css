@@ -395,17 +395,32 @@ details span::before, details span::after{
         display: flex;
         flex-direction: row ;
         justify-content: space-evenly;
-        padding:2.5rem ;
-        padding-top: 0rem;
+        align-items: center;
+        padding:0rem 2.5rem ;
+        margin-top: -4rem;
+        height: 100dvh;
     }
+    details[open] > .item_description_block{
+        display: block;
+        
+    }
+    .details_info{
+        text-align: left;
+    }
+
     input:focus{
         outline: 0;
     }
     input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
         appearance: none;
     }
+    .item_description_block{
+        height: 100dvh;
+        width: 40dvw;
+        margin: 0;
+    }
 
-    .item_img_block, .item_description_block, .row_img_group{
+    .item_img_block, .row_img_group{
         width: 40dvw;
         height: 75dvh;
         margin: 0;
@@ -440,6 +455,7 @@ details span::before, details span::after{
     }
     .subscribe_btn, .item_add_to_bag_btn,.counter{
         width:40dvw;
+        margin: 0rem .6rem;
     }
     .user_name{
         font-size: 2rem;
@@ -461,4 +477,5 @@ details span::before, details span::after{
     .leave_review_btn_container{
         width: 100%;
     }
+
 }
