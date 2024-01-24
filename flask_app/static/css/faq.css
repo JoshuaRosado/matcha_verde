@@ -41,7 +41,6 @@ body, html, .container{
 /* ======================= GENERAL INFO ============================ */
 
 .general_info_block{
-    position: absolute;
     z-index: 2;
     color: rgba(255, 255, 255, 0.9);
     padding: 1.5rem;
@@ -64,6 +63,7 @@ summary{
     padding: 1rem;
     list-style-type: none;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -84,7 +84,7 @@ details[open] > summary span::before{
 }
 
 details[open] > .p{
-    padding: 0rem 1rem;
+    padding: .5rem 1rem 1rem;
 }
 
 details span::before, details span::after{
@@ -98,4 +98,92 @@ details span::before, details span::after{
 }
 
 /* ============================================================= */
+
+/* ====================== LANDSCAPE VIEW ======================== */
+
+@media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
+
+    .header{
+        height: 100dvh;
+        width: 100dvw;
+        margin-top: 2rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .faq_img_container,.header img, .img_shadow{
+        height: 100dvh;
+        margin-top: 0;
+    }
+    .faq_img_container{
+        width: 50dvw;
+    }
+    .general_info_block{
+        display:flex ;
+        flex-direction: column;
+        justify-content: center;
+        width: 40dvw;
+    }
+
+    .img_shadow{
+        background: linear-gradient(to right, rgba(35, 35, 35) 38%, rgba(255, 255, 255, 0)50%);
+    }
+
+}
+/* ============================================================= */
+/* ==================== LAPTOP VIEW ============================= */
+
+@media screen and (min-device-width: 850px){
+    .header{
+        height: 45dvh;
+        justify-content: top;
+
+    }
+    .faq_img_container,.header img, .img_shadow{
+        height: 80dvh;
+        margin-top: 0;
+    }
+
+    .img_shadow{
+        background: linear-gradient(to right top, rgba(35, 35, 35) 30%, rgba(255, 255, 255, 0)50%);
+
+    }
+    .general_info_block{
+        width: 40dvw;
+        padding-left: 5rem;
+    }
+    summary{
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+    }
+
+    .details_container{
+        width: 92dvw;
+    }
+
+    .faq_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    details{
+        padding: .5rem 2rem;
+    }
+    details[open] > summary {
+        animation: detail_selected .8s linear ;
+    }
+}
+@keyframes detail_selected {
+    0%{color:rgba(255, 255, 255, 0.9) ;}
+    50%{color:rgba(255, 255, 255, 0.3) ;}
+    100%{color: rgba(255, 255, 255, 0.9) ;}
+    
+}
+
+
+
+
+/* ============================================================= */
+
 
