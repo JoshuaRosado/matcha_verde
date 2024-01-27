@@ -51,3 +51,74 @@ class User:
         if len(results)< 1:
             return False
         return cls(results[0])
+    
+    @classmethod
+    def get_all(cls):
+        
+        query = "SELECT * FROM users";
+        user_data = connectToMySQL(DB).query_db(query)
+        
+        users = []
+        #  for each user in the user_data coming back from the DB
+        for user in user_data:
+            # Append that user cls to the users empty list
+            users.append(cls(user))
+        # return users list
+        return users
+    
+    @classmethod
+    def authentication_user_input(cls, user_input):
+        valid = True
+        valid_password = True
+        existing_user = cls.get_by_email(user_input["email"])
+        
+        # if is not an existing user return False
+        if not existing_user:
+            valid = False
+        #  Else proceed to the password
+        else: 
+            valid_password = bcrypt.check_password_hash(existing_user.password, user_input["password"])
+            # If password is not valid return False
+            if not valid_password:
+                valid = False
+        #  If valid is false flash this message
+        if not valid:
+            flash("Password does not match our records")
+            return False
+        #If everything is Valid return the existing user
+        return existing_user
+    
+# ================ VERIFYING IF IS VALID ===================
+    @classmethod
+    def is_valid(cls, user):
+        valid = True
+        #  if the length of the first name is less than 2 characters
+        if len(user["first_name"]) < 2:
+            # Return False and Flash message
+            valid = False
+            flash("First name must be at least 2 characters")
+        #  if the length of the last name is less than 2 characters
+        if len(user["last_name"])< 2:
+            valid = False
+            flash("Last name must be at least 2 characters")
+        # If is the email is not properly written Flash message
+        if not EMAIL_REGEX.matcha(user["email"]):
+            flash("Invalid email address!")
+            valid = False
+        #  If password is less than 7 characters Flash message
+        if len(user["password"]) < 7:
+            valid = False
+            flash("Password must be at least 7 characters")
+        #  If password does not matcha the password confirmation Flash Message
+        if not user["password"] == user["password_confirmation"]:
+            flash("Password must match")
+            valid = False
+        
+        email_already_has_account = User.get_by_email(user["email"])
+        # if Email address already has an account Flash message
+        if  email_already_has_account:
+            flash("An account with this email already exists, please log in.")
+            valid = False
+            
+        return valid
+            
