@@ -29,7 +29,7 @@ class User:
         # Using the email data
         data = {
             "email": email}
-        # Find the user where the email matches the input email
+        # Find the user where the email matches the entered by user
         query = "SELECT * FROM users WHERE email = %(email)s;"
         # Results returns as a list from DB
         results = connectToMySQL(DB).query_db(query, data)
@@ -66,6 +66,7 @@ class User:
         # return users list
         return users
     
+    # ================ VERIFYING AUTHENTICATION ===================
     @classmethod
     def authentication_user_input(cls, user_input):
         valid = True
@@ -87,6 +88,29 @@ class User:
             return False
         #If everything is Valid return the existing user
         return existing_user
+    
+    # ================ REGISTER PROCESS ===================
+    
+    @classmethod
+    def register_new_user(cls, user):
+        
+        if not cls.is_valid(user):
+            return False
+        
+        pw_hash = bcrypt.generate_password_hash(user['password'])
+        user = user.copy()
+        user['password'] = pw_hash
+        print("User after adding pw: ", user)
+        
+        query = """
+                INSERT INTO users (first_name, last_name, email, password)
+                VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);
+        """
+        
+        new_user_id = connectToMySQL(DB).query_db(query, user)
+        new_user = cls.get_all(new_user_id)
+        
+        return new_user
     
 # ================ VERIFYING IF IS VALID ===================
     @classmethod
@@ -121,4 +145,5 @@ class User:
             valid = False
             
         return valid
-            
+    
+# ===================  =======================
