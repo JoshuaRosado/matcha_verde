@@ -39,8 +39,7 @@ def register():
     
     if not valid_user:
         return redirect('/register_page')
-    
-    session['user_id'] = valid_user.id
+    session["user_id"] = valid_user.id
     return redirect('/home')
 
 # ===================== LOGOUT======================

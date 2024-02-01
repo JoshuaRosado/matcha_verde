@@ -4,6 +4,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 from flask_bcrypt import Bcrypt
 from flask_app.models import user
+from flask_app.models import review
 import re
 
 
@@ -70,6 +71,7 @@ def get_all(cls):
                 
             }
         )
+        
         matchas.append(matcha_obj)
         return matchas
         

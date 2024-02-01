@@ -3,6 +3,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 from flask_bcrypt import Bcrypt
 from flask_app.models import matcha
+from flask_app.models import user
 import re
 
 bcrypt = Bcrypt(app)
@@ -70,15 +71,15 @@ class User:
     @classmethod
     def authentication_user_input(cls, user_input):
         valid = True
-        valid_password = True
         existing_user = cls.get_by_email(user_input["email"])
+        valid_password = True
         
         # if is not an existing user return False
         if not existing_user:
             valid = False
         #  Else proceed to the password
         else: 
-            valid_password = bcrypt.check_password_hash(existing_user.password, user_input["password"])
+            valid_password = bcrypt.check_password_hash(existing_user.password, user_input['password'])
             # If password is not valid return False
             if not valid_password:
                 valid = False
@@ -119,20 +120,20 @@ class User:
         #  if the length of the first name is less than 2 characters
         if len(user["first_name"]) < 2:
             # Return False and Flash message
-            valid = False
             flash("First name must be at least 2 characters")
+            valid = False
         #  if the length of the last name is less than 2 characters
         if len(user["last_name"])< 2:
-            valid = False
             flash("Last name must be at least 2 characters")
+            valid = False
         # If is the email is not properly written Flash message
         if not EMAIL_REGEX.matcha(user["email"]):
             flash("Invalid email address!")
             valid = False
         #  If password is less than 7 characters Flash message
         if len(user["password"]) < 7:
-            valid = False
             flash("Password must be at least 7 characters")
+            valid = False
         #  If password does not matcha the password confirmation Flash Message
         if not user["password"] == user["password_confirmation"]:
             flash("Password must match")
