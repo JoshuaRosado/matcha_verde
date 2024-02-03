@@ -2,7 +2,7 @@ from flask_app import app
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 from flask_bcrypt import Bcrypt
-from flask_app.models import matcha
+# from flask_app.models import matcha
 from flask_app.models import user
 import re
 
@@ -109,7 +109,7 @@ class User:
         """
         
         new_user_id = connectToMySQL(DB).query_db(query, user)
-        new_user = cls.get_all(new_user_id)
+        new_user = cls.get_by_id(new_user_id)
         
         return new_user
     
@@ -127,7 +127,7 @@ class User:
             flash("Last name must be at least 2 characters")
             valid = False
         # If is the email is not properly written Flash message
-        if not EMAIL_REGEX.matcha(user["email"]):
+        if not EMAIL_REGEX.match(user["email"]):
             flash("Invalid email address!")
             valid = False
         #  If password is less than 7 characters Flash message

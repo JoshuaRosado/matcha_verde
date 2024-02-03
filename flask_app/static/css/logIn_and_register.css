@@ -69,7 +69,7 @@ body{
     font-size: 2rem;
 }
 .email_input::placeholder, .password_input::placeholder, .sign_in_first_name::placeholder, .sign_in_last_name::placeholder, .sign_in_email::placeholder,.sign_in_password::placeholder, .sign_in_confirm_password::placeholder{
-    text-align: start;
+    text-align: center;
     padding-left: .3rem;
 }
 
@@ -160,10 +160,27 @@ body{
     box-shadow: 5px 5px 3px 1px rgba(38, 56, 12, 0.10),
     2px 2px 5px 3px rgba(0, 0, 0, 0.200);
 }
+
+
 .matcha_logo_signUp{
+    height: 8rem;
+    padding: .5rem;
     margin-top: 5rem;
     margin-bottom: 2rem;
     
+}
+
+/* ==================== ERROR MSGS ================= */
+
+.register_error_container, .login_error_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register_error_msg, .login_error_msg{
+    color: red;
+    padding: .1rem;
 }
 /* =========================== LANDSCAPE VIEW ========================== */
 @media (orientation: landscape) and (max-height: 450px) and (max-width: 844px) {
@@ -185,6 +202,7 @@ body{
     .matcha_logo_signUp{
         height: 20rem;
         margin-bottom: 10rem;
+        padding: 1rem;
     }
     .email_input, .password_input,.sign_in_first_name, .sign_in_last_name, .sign_in_email,.sign_in_password, .sign_in_confirm_password{
         margin:1rem;
@@ -225,5 +243,13 @@ body{
         color: rgb(148, 204, 130);
         font-weight: 600;
     }
-    
+    .register_error_container{
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;
+        position: absolute;
+        justify-content:flex-start;
+        margin-top: 4rem;
+
+    }
 }

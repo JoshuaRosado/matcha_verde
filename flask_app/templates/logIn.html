@@ -13,9 +13,19 @@
         <!-- <button class="dark_mode_btn" onclick="darkMode()"></button> -->
         <!-- ============================= LOG IN ============================= -->
         <img src="../static/imgs/matcha_logo/matcha_verde.png" alt="matcha_logo" class="matcha_logo_logIn">
+        <div class="login_error_container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p class="login_error_msg">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith%}
+        </div>
         <form action="/login" method="post" class="logIn_form">
+            
             <div class="email_form">
-                <input type="text" name="text" placeholder="email" class="email_input">
+                <input type="email" name="email" placeholder="email" id="email" class="email_input">
             </div>
             <div class="password_form">
                 <input type="password" name="password" placeholder="password" class="password_input">

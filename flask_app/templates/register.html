@@ -16,12 +16,21 @@
         <div class="matcha_logo_container">
             <img src="../static/imgs/matcha_logo/matcha_verde.png" alt="matcha_logo" class="matcha_logo_signUp">
         </div>
+        <div class="register_error_container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p class="register_error_msg">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith%}
+        </div>
         <form action="/register" method="post" class="signUp_form">
-            <input type="text" name="name" class="input_class sign_in_first_name" placeholder="first name">
-            <input type="text" name="last_name" class="input_class sign_in_last_name" placeholder="last name">
-            <input type="email" name="email" class="input_class sign_in_email" placeholder="email">
-            <input type="password" name="password" class="input_class sign_in_password" placeholder="password">
-            <input type="password" name="password" class="input_class sign_in_confirm_password" placeholder="confirm password">
+            <input type="text" name="first_name" id="first_name" class="input_class sign_in_first_name" placeholder="first name">
+            <input type="text" name="last_name" id="last_name" class="input_class sign_in_last_name" placeholder="last name">
+            <input type="email" name="email" id="email" class="input_class sign_in_email" placeholder="email">
+            <input type="password" name="password" id="password" class="input_class sign_in_password" placeholder="password">
+            <input type="password" name="password_confirmation" id="confirm_password" class="input_class sign_in_confirm_password" placeholder="confirm password">
             <div class="sign_up_button_container">
                 <button type="submit" class="sign_up_button">Join</button>
                 <a href="./login_page" class="logIn_transfer_link">Log In</a>
