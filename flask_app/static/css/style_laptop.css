@@ -16,6 +16,7 @@
 
 
     .nav_block{
+        position: relative;
         font-size: .9rem;
         border: none;
         translate: none;
