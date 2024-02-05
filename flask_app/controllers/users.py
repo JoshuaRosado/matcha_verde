@@ -1,7 +1,6 @@
 from flask import Flask, render_template, session, redirect, request
 from flask_app import app
 from flask_app.models.user import User
-# from flask_app.models.matcha import Matcha
 from flask import flash
 
 # ===================== INDEX ======================
@@ -46,7 +45,8 @@ def register():
 # ===================== HOME ======================
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    user = User.get_by_id(session['user_id'])
+    return render_template('home.html', user= user)
 # ===================== LOGOUT======================
 
 @app.route('/logout')

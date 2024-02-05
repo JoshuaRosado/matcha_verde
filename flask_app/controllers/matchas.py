@@ -13,5 +13,5 @@ def home():
         return redirect('/')
     user = User.get_by_id(session["user_id"])
     matchas = Matcha.get_all()
-    return render_template('home.html', user = user, matchas=matchas)
+    return render_template('home.html', user = "", matchas=matchas)
         
