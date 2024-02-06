@@ -116,13 +116,15 @@ html,.home_container{
 
 /* ================================================================= */
 /*  ========== BAG BLOCK WINDOW ============*/
+
 details img{
     height: 3rem;
 }
 
-details[open] > details{
+details[open] > .bag_details{
     width: 100svw;
 }
+
 .bag_container{
     z-index: -10;
     border-bottom: 2px solid rgba(219, 217, 217, 0.3);
@@ -142,6 +144,9 @@ details[open] > details{
 }
 summary{
     list-style-type: none;
+}
+summary::-webkit-details-marker{
+    display: none;
 }
 
 .item_block{
@@ -222,8 +227,13 @@ input:focus{
     color: rgba(219, 217, 217, 0.3);
 }
 
-.nav_account_section a:hover{
+.nav_account_section a, #bag_summary{
+    font-weight: 600;
+    transition: .5s ease-in-out;
+}
+.nav_account_section a:hover, #bag_summary:hover{
     color: white;
+    transition: .2s ease-in-out;
 }
 
 .nav{

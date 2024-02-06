@@ -151,7 +151,7 @@ input:focus{
 
 
 /* ======================== DETAIL TAG =============================== */
-details > summary{
+details > .item_summary{
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -159,14 +159,14 @@ details > summary{
     font-weight: 600;
     justify-content: space-between;
 }
-summary span::before{
+.item_summary span::before{
     content: '+';
 
 }
-details[open] > summary span::after{
+details[open] > .item_summary span::after{
     content: '-';
 }
-details[open] > summary span::before{
+details[open] > .item_summary span::before{
     content: '';
 }
 
@@ -174,10 +174,10 @@ details[open] > .details_info {
     margin-top: .6rem;
 }
 
-details[open] > summary {
+details[open] > .item_summary {
     border-bottom: 2px solid rgba(255, 255, 255, 0.424);
 }
-details{
+.item_details{
     display: flex;
     background-color: rgba(132, 132, 132, 0.15);
     border-radius: .5rem;

@@ -53,14 +53,15 @@ body, html, .container{
     padding: 4rem .5rem;
 }
 
-details{
+.details{
     color: rgba(255, 255, 255, 0.9);
     margin: .5rem 1rem;
     padding: 0rem;
     display: flex;
 }
-summary{
+.faq_summary{
     padding: 1rem;
+    color: rgba(255, 255, 255, 0.9);
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -71,23 +72,24 @@ summary{
     background: rgba(35, 35, 35, 0.7);
 }
 
-summary span::before{
+.faq_summary span::before{
     content: '+';
 
 }
-details[open] > summary span::after{
+.details[open] > .faq_summary span::after{
     content: '-';
     margin-top: .1rem;
 }
-details[open] > summary span::before{
+.details[open] > .faq_summary span::before{
     content: '';
 }
 
 details[open] > .p{
     padding: .5rem 1rem 1rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-details span::before, details span::after{
+.details span::before, .details span::after{
     display: flex;
     justify-content: right;
     align-items: right;
@@ -151,7 +153,7 @@ details span::before, details span::after{
         width: 40dvw;
         padding-left: 5rem;
     }
-    summary{
+    .faq_summary{
         justify-content: space-between;
         align-items: center;
         font-size: 1.1rem;

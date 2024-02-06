@@ -24,3 +24,8 @@ def about():
 def faq():
     user = User.get_by_id(session["user_id"])
     return render_template('faq.html', user = user)
+
+@app.route('/item')
+def item():
+    user = User.get_by_id(session["user_id"])
+    return render_template('item.html', user=user)
