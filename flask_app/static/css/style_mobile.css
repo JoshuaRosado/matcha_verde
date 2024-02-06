@@ -135,7 +135,7 @@ details[open] > .bag_details{
     top: 0rem;
     right: 0rem;
     width: 100svw;
-    height: auto;
+    height: 30svh;
     padding: 1rem;
 }
 summary{
@@ -148,18 +148,41 @@ summary::-webkit-details-marker{
 .item_block{
     display: flex;
     width: 100svw;
+    margin-bottom: 2rem;
+    border: 2px solid red;
     justify-content: space-between;
     border-bottom: 2px solid rgba(219, 217, 217, 0.09);
 }
 
-.left_column, .right_column{
-    width: 48svw;
+.bag_block_header{
+    margin: 1.5rem;
+}
+.right_column{
+    width: 60svw;
+    padding: 0rem 1rem;
+    display: flex;
+    justify-content:space-around;
+
+}
+
+.left_column{
+    width: 38svw;
+}
+
+.right_section, .left_section{
+    width: 20svw;
+    height: 10svh;
+    margin-bottom: 1rem;
+    display: flex;
+    padding: .5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .product_section{
     display: flex;
     align-items: center;
-    border: 2px solid blue;
     height: 10svh;
     justify-content: center;
 
@@ -172,15 +195,23 @@ summary::-webkit-details-marker{
     align-items: center;
 }
 
+.right_column{
+    display: flex;
+}
 
+/* .left_section, .right_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
 /* ========= COUNTER ========== */
-.counter{
+.bag_counter{
     border: 2px solid white;
     border-radius: 5rem;
-    height: 3rem;
-    width: 90svw;
+    height: 2.1rem;
+    width: 30svw;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -188,16 +219,15 @@ input:focus{
     outline: 0;
     appearance: none;
 }
-#count, #plus, #minus{
+#bag_count{
+    width: 5svw;
+}
+#bag_count, #bag_plus, #bag_minus{
     background:none;
     border: none;
     color: white;
     text-align: center;
     font-size: 1.2rem;
-}
-
-#count{
-    text-align: center;
 }
 
 /* ============================== */
