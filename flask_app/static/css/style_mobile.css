@@ -115,6 +115,93 @@ html,.home_container{
 }
 
 /* ================================================================= */
+/*  ========== BAG BLOCK WINDOW ============*/
+details img{
+    height: 3rem;
+}
+
+details[open] > details{
+    width: 100svw;
+}
+.bag_container{
+    z-index: -10;
+    border-bottom: 2px solid rgba(219, 217, 217, 0.3);
+    color:rgba(219, 217, 217, 0.98) ;
+    display: flex;
+    background: rgb(21, 13, 0);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 3.5rem;
+    top: 0rem;
+    right: 0rem;
+    width: 100svw;
+    height: auto;
+    padding: 1rem;
+}
+summary{
+    list-style-type: none;
+}
+
+.item_block{
+    display: flex;
+    width: 100svw;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(219, 217, 217, 0.09);
+}
+
+.left_column, .right_column{
+    width: 48svw;
+}
+
+.product_section{
+    display: flex;
+    align-items: center;
+    border: 2px solid blue;
+    height: 10svh;
+    justify-content: center;
+
+}
+
+.item_name_container{
+    display: flex ;
+    flex-direction: column;
+    margin: 2rem 0rem .7rem;
+    align-items: center;
+}
+
+
+/* ========= COUNTER ========== */
+.counter{
+    border: 2px solid white;
+    border-radius: 5rem;
+    height: 3rem;
+    width: 90svw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+input:focus{
+    outline: 0;
+    appearance: none;
+}
+#count, #plus, #minus{
+    background:none;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#count{
+    text-align: center;
+}
+
+/* ============================== */
+
+/* ================================================================= */
 /* ============================== NAV ================================ */
 .nav_account_section{
     width: 8rem;
@@ -126,10 +213,9 @@ html,.home_container{
     justify-content: space-around;
 }
 
-.nav_account_section a{
+.nav_account_section a, .nav_account_section{
     color: rgba(219, 217, 217, 0.6);
     text-decoration: none;
-
 }
 
 .account_section_icons{

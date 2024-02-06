@@ -42,11 +42,7 @@ def register():
     return redirect('/home')
 
 
-# ===================== HOME ======================
-@app.route('/home')
-def home():
-    user = User.get_by_id(session['user_id'])
-    return render_template('home.html', user= user)
+
 # ===================== LOGOUT======================
 
 @app.route('/logout')
