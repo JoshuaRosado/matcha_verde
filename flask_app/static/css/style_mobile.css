@@ -105,10 +105,6 @@ html,.home_container{
     background-color: rgb(21, 13, 0);
 }
 
-.home_matcha_logo{
-    margin-top: -20px;
-}
-
 
 .nav_toggle_label:has(input:checked) + .nav_block{
     translate: 0;
@@ -291,6 +287,9 @@ input:focus{
 }
 
 .nav_block a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgba(219, 217, 217, 0.6);
     text-decoration: none;
     font-size: 1.2rem;
@@ -315,7 +314,11 @@ input:focus{
     3px 3px 3px 5px rgb(0, 0, 0);
     border: .4rem solid rgba(255, 255, 255, 0.272);
     padding: .4rem;
-    
+}
+
+#home_matcha_logo{
+    margin-top: 2rem;
+    padding-bottom: 3rem;
 }
 /* ================================================================= */
 
