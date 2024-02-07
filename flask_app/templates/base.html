@@ -48,41 +48,106 @@
                             <h2>Shopping Bag</h2>
                             <h6>Free Shipping</h6>
                         </div>
-                        <div class="item_block">
-                            <div class="left_column">
-                                <h6><b>Product</b></h6>
-                                <section class="product_section">
-                                    <img src="../static/imgs/matcha_types_imgs/hatsu.png" alt="item_img" class="bag_item_img" name = "item_img">
-                                    <div class="item_name_container">
-                                        <h6><b>Hatsu - 40g</b></h6>
-                                        <a href="/delete"><p>Remove</p></a>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="right_column">
-                                <section class="left_section">
-                                    <p><b>QTY</b></p>
-                                    <div class="bag_counter">
-                                        <button id="bag_minus" onclick="minusBtn(event, this)">-</button>
-                                        <input type="number" id="bag_count" name="count" value="1">
-                                        <button id="bag_plus" onclick="plusBtn(event, this)">+</button>
-                                    </div>
-                                    
-                                </section>
-                                <section class = "right_section">
-                                    <p><b>Price</b></p>
-                                    <p><b>$40.00</b></p>
-                                </section>
-                            </div>
-                        </div>
-                        <div class="bag_btn_container">
-                            <button class="close_btn">Close</button>
-                            <a href="/checkout"><button class="checkout">Checkout</button></a>
-                        </div>
-
-
+                        <table class="item_block">
+                            <tr>
+                                <th id="product_th" >Product</th>
+                                <th>QTY</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr>
+                                <td id="product_td">
+                                    <section class="product_section">
+                                        <img src="../static/imgs/matcha_types_imgs/hatsu.png" alt="item_img" class="bag_item_img" name = "item_img">
+                                        <div class="item_name_container">
+                                            <h6><b>Hatsu - 40g</b></h6>
+                                            <a href="/delete"><p>Remove</p></a>
+                                        </div>
+                                    </section>
+                                </td>
+                                <td>
+                                    <section class="left_section">
+                                        <div class="bag_counter">
+                                            <button class="bag_minus" onclick="minusBtn(event, this)">-</button>
+                                            <input type="number" class="bag_count" name="count" value="1">
+                                            <button class="bag_plus" onclick="plusBtn(event, this)">+</button>
+                                        </div>
+                                    </section>
+                                </td>
+                                <td>
+                                    <section class="right_section">
+                                        <p>$ 40.00</p>
+                                    </section>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="item_block">
+                            <tr>
+                                <th id="product_th" >Product</th>
+                                <th>QTY</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr>
+                                <td id="product_td">
+                                    <section class="product_section">
+                                        <img src="../static/imgs/matcha_types_imgs/hatsu.png" alt="item_img" class="bag_item_img" name = "item_img">
+                                        <div class="item_name_container">
+                                            <h6><b>Hatsu - 40g</b></h6>
+                                            <a href="/delete"><p>Remove</p></a>
+                                        </div>
+                                    </section>
+                                </td>
+                                <td>
+                                    <section class="left_section">
+                                        <div class="bag_counter">
+                                            <button class="bag_minus" onclick="minusBtn(event, this)">-</button>
+                                            <input type="number" class="bag_count" name="count" value="1">
+                                            <button class="bag_plus" onclick="plusBtn(event, this)">+</button>
+                                        </div>
+                                    </section>
+                                </td>
+                                <td>
+                                    <section class="right_section">
+                                        <p>$ 40.00</p>
+                                    </section>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="item_block">
+                            <tr>
+                                <th id="product_th" >Product</th>
+                                <th>QTY</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr>
+                                <td id="product_td">
+                                    <section class="product_section">
+                                        <img src="../static/imgs/matcha_types_imgs/hatsu.png" alt="item_img" class="bag_item_img" name = "item_img">
+                                        <div class="item_name_container">
+                                            <h6><b>Hatsu - 40g</b></h6>
+                                            <a href="/delete"><p>Remove</p></a>
+                                        </div>
+                                    </section>
+                                </td>
+                                <td>
+                                    <section class="left_section">
+                                        <div class="bag_counter">
+                                            <button class="bag_minus" onclick="minusBtn(event, this)">-</button>
+                                            <input type="number" class="bag_count" name="count" value="1">
+                                            <button class="bag_plus" onclick="plusBtn(event, this)">+</button>
+                                        </div>
+                                    </section>
+                                </td>
+                                <td>
+                                    <section class="right_section">
+                                        <p>$ 40.00</p>
+                                    </section>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-
+                    <br>
+                        
+                        
                 </details>
                 <!-- ============================================================= -->
                 <!-- ===================== ACCOUNT ICON LINK ========================= -->
@@ -134,6 +199,5 @@
         <p class="bottom_paragraph2">© 2023, Matcha Verde</p>
     </div>
 <script src="../static/js/script.js"></script>
-<script src="../static/js/bag.js"></script>
 </body>
 </html>

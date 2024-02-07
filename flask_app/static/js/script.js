@@ -1,4 +1,4 @@
-var checkBox = document.querySelector(".nav_toggle_label");
+
 var mainTitle = document.querySelector('.main_title');
 var matchaLogo = document.querySelector('.matcha_logo');
 
@@ -93,20 +93,23 @@ startSlide();
 
 
 
-    var decrease = document.getElementById("minus");
-    var increase = document.getElementById("plus");
-    const countNum = document.getElementById("count");
-    const inputValue = document.getElementsByTagName("input");
-    const label = document.querySelector(".count_num");
     let count = 0;
-    
-    function increaseBtn(){
-        count++;
-        label.innerText = count;
+
+
+    function plusBtn(a, b) {
+        var input = b.previousElementSibling;
+        var value = parseInt(input.value,10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        input.value = value;
     }
     
-    function decreaseBtn(){
-        count--;
-        label.textContent = count;
-    
+    function minusBtn(a, b) {
+        var input = b.nextElementSibling;
+        var value = parseInt(input.value, 10);
+        if (value > 1) {
+        value = isNaN(value) ? 0 : value;
+        value--;
+        input.value = value;
+        }
     }

@@ -112,14 +112,21 @@ html,.home_container{
 
 /* ================================================================= */
 /*  ========== BAG BLOCK WINDOW ============*/
-
+details{
+    transition: height 3s ease-in;
+}
 details img{
     height: 3rem;
+    margin-bottom: 1rem;
+}
+details[open] > #bag_summary{
+    position: relative;
+    top: .7rem;
+    right: 0rem;
 }
 
-details[open] > .bag_details{
-    width: 100svw;
-}
+
+
 
 .bag_container{
     z-index: -10;
@@ -131,12 +138,10 @@ details[open] > .bag_details{
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-top: 3.5rem;
-    top: 0rem;
+    top: 3.5rem;
     right: 0rem;
     width: 100svw;
-    height: 30svh;
-    padding: 1rem;
+    height: auto;
 }
 summary{
     list-style-type: none;
@@ -148,87 +153,73 @@ summary::-webkit-details-marker{
 .item_block{
     display: flex;
     width: 100svw;
-    margin-bottom: 2rem;
-    border: 2px solid red;
+    height: 18svh;
     justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     border-bottom: 2px solid rgba(219, 217, 217, 0.09);
+    border-top: 2px solid rgba(219, 217, 217, 0.09);
+}
+table th, table td{
+    width: 25svw;
+}
+#product_th, #product_td{
+    width: 50svw;
 }
 
 .bag_block_header{
     margin: 1.5rem;
 }
-.right_column{
-    width: 60svw;
-    padding: 0rem 1rem;
-    display: flex;
-    justify-content:space-around;
 
-}
-
-.left_column{
-    width: 38svw;
-}
-
-.right_section, .left_section{
-    width: 20svw;
-    height: 10svh;
-    margin-bottom: 1rem;
-    display: flex;
-    padding: .5rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 .product_section{
     display: flex;
+    margin-top: .5rem;
     align-items: center;
     height: 10svh;
     justify-content: center;
 
 }
 
-.item_name_container{
-    display: flex ;
-    flex-direction: column;
-    margin: 2rem 0rem .7rem;
-    align-items: center;
-}
 
-.right_column{
-    display: flex;
-}
 
-/* .left_section, .right_section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
 /* ========= COUNTER ========== */
 .bag_counter{
     border: 2px solid white;
     border-radius: 5rem;
-    height: 2.1rem;
+    height: 3rem;
+    margin-bottom: .5rem;
     width: 30svw;
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
-input:focus{
-    outline: 0;
-    appearance: none;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
-#bag_count{
-    width: 5svw;
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
-#bag_count, #bag_plus, #bag_minus{
+.bag_count, .bag_plus, .bag_minus{
     background:none;
     border: none;
     color: white;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
+.bag_count{
+    font-size: 1rem;
+    width: 5svw;
+}
+.bag_count:focus{
+    outline: 0;
+    appearance: none;
+}
+
 
 /* ============================== */
 
@@ -263,7 +254,7 @@ input:focus{
 }
 
 .nav{
-    position: fixed;
+    position:absolute;
     top: 1.8rem;
     height: 3.5rem;
     width: 100svw;
@@ -355,6 +346,7 @@ input:focus{
 /* ======================== SLIDESHOW AREA =============================== */
 .slide_show_container{
     height: 100svh;
+    overflow-y: hidden;
     width: 100svw;
 }
 
@@ -364,9 +356,12 @@ input:focus{
     width: 100svw;
     display: flex;
     flex-direction: row;
+    overflow-y: hidden;
 }
 .slide{
-    object-fit: cover;;
+    object-fit: cover;
+    overflow-y: hidden;
+    margin-top: 3.5rem;
     height: 100svh;
     width: 100svw;
     /* scroll-snap-align: start; */
@@ -582,13 +577,6 @@ input:focus{
     ;
 }
 
-/* .about_container_footer{
-    height: 15rem;
-    width: 101vw;
-    border-radius: 0rem 0rem 0rem 5rem;
-    background:  rgb(25, 25, 25);
-
-} */
 /* ================================================================= */
 /* ===========================TOP RANK AREA =============================== */
 
