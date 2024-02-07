@@ -64,6 +64,10 @@
         1px 1px 1px 14px rgb(17, 11, 1);
     }
 
+    .bag_container{
+        top: 7dvh
+    }
+
     /* ================================================================= */
     
     /* ============================= SLIDE AREA ================================= */
@@ -77,6 +81,10 @@
     }
     .main_slide{
         flex-direction: column;
+    }
+
+    .slide{
+        margin-top: 0rem;
     }
 
     .slide_item_description_main{

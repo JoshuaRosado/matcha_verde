@@ -36,12 +36,38 @@
     .special_announcement_bar{
         display: none;
     }
+
+    .item_block{
+        margin-top: 2rem;
+    }
+
+    .bag_block_header{
+        padding-bottom: 5rem;
+    }
+
+    .each_item{
+        height: auto
+    }
+    .tr_header{
+        height: 4rem;
+    }
+
+    table td{
+
+        height: 6rem;
+    }
+    #bag_summary span::after{
+        right: 80svw;
+    }
 /* ========================================================================= */
 /* ======================== SLIDE IMGS ========================= */
     .slide_show_container, .slide_imgs_container, .slide, .slide img{
         width: 100svw;
         height: 100svh;
         object-fit: cover;
+    }
+    .description_container{
+        margin-bottom: 5rem;
     }
 
     .slide_info{

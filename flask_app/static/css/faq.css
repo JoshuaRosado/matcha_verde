@@ -76,13 +76,7 @@ body, html, .container{
     content: '+';
 
 }
-.details[open] > .faq_summary span::after{
-    content: '-';
-    margin-top: .1rem;
-}
-.details[open] > .faq_summary span::before{
-    content: '';
-}
+s
 
 details[open] > .p{
     padding: .5rem 1rem 1rem;

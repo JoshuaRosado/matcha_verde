@@ -386,6 +386,7 @@ details span::before, details span::after{
     .header_container{
         padding-top: 2rem;
         height: 8rem;
+        margin-bottom: -6rem;
         
     }
     .nav, .nav_block{
