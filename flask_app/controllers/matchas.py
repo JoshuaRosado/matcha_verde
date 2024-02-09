@@ -29,3 +29,8 @@ def faq():
 def item():
     user = User.get_by_id(session["user_id"])
     return render_template('item.html', user=user)
+
+@app.route('/matchas')
+def matchas():
+    user = User.get_by_id(session["user_id"])
+    return render_template('matcha.html', user=user)
