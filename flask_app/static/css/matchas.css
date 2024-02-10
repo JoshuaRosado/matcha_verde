@@ -1,0 +1,39 @@
+.matchas_top_info_container{
+    height: 50svh;
+    background: linear-gradient(to top, rgb(21, 13, 0) 30%,black 90%);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.matchas_top_info_container h3{
+    font-size: 2rem;
+    text-align: left;
+}
+
+.nav_space{
+    height: 3.5rem;
+    background: rgb(21, 13, 0);
+}
+.header_bg{
+    height: 50svh;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, black 90%),  url(../imgs/matcha_recipes_imgs/nha-van-uFAVbEbsOIM-unsplash\ \(1\).jpg);
+    background-position: center;
+    background-size: 50svh;
+}
+
+
+#find_matcha_quiz{
+    font-size: 1rem;
+    border: .2rem solid rgba(104, 104, 104, 0.6);
+    background-color: rgba(255, 255, 255, 0.8) ;
+    border-radius: 4rem;
+    width: 15rem;
+    height: 2.5rem;
+    margin: .5rem;
+}
+
+

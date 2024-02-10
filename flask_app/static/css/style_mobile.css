@@ -228,10 +228,6 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
 .bag_count, .bag_plus, .bag_minus{
     background:none;
     border: none;
