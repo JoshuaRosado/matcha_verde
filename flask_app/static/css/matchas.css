@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}
+
 .matchas_top_info_container{
     height: 50svh;
     background: linear-gradient(to top, rgb(21, 13, 0) 30%,black 90%);
@@ -14,6 +18,23 @@
     text-align: left;
 }
 
+.matchas_logo_container{
+    all: unset;
+    margin-left: -1rem;
+    width: 100svw;
+    height: 20svh;
+    padding: 4rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.matchas_logo{
+    border-radius: 50%;
+    box-shadow: 25px 10px 2px 10px white, 
+    15px 10px 2px 10px rgba(55, 55, 55, 0.434);
+}
+
 .nav_space{
     height: 3.5rem;
     background: rgb(21, 13, 0);
@@ -22,7 +43,7 @@
     height: 50svh;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, black 90%),  url(../imgs/matcha_recipes_imgs/nha-van-uFAVbEbsOIM-unsplash\ \(1\).jpg);
     background-position: center;
-    background-size: 50svh;
+    background-size: 100svw;
 }
 
 
@@ -36,4 +57,73 @@
     margin: .5rem;
 }
 
+/*  ===================== LANDSCAPE VIEW ================== */
+@media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
+    body{
+        background-color: rgb(21, 13, 0);
+    }
 
+    .top_container{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+    
+    }
+
+    .matchas_top_info_container{
+        width: 35svw;
+        height: 110svh;
+        background: black;
+        display: flex;
+    }
+    .header_bg{
+        background: linear-gradient(to left, rgba(255, 255, 255, 0) 2%, black 94%),  url(../imgs/matcha_recipes_imgs/nha-van-uFAVbEbsOIM-unsplash\ \(1\).jpg);
+        height: 110svh;
+        width: 65svw;
+        background-size: 65svw;
+        background-position: center;
+    }
+}
+
+/* =================== LAPTOP VIEW ================ */
+@media screen and (min-device-width: 850px){
+    body{
+        background-color: black;
+    }
+    .top_container{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav_space{
+        display: none;
+    }
+    .matchas_top_info_container{
+        width: 50dvw;
+        height: 50dvh;
+        background: black;
+        padding-left: 5rem;
+        display: flex;
+        align-items: self-start;
+    }
+    #find_matcha_quiz{
+        margin-left: -.2rem;
+    }
+
+    .matchas_top_info_container h3{
+        font-size: 2.5rem;
+    }
+
+
+    .header_bg{
+        height: 50dvh;
+        width: 50dvw;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0) 40%, black 94%),  url(../imgs/matcha_recipes_imgs/nha-van-uFAVbEbsOIM-unsplash\ \(1\).jpg);
+        background-position: center;
+        background-size: 50dvw 100dvh;
+    }
+
+
+}

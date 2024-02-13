@@ -131,10 +131,14 @@
         align-items: center;
     }
     .top_rank_items_main_container{
-        width: 90svw;
+        width: 100svw;
     }
     .top_rank_first_row, .top_rank_second_row{
-        width: 23rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 45svw;
     }
 
     .top_rank_item_container{
