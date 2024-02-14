@@ -1,0 +1,20 @@
+.recipes_top_container{
+    height: 100svh;
+    width: 100svw;
+    padding-top: 3.5rem;
+    background: rgb(21, 13, 0);
+}
+
+.recipes_bg{
+    height: 50svh;
+    width: 100svw;
+    background: url(../imgs/index_bg/pexels-roman-odintsov-5976082.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.recipes_top_info_container{
+    background: rgba(0.9176, 0.7686, 0.5922);
+}
+

@@ -91,6 +91,11 @@ body{
     body{
         background-color: black;
     }
+    .top_rank_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .top_container{
         display: flex;
         flex-direction: row-reverse;
@@ -114,6 +119,16 @@ body{
 
     .matchas_top_info_container h3{
         font-size: 2.5rem;
+    }
+    .matchas_logo_container{
+        width: 100dvw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .matchas_logo{
+        margin: 0;
+        padding: 0;
     }
 
 

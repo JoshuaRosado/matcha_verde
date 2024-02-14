@@ -13,7 +13,9 @@
         display: flex;
         position: absolute;
     }
-
+    #home_matcha_logo{
+        display: none;
+    }
 
     .nav_block{
         position: relative;
