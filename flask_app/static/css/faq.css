@@ -12,15 +12,14 @@ body, html, .container{
 /* ===================== IMG BG CONTAINER ===================================== */
 .header{
     width: 100svw;
-    margin-top: 11rem;
-    height: 65svh;
+    height: 100svh;
     display: flex;
     flex-direction: column-reverse;
 }
 
 .header img{
-    margin-top: 3.5rem;
     height: 90svh;
+    padding-top: 3.5rem;
     width: 100svw;
     object-fit: cover;
 }
@@ -28,7 +27,7 @@ body, html, .container{
     z-index: 1;
     height: 100svh;
     width: 100svw;
-    position: absolute;
+    position: absolute
 }
 .img_shadow{
     height: 100svh;
@@ -41,6 +40,7 @@ body, html, .container{
 /* ======================= GENERAL INFO ============================ */
 
 .general_info_block{
+    height: 30svh;
     z-index: 2;
     color: rgba(255, 255, 255, 0.9);
     padding: 1.5rem;
@@ -82,6 +82,12 @@ details[open] > .p{
     padding: .5rem 1rem 1rem;
     color: rgba(255, 255, 255, 0.9);
 }
+.details[open] > .faq_summary span::before{
+    content: '';
+}
+.details[open] > .faq_summary span::after{
+    content: '-';
+}
 
 .details span::before, .details span::after{
     display: flex;
@@ -99,25 +105,27 @@ details[open] > .p{
 
 @media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
 
+    .faq_img_container,.header img, .img_shadow{
+        height: 100dvh;
+        padding: 0;
+    }
     .header{
         height: 100dvh;
         width: 100dvw;
-        margin-top: 2rem;
         flex-direction: row;
         justify-content: space-between;
-    }
-    .faq_img_container,.header img, .img_shadow{
-        height: 100dvh;
-        margin-top: 0;
+        padding-top: 3.5rem;
     }
     .faq_img_container{
         width: 50dvw;
+        padding: 0;
     }
     .general_info_block{
         display:flex ;
         flex-direction: column;
         justify-content: center;
         width: 40dvw;
+        height: 100dvh;
     }
 
     .img_shadow{
@@ -130,13 +138,16 @@ details[open] > .p{
 
 @media screen and (min-device-width: 850px){
     .header{
-        height: 45dvh;
+        height: 60dvh;
         justify-content: top;
 
     }
     .faq_img_container,.header img, .img_shadow{
         height: 80dvh;
         margin-top: 0;
+    }
+    .header img {
+        height: 80dvh;
     }
 
     .img_shadow{

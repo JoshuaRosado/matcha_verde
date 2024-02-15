@@ -7,7 +7,6 @@
         text-decoration: none;
         box-sizing: border-box;
     }
-
     /* ======================= BAG COUNTER =================== */
     details[open] > .bag_container{
         overflow: scroll;

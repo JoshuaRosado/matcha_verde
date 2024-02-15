@@ -14,12 +14,15 @@ body, html,
     background-color: rgb(21, 13, 0);
     height: 100svh;
     width: 100svw;
+    overflow-x: hidden;
 }
+
 video{
     height: 100svh;
     width: 100svw;
     object-fit: cover;
     z-index: 2;
+    padding-top: 3.5rem;
     position: absolute;
 }
 
