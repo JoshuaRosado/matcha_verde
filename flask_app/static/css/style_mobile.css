@@ -7,14 +7,12 @@
 }
 *:not(.stars, .stars_rate){
     word-spacing: 1px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 html,.home_container, body{
     background:rgb(21, 13, 0);
-    overflow-x: hidden;
 }
-
 .title{
     font-size: 2.4rem;
 }

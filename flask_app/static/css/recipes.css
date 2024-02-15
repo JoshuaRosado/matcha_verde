@@ -65,3 +65,46 @@
 
     }
 }
+
+/* ============= LAPTOP VIEW ============ */
+
+@media screen and (min-device-width: 850px){
+    .recipes_top_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+        height: 70dvh;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .recipes_bg,.recipes_top_info_container{
+        height: 70dvh;
+        width: 65dvw;
+    }
+    .recipes_top_info_container{
+        width: 35dvw;
+        display: flex;
+        margin: 0;
+        padding: 0rem 0rem 0rem 5rem ;
+        justify-content: center;
+    }
+
+    .recipes_top_info_container h2{
+        font-size: 2.5rem;
+    }
+    .recipes_top_info_container p{
+        font-size: 1.2rem;
+    }
+
+    .recipes_bg{
+        background: linear-gradient(to left, rgba(255, 255, 255, 0) 30%, rgb(236, 194, 140) 95%),  url(../imgs/index_bg/pexels-roman-odintsov-5976082.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+
+
+}

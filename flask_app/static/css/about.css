@@ -14,10 +14,13 @@ body, html,
     background-color: rgb(21, 13, 0);
     height: 100svh;
     width: 100svw;
+}
+body{
     overflow-x: hidden;
 }
 
 video{
+    overflow-x: hidden;
     height: 100svh;
     width: 100svw;
     object-fit: cover;
