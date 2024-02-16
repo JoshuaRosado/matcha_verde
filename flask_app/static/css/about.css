@@ -121,7 +121,8 @@ video{
 /* ========================== LAPTOP VIEW ============================ */
 @media screen and (min-device-width: 850px){
     .video_container, .video_block, video, .video_text{
-        height: 50svh;
+        height: 60dvh;
+        padding: 0;
     }
     .video_title{
         font-size: 3rem;
@@ -138,17 +139,17 @@ video{
 
     }
     .about_upper_img, .about_lower_img{
-        height: 45svh;
-        width: 50svw;
+        height: 45dvh;
+        width: 50dvw;
     }
 
     .info_block, .about_upper_img_container, .about_lower_img_container{
-        width: 45svw;
-        height: 50svh;
+        width: 45dvw;
+        height: 50dvh;
         padding: 1rem 4rem;
     }
     .about_upper_img_container, .about_lower_img_container{
-        width: 55svw;
+        width: 55dvw;
     }
     .about_upper_img_container, .about_lower_img_container{
         border: none;
@@ -160,13 +161,13 @@ video{
         font-size: 1.2rem;
     }
     .line_decor_container{
-        width: 100svw;
-        height: 3svh;
+        width: 100dvw;
+        height: 3dvh;
         align-items: center;
     }
     .line_decor{
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        width: 50svw;
+        width: 50dvw;
     }
 
 

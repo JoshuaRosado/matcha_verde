@@ -39,3 +39,5 @@ def matchas_page():
 def recipes_page():
     user = User.get_by_id(session["user_id"])
     return render_template('recipes.html', user=user)
+
+

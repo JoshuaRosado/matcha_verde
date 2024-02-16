@@ -133,7 +133,7 @@ body{
 
 
     .header_bg{
-        height: 50dvh;
+        height: 60dvh;
         width: 50dvw;
         background: linear-gradient(to left, rgba(255, 255, 255, 0) 40%, black 94%),  url(../imgs/matcha_recipes_imgs/nha-van-uFAVbEbsOIM-unsplash\ \(1\).jpg);
         background-position: center;
