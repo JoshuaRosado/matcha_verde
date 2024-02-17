@@ -1,5 +1,56 @@
 {% extends "base.html" %}
 {% block content%}
 
-<h1>HELLO</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/organic.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="organic_top_container">
+        <div class="organic_bg"></div>
+        <div class="organic_top_info_container">
+            <p>Organic</p>
+            <h2>Organic Matcha</h2>
+            <p>Our organic selection features a variety of Japanese teas with a classic, refreshing character.</p>
+        </div>
+    </div>
+    <div class="top_rank_container organic_container">
+        <div class="organic_logo_container">
+            <img src="../static/imgs/matcha_logo/Matcha_Verde_Official_Logo copy/matcha_logo_no_title_noBG.png" alt="matcha_logo" class="organic_logo">
+        </div>
+        <div class="top_rank_items_main_container">
+            <div class="top_rank_first_row">
+                <!-- ======================= BEST SELLER INDIVIDUAL ITEM SECTION  ======== -->
+                <div class="top_rank_item_container">
+                    <img src="../static/imgs/item_imgs/premium_organic_matchas.avif " alt="top_rank_item_pic" class="top_rank_imgs">
+                    <div class="top_rank_item_info_section">
+                        <h4 class="top_rank_title">Premium Organic Matcha - 20g</h4>
+                        <p class="top_rank_subtitle">Medium & Balanced</p>
+                        <p class="top_rank_item_price">$40</p>
+                        <button class="add_to_bag_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="add_to_bag_icon" viewBox="0 0 16 16">
+                        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5      3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2      5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                        </svg> Add to bag</button>
+                    </div>
+                </div>
+                <!-- ======================= BEST SELLER INDIVIDUAL ITEM SECTION =========== -->
+                <div class="top_rank_item_container">
+                    <img src="../static/imgs/item_imgs/organic_matchas.avif " alt="top_rank_item_pic" class="top_rank_imgs">
+                    <div class="top_rank_item_info_section">
+                        <h4 class="top_rank_title"> Organic Matcha - 20g</h4>
+                        <p class="top_rank_subtitle">Light & Snappy</p>
+                        <p class="top_rank_item_price">$18</p>
+                        <button class="add_to_bag_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="add_to_bag_icon" viewBox="0 0 16 16">
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+            </svg> Add to bag</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 {% endblock %}

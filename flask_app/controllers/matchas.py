@@ -6,6 +6,7 @@ from flask import flash
 
 # ======================= HOME PAGE ========================
 
+
 @app.route('/home')
 def home_page():
     if 'user_id' not in session:
@@ -40,4 +41,8 @@ def recipes_page():
     user = User.get_by_id(session["user_id"])
     return render_template('recipes.html', user=user)
 
-
+@app.route('/organic')
+def organic_page():
+    user = User.get_by_id(session["user_id"])
+    matchas = Matcha.get_all()
+    return render_template('organic.html', user=user, matchas =matchas)
