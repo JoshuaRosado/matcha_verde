@@ -140,7 +140,12 @@ details[open] > .p{
     .header{
         height: 60dvh;
         justify-content: top;
+    
+    }
 
+    .faq_title{
+        font-size: 3rem;
+        font-weight: 900;
     }
     .faq_img_container,.header img, .img_shadow{
         height: 80dvh;

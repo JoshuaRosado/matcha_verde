@@ -21,6 +21,7 @@
     justify-content: center;
     height: 40svh;
     width: 100svw;
+    color: white;
     padding: 0rem 1.5rem 5rem;
 }
 
@@ -52,11 +53,11 @@
         height: 100dvh;
         display: flex;
         margin: 0;
-        width: 65dvw;
-        padding: 1rem;
+        width: 70dvw;
+        padding: 1.5rem;
     }
     .recipes_top_info_container{
-        width: 35dvw;
+        width: 45dvw;
     }
     .recipes_bg{
         background: linear-gradient(to left, rgba(255, 255, 255, 0) 60%, rgb(236, 194, 140) 90%),  url(../imgs/index_bg/pexels-roman-odintsov-5976082.jpg);
@@ -84,8 +85,9 @@
         height: 60dvh;
         width: 65dvw;
     }
+
     .recipes_top_info_container{
-        width: 35dvw;
+        width: 45dvw;
         display: flex;
         margin: 0;
         padding: 0rem 0rem 0rem 5rem ;
@@ -93,7 +95,8 @@
     }
 
     .recipes_top_info_container h2{
-        font-size: 2.5rem;
+        font-size:3rem;
+        font-weight: 900;
     }
     .recipes_top_info_container p{
         font-size: 1.2rem;
