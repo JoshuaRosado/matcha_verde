@@ -4,9 +4,10 @@ body{
 
 .matchas_top_info_container{
     height: 50svh;
-    background: linear-gradient(to top, rgb(21, 13, 0) 30%,black 90%);
+    /* background: linear-gradient(to top, rgb(21, 13, 0) 30%,black 90%); */
+    background-color: black;
     color: rgba(255, 255, 255, 0.8);
-    padding: 0rem 1.5rem;
+    padding: 0rem 1.5rem 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +15,7 @@ body{
 }
 
 .matchas_top_info_container h3{
-    font-size: 2rem;
+    font-size: 1rem;
     text-align: left;
 }
 
@@ -22,8 +23,8 @@ body{
     all: unset;
     margin-left: -1rem;
     width: 100svw;
-    height: 20svh;
-    padding: 4rem 0rem;
+    height: 5svh;
+    padding: 3rem 0rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,8 +32,12 @@ body{
 
 .matchas_logo{
     border-radius: 50%;
-    box-shadow: 25px 10px 2px 10px white, 
-    15px 10px 2px 10px rgba(55, 55, 55, 0.434);
+    background: rgb(21,13,0);
+    margin-top: -7rem;
+
+
+    /* box-shadow: 25px 10px 2px 10px white, 
+    15px 10px 2px 10px rgba(55, 55, 55, 0.434); */
 }
 
 .nav_space{
@@ -62,6 +67,9 @@ body{
     body{
         background-color: rgb(21, 13, 0);
     }
+    #find_matcha_quiz{
+        width: 30svw;
+    }
 
     .top_container{
         display: flex;
@@ -77,6 +85,14 @@ body{
         background: black;
         display: flex;
     }
+
+    .matchas_top_info_container h3{
+        font-size: 2.5rem;
+        margin-top: 3rem;
+    }
+    .matchas_top_info_container p {
+        font-size: 1rem;
+    }
     .header_bg{
         background: linear-gradient(to left, rgba(255, 255, 255, 0) 2%, black 94%),  url(../imgs/matcha_recipes_imgs/nha-van-uFAVbEbsOIM-unsplash\ \(1\).jpg);
         height: 110svh;
@@ -84,6 +100,7 @@ body{
         background-size: 65svw;
         background-position: center;
     }
+
 }
 
 /* =================== LAPTOP VIEW ================ */
@@ -102,6 +119,7 @@ body{
         justify-content: center;
         align-items: center;
     }
+
     .nav_space{
         display: none;
     }
@@ -129,7 +147,8 @@ body{
         align-items: center;
     }
     .matchas_logo{
-        margin: 0;
+        height: 15dvh;
+        margin-top: -15dvh;
         padding: 0;
     }
 
