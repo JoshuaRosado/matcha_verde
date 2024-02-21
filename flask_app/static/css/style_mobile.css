@@ -16,6 +16,9 @@ html,.home_container, body{
 .title{
     font-size: 2.4rem;
 }
+.home_container{
+    overflow-x: hidden;
+}
 
 /* ====================== TOGGLE ANIMATION ======================== */
 
@@ -658,8 +661,45 @@ input::-webkit-inner-spin-button {
 /* ================================================================= */
 
 /* ====================== MATCHA RECIPES AREA ================================== */
+
+/* ===== DETAILS TAG ========= */
+.recipes_details{
+    margin: 1rem;
+    padding: .8rem;
+    display: flex ;
+    justify-content: space-between;
+}
+.recipes_summary{
+    font-weight: 600;
+    display: flex ;
+    justify-content: space-between;
+}
+.recipes_paragraph{
+    margin: 1rem 0rem;
+}
+
+.recipes_summary span::before{
+    content: '+';
+}
+details[open] > .recipes_summary span::before{
+    content: '';
+}
+
+details[open] > .recipes_summary span::after{
+    content: '-';
+}
+
+
+.dark_detail{
+    border: 1px solid rgba(219,217,217, 0.09);
+}
+.light_detail{
+    background-color: rgba(219, 217, 217, 0.09);
+}
+/* =================== */
+
 .matcha_recipes_container{
-    height: 200svh;
+    height: auto;
     width: 100svw;
     background:  rgb(25, 25, 25);
     padding: 1rem;
@@ -690,7 +730,7 @@ input::-webkit-inner-spin-button {
 }
 
 .matcha_recipe_block{
-    height: 20rem;
+    height: auto;
     margin: 3rem 0rem;
 }
 .matcha_recipe_block h3,.item_type, .matcha_recipe_block p{
