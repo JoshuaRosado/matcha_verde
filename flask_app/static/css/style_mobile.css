@@ -509,7 +509,7 @@ input::-webkit-inner-spin-button {
     background-color: rgb(21, 13, 0);
     flex-direction: column;
     padding: 2rem 1rem;
-    height: 95svh;
+    height: 100svh;
     width: 100svw;
     color: rgba(219, 217, 217, 0.895);
 }
@@ -549,7 +549,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
     padding: 1rem;
     color: rgba(219, 217, 217, 0.895);
-    height: 75svh;
+    height: auto;
     width: 100svw;
     background:  rgb(25, 25, 25);
     

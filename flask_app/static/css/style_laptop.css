@@ -232,22 +232,23 @@
   /* ================================================================= */
     /* ======================= FEATURED RECIPES AREA ============================ */
     .matcha_recipes_container{
-        height: 75svh;
-        padding: 1rem 2rem 4rem;
+        height: auto;
+        padding: 1rem 2rem 1rem;
+        
     }
     .matcha_recipes_block_container{
         flex-direction: row;
-        align-items: center;
+        align-items:flex-start;
         justify-content: space-around;
         margin-top: 1rem;
     }
     .matcha_recipe_block{
-        height:25rem;
-        width: 30rem;
+        height:auto;
+        width: 30dvw;
     }
 
     .matcha_recipes_container_img{
-        width: 25rem;
+        width: 30dvw;
     }
 
     .recipe_footer{

@@ -128,6 +128,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height: auto;
+        padding: 1rem;
     }
     .top_rank_items_main_container{
         width: 100svw;
@@ -175,9 +177,11 @@
     /* =================== MATCHA RECIPES AREA ============================== */
 
     .matcha_recipes_container{
-        height: 165svh;
+        height: auto;
         justify-content: center;
         align-items: center;
+        margin-top: 10svh;
+        padding: 2rem;
     }
 
     .matcha_recipes_block_container{
@@ -198,7 +202,7 @@
     }
 
     .matcha_recipes_title{
-        margin-top: -10rem;
+        margin-top: 0rem;
     }
 
     .matcha_recipes_browse{
