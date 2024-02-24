@@ -27,7 +27,9 @@
                     
                     <div class="slide_info main_slide">
                         <p class="slide_item_description_main">It's tea o'clock... <br>you're just in time </p>
-                        <h4 class="matcha_name_main">Matcha Verde</h4>
+                        {%for matcha in matchas%}
+                        <h4 class="matcha_name_main">Matcha Verde ${{matcha.price}}</h4>
+                        {%endfor%}
                         <button class="slide_shop_now_btn">Shop now</button>
                     </div>
                 </section>

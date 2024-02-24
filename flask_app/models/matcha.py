@@ -29,6 +29,7 @@ class Matcha:
         
         results = connectToMySQL(DB).query_db(query,data)
         matcha = cls(results)
+        results = results[0]
         
         matcha.user = user.User(
             {
@@ -42,7 +43,6 @@ class Matcha:
             }
         )
         return matcha
-
     @classmethod
     def get_all(cls):
         query = """ SELECT 
