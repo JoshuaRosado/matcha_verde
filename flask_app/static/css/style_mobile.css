@@ -124,6 +124,7 @@ details[open] > #bag_summary{
     position: relative;
     top: 0rem;
     right: 0rem;
+    transition: 5s ease-in-out;
 }
 details[open] >  #bag_summary span::after{
     content: 'x';
@@ -162,7 +163,16 @@ details[open] >  #bag_summary span::before{
     right: 0rem;
     width: 100svw;
     height: auto;
+    transform: scale(1,0);
+    transition: transform .3s ease-in-out;
+    transform-origin: top;
 }
+
+details[open] > .bag_container{
+    transform: scale(1,1);
+    transition: transform .3s ease-in-out ;
+}
+
 summary{
     list-style-type: none;
 }

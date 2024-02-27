@@ -3,6 +3,8 @@ var mainTitle = document.querySelector('.main_title');
 var matchaLogo = document.querySelector('.matcha_logo');
 
 
+
+
     function TitleColorAnim(){
         mainTitle.classList.add("main_title_anim");
     }
