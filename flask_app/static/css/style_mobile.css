@@ -130,6 +130,7 @@ details[open] > #bag_summary{
     content: 'x';
     opacity: 0;
     transform: translateY(150svh);
+    
 
 }
 details[open] >  #bag_summary span::after{

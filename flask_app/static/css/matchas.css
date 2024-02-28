@@ -4,8 +4,7 @@ body{
 
 .matchas_top_info_container{
     height: 50svh;
-    /* background: linear-gradient(to top, rgb(21, 13, 0) 30%,black 90%); */
-    background-color: black;
+    background-color: rgb(25,25,25);
     color: rgba(255, 255, 255, 0.8);
     padding: 0rem 1.5rem 4rem;
     display: flex;
@@ -46,7 +45,7 @@ body{
 }
 .header_bg{
     height: 50svh;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, black 90%),  url(../imgs/matcha_recipes_imgs/nha-van-uFAVbEbsOIM-unsplash\ \(1\).jpg);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgb(25,25,25) 90%),  url(../imgs/matcha_recipes_imgs/nha-van-uFAVbEbsOIM-unsplash\ \(1\).jpg);
     background-position: center;
     background-size: 100svw;
 }
