@@ -126,9 +126,18 @@ details[open] > #bag_summary{
     right: 0rem;
     transition: 5s ease-in-out;
 }
+#bag_summary span::after{
+    content: 'x';
+    opacity: 0;
+    transform: translateY(150svh);
+
+}
 details[open] >  #bag_summary span::after{
     content: 'x';
+    transform: translateY(0);
     font-size: 2rem;
+    opacity: 1;
+    transition: transform 1.3s ease-in-out;
     color: rgba(219, 217, 217, 0.990);
 }
 details[open] >  #bag_summary span::before{
@@ -150,7 +159,7 @@ details[open] >  #bag_summary span::before{
 
 
 .bag_container{
-    z-index: -1;
+    z-index: -10;
     border-bottom: 2px solid rgba(219, 217, 217, 0.3);
     color:rgba(219, 217, 217, 0.98) ;
     display: flex;
@@ -163,14 +172,13 @@ details[open] >  #bag_summary span::before{
     right: 0rem;
     width: 100svw;
     height: auto;
-    transform: scale(1,0);
-    transition: transform .3s ease-in-out;
+    transform: translateY(-120svh);
     transform-origin: top;
 }
 
 details[open] > .bag_container{
-    transform: scale(1,1);
-    transition: transform .3s ease-in-out ;
+    transform: translateY(0svh);
+    transition: transform 1s ease ;
 }
 
 summary{
@@ -203,7 +211,7 @@ table th, table td{
     width: 25svw;
 }
 #product_th, #product_td{
-    width: 50svw;
+    width: 48svw;
 }
 
 .bag_block_header{
@@ -226,10 +234,11 @@ table th, table td{
 .bag_counter{
     border: 2px solid white;
     border-radius: 5rem;
-    height: 3rem;
+    height: 5svh;
     margin-bottom: .5rem;
-    width: 30svw;
+    width: 28svw;
     display: flex;
+    align-items: center;
     justify-content: space-around;
 }
 

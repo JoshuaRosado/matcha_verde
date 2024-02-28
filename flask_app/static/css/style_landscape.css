@@ -58,6 +58,9 @@
     #bag_summary span::after{
         right: 80svw;
     }
+    .bag_counter{
+        height: 10svh;
+    }
 /* ========================================================================= */
 /* ======================== SLIDE IMGS ========================= */
     .slide_show_container, .slide_imgs_container, .slide, .slide img{

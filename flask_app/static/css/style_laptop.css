@@ -69,6 +69,32 @@
     .bag_container{
         top: 7dvh
     }
+    table th, table td{
+        width: 33dvw;
+    }
+    .left_section{
+        display: flex;
+        justify-content: center;
+    }
+    #product_th, #product_td{
+        width: 33dvw;
+    }
+    #bag_summary span::after{
+        content: 'x';
+        transform: translateY(150dvh);
+        opacity: 0;
+    }
+
+    details[open] >  #bag_summary span::after{
+        content: 'x';
+        right: -8.5dvw;
+        font-size: 5dvh;
+        opacity: 1;
+        transform: translateY(0);
+        top: 10dvh;
+        position: absolute;
+        transition: transform 1.8s ease-in-out;
+    }
 
     /* ================================================================= */
     
