@@ -27,9 +27,7 @@
                     
                     <div class="slide_info main_slide">
                         <p class="slide_item_description_main">It's tea o'clock... <br>you're just in time </p>
-                        {%for matcha in matchas%}
                         <h4 class="matcha_name_main">Matcha Verde</h4>
-                        {%endfor%}
                         <button class="slide_shop_now_btn">Shop now</button>
                     </div>
                 </section>
@@ -93,7 +91,9 @@
                     </svg>Start our quiz</button>
                 </div>
             </div>
-            <img src="../static/imgs/slide_imgs/matcha-co-pC16vUGYCL4-unsplash.jpg" alt="help_matcha_img" class="help_matcha_img">
+            {% for matcha in matchas:%}
+                <img src="../static/imgs/{{matcha.img}}"alt="help_matcha_img" class="help_matcha_img">
+            {% endfor %}
         </div>
         <!-- ============================================================ -->
 

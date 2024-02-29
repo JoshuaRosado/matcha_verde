@@ -75,35 +75,35 @@ class Matcha:
             return matchas
             
     
-    @classmethod
-    def get_all_matchas(cls):
-        query = """ SELECT 
-                    matchas.id, matchas.created_at, matchas.updated_at, matchas.matcha_name, matchas.matcha_qty, matchas.matcha_short_description, matchas.taste_description, matchas.taste_notes, matchas.price, matchas.img, users.id as user_id, users.first_name, users.last_name, users.email, users.created_at, users.updated_at
-                    FROM matchas
-                    JOIN users on users.id = matchas.user_id;"""
-        matcha_data = connectToMySQL(DB).query_db(query)
+    # @classmethod
+    # def get_all_matchas(cls):
+    #     query = """ SELECT 
+    #                 matchas.id, matchas.created_at, matchas.updated_at, matchas.matcha_name, matchas.matcha_qty, matchas.matcha_short_description, matchas.taste_description, matchas.taste_notes, matchas.price, matchas.img, users.id as user_id, users.first_name, users.last_name, users.email, users.created_at, users.updated_at
+    #                 FROM matchas
+    #                 JOIN users on users.id = matchas.user_id;"""
+    #     matcha_data = connectToMySQL(DB).query_db(query)
         
-        matchas = []
+    #     matchas = []
         
-        for matcha in matcha_data:
+    #     for matcha in matcha_data:
             
-            matcha_obj = cls(matcha)
+    #         matcha_obj = cls(matcha)
             
-            matcha_obj.user = user.User(
-                {
-                    "id": matcha["user_id"],
-                    "first_name": matcha["first_name"],
-                    "last_name": matcha["last_name"],
-                    "email": matcha["email"],
-                    "password":False,
-                    "created_at": matcha["created_at"],
-                    "updated_at": matcha["updated_at"]
+    #         matcha_obj.user = user.User(
+    #             {
+    #                 "id": matcha["user_id"],
+    #                 "first_name": matcha["first_name"],
+    #                 "last_name": matcha["last_name"],
+    #                 "email": matcha["email"],
+    #                 "password":False,
+    #                 "created_at": matcha["created_at"],
+    #                 "updated_at": matcha["updated_at"]
                     
-                }
-            )
+    #             }
+    #         )
             
-            matchas.append(matcha_obj)
-            return matchas
+    #         matchas.append(matcha_obj)
+    #         return matchas
             
         
             
