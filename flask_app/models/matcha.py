@@ -20,6 +20,10 @@ class Matcha:
         self.img = matcha["img"]
         self.created_at = matcha["created_at"]
         self.updated_at = matcha["updated_at"]
+        self.small_img_one = matcha["small_img_one"]
+        self.small_img_two = matcha["small_img_two"]
+        self.small_img_three = matcha["small_img_three"]
+        self.small_img_four = matcha["small_img_four"]
         self.reviews = []
 
     @classmethod
@@ -47,7 +51,7 @@ class Matcha:
     @classmethod
     def get_all(cls):
         query = """ SELECT 
-                    matchas.id, matchas.created_at, matchas.updated_at, matchas.matcha_name, matchas.matcha_qty, matchas.matcha_short_description, matchas.taste_description, matchas.taste_notes, matchas.price, matchas.img, users.id as user_id, users.first_name, users.last_name, users.email, users.created_at, users.updated_at
+                    matchas.id, matchas.created_at, matchas.updated_at, matchas.matcha_name, matchas.matcha_qty, matchas.matcha_short_description, matchas.taste_description, matchas.taste_notes, matchas.price, matchas.img, matchas.small_img_one,matchas.small_img_two, matchas.small_img_three, matchas.small_img_four, users.id as user_id, users.first_name, users.last_name, users.email, users.created_at, users.updated_at
                     FROM matchas
                     JOIN users on users.id = matchas.user_id;"""
         matcha_data = connectToMySQL(DB).query_db(query)

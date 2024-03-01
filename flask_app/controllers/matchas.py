@@ -26,10 +26,10 @@ def faq_page():
     user = User.get_by_id(session["user_id"])
     return render_template('faq.html', user = user)
 
-@app.route('/item/<int:matcha_id>')
-def item_page(matcha_id):
+@app.route('/item')
+def item_page():
     user = User.get_by_id(session["user_id"])
-    matchas = Matcha.get_by_id(matcha_id)
+    matchas = Matcha.get_all()
     return render_template('item.html', user=user, matchas = matchas)
 
 @app.route('/matchas')
