@@ -48,6 +48,8 @@ class Matcha:
             }
         )
         return matcha
+    
+
     @classmethod
     def get_all(cls):
         query = """ SELECT 
