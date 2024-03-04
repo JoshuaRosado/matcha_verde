@@ -14,6 +14,10 @@
         <div class="organic_bg"></div>
         <div class="organic_top_info_container">
             <p>Organic</p>
+            {% for each_matcha in matchas :%}
+                {{each_matcha.matcha_name}}
+
+            {% endfor %}
             <h2>Organic Matcha</h2>
             <p>Our organic selection features a variety of Japanese teas with a classic, refreshing character.</p>
         </div>

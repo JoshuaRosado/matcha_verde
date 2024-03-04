@@ -103,6 +103,10 @@
             </div>
             <h2 class="about_container_title title">About Matcha Verde</h2>
             <p class="about_container_paragraph paragraph">We are a family-run tea company founded in 2023. For generations, we have upheld a tradition of aromatic, well-balanced teas by carefully selecting, blending, and crafting each of our 30+ blends.</p>
+            {% for each_matcha in matchas :%}
+                {{each_matcha.matcha_name}}
+
+            {% endfor %}
             <div class="about_btn_container">
                 <a href="/matchas">
                     <button class="about_show_now_btn">Shop now</button>
@@ -119,10 +123,6 @@
                 <!-- ======================= BEST SELLER UPPER ROW =========================== -->
                 <div class="top_rank_first_row">
                     <!-- ======================= BEST SELLER INDIVIDUAL ITEM SECTION  ======== -->
-                    {% for matcha in matchas :%}
-                        {{matcha.matcha_name}}
-
-                    {% endfor %}
                     <div class="top_rank_item_container">
                         <img src="../static/imgs/matcha_types_imgs/ippodo-tea-ummon-40g-matcha_98cfdb6b-463f-472e-aced-416ce61f7405_750x750.png" alt="top_rank_item_pic" class="top_rank_imgs">
                         <div class="top_rank_item_info_section">

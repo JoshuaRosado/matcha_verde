@@ -53,7 +53,7 @@ class Matcha:
     @classmethod
     def get_all(cls):
         query = """ SELECT 
-                    matchas.id, matchas.created_at, matchas.updated_at, matchas.matcha_name, matchas.matcha_qty, matchas.matcha_short_description, matchas.taste_description, matchas.taste_notes, matchas.price, matchas.img, matchas.small_img_one,matchas.small_img_two, matchas.small_img_three, matchas.small_img_four, users.id as user_id, users.first_name, users.last_name, users.email, users.created_at, users.updated_at
+                    matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM matchas
                     JOIN users on users.id = matchas.user_id;"""
         matcha_data = connectToMySQL(DB).query_db(query)
@@ -78,7 +78,7 @@ class Matcha:
             )
             
             matchas.append(matcha_obj)
-            return matchas
+        return matchas
             
     
     # @classmethod
