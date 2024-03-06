@@ -2,7 +2,6 @@
 *, *::before, *::after{
     padding: 0;
     margin: 0;
-    font-weight: lighter;
 }
 
 /*========================= CONTAINER ============================*/
@@ -24,7 +23,9 @@
 
 /* ======================== HEADER CONTAINER=============================== */
 .header_container{
-    height: 10rem;
+    height: 10svh;
+    margin-top: 7svh;
+    margin-bottom: -3svh;
     width: 100svw;
     padding-top: 5.5rem;
     display: flex;
@@ -93,14 +94,14 @@
 
 .btn_options_row{
     display: flex;
-    height: 25svh;
+    height: 20svh;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
 
-.subscribe_btn, .item_add_to_bag_btn, .leave_review_btn{
+.item_add_to_bag_btn, .leave_review_btn{
     border-radius: 5rem;
     height: 3rem;
     width: 90svw;
@@ -144,7 +145,7 @@ input:focus{
     text-align: center;
 }
 
-.bellow_item_description{
+.below_item_description{
     padding: .5rem;
 }
 /* ================================================================= */
@@ -297,26 +298,25 @@ details span::before, details span::after{
     *, *::before, *::after{
         padding: 0;
         margin: 0;
-        font-weight: lighter;
     }
     .container{
         all: unset;
     }
     .btn_options_row{
-        height: 50dvh;
+        height: 38dvh;
     }
     .subscribe_btn, .item_add_to_bag_btn,.counter{
         width:40dvw;
     }
 
     .header_container{
-        padding-top: 3rem;
+        padding-top: 20dvh;
     }
     .item_container{
-        min-height: 120dvh;
+        height: auto;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        /* align-items: center; */
         justify-content: space-evenly;
     }
     
@@ -326,10 +326,10 @@ details span::before, details span::after{
     .item_description_block{
         text-align: center;
         margin: 0;
+
     }
     .item_img_block{
-        min-height: 100dvh;
-        margin-bottom: 12rem;
+        height: auto;
     }
     .small_img{
         min-height: 15dvh;
@@ -384,9 +384,9 @@ details span::before, details span::after{
     }
 
     .header_container{
-        padding-top: 2rem;
-        height: 8rem;
-        margin-bottom: -6rem;
+        padding-top: 3dvh;
+        height: 4dvh;
+        margin-bottom: -15dvh;
         
     }
     .nav, .nav_block{
@@ -416,18 +416,17 @@ details span::before, details span::after{
         appearance: none;
     }
     .item_description_block{
-        height: 100dvh;
         width: 40dvw;
-        margin: 0;
+
     }
 
     .item_img_block, .row_img_group{
         width: 40dvw;
         height: 75dvh;
-        margin: 0;
     }
     .item_img_block{
         justify-content: space-around;
+
     }
     .item_description_block{
         display: flex;
@@ -454,9 +453,10 @@ details span::before, details span::after{
         width: 7dvw;
         object-fit: cover;
     }
-    .subscribe_btn, .item_add_to_bag_btn,.counter{
-        width:40dvw;
+    .item_add_to_bag_btn,.counter{
+        width:30dvw;
         margin: 0rem .6rem;
+        height: 6dvh;
     }
     .user_name{
         font-size: 2rem;

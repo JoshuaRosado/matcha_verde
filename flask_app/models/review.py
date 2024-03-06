@@ -17,6 +17,7 @@ class Review:
         self.message = review["message"]
         self.created_at = review["created_at"]
         self.updated_at = review["updated_at"]
+        self.user = None
         
         
 # =================== LEAVE REVIEW ==========================
@@ -59,12 +60,11 @@ def update_review(cls, review_dict):
     
 # =================== GET ALL REVIEWS ==========================
 @classmethod
-def get_all(cls):
+def get_all_reviews(cls):
     query = """SELECT
             reviews.id, reviews.created_at, reviews.updated_at,name, stars, review_title, message, users.id as user_id, users.first_name, users.last_name, users.email, users.created_at, users.updated_at 
             FROM reviews
-            JOIN users ON users.id = reviews.user_id;
-            JOIN users ON """
+            JOIN users ON users.id = reviews.user_id;"""
     review_data = connectToMySQL(DB).query_db(query)
     
     reviews = []
@@ -93,7 +93,7 @@ def get_all(cls):
 
 # =================== GET REVIEW BY ID ==========================
 @classmethod
-def get_by_id(cls, review_dict):
+def get_review_by_id(cls, review_dict):
     data = {"id": review_dict}
     query = """SELECT * FROM reviews
             JOIN users on users.id = reviews.user_id

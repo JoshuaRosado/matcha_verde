@@ -9,7 +9,7 @@
         <title>Item</title>
     </head>
     <body>
-        <div class="container">
+        <div class="container item_page_container">
             <div class="header_container">
                 <h5 class="type"> Matcha </h5>
                 <h5 class="matcha_small_name"> -{{matchas.matcha_qty}} </h5>
@@ -42,9 +42,8 @@
                             <button id="plus" onclick="increaseBtn(event, this)">+</button>
                         </div>
                         <button class="item_add_to_bag_btn" type="submit">Add to bag</button>
-                        <button class="subscribe_btn">Subscribe</button>
                     </div>
-                    <p class="bellow_item_description">{{matchas.taste_description}}</p>
+                    <p class="below_item_description">{{matchas.taste_description}}</p>
                     <details class=" item_details taste_notes">
                         <summary class="item_summary"> Taste Notes <span></span></summary>
                             <h6 class="details_info">{{matchas.taste_notes}}</h6>

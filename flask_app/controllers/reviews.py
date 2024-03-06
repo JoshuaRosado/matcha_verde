@@ -7,15 +7,15 @@ from flask import flash
 
 
 # ======================= HOME PAGE ========================
-@app.route('/home')
-def home():
-    if "user_id" not in session:
-        flash("You must be logged in to access the dashboard")
-        return redirect('/')
-    user = User.get_by_id(session["user_id"])
-    matchas = Matcha.get_all()
-    reviews = Review.get_all()
-    return render_template('home.html', user=user, matchas=matchas, reviews=reviews)
+# @app.route('/home')
+# def home():
+#     if "user_id" not in session:
+#         flash("You must be logged in to access the dashboard")
+#         return redirect('/')
+#     user = User.get_by_id(session["user_id"])
+#     matchas = Matcha.get_all()
+#     reviews = Review.get_all()
+#     return render_template('home.html', user=user, matchas=matchas, reviews=reviews)
 
 
 # ======================= VIEW ITEM ========================
