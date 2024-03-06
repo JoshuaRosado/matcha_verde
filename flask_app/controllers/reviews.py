@@ -7,28 +7,31 @@ from flask import flash
 
 
 # ======================= HOME PAGE ========================
-# @app.route('/home')
-# def home():
-#     if "user_id" not in session:
-#         flash("You must be logged in to access the dashboard")
-#         return redirect('/')
-#     user = User.get_by_id(session["user_id"])
-#     matchas = Matcha.get_all()
-#     reviews = Review.get_all()
-#     return render_template('home.html', user=user, matchas=matchas, reviews=reviews)
 
 
 # ======================= VIEW ITEM ========================
 
 @app.route('/see_review/<int:review_id>')
-def see_review(review_id):
+def see_review(review_id, matcha_name):
     review = Review.get_by_id(review_id)
+    matchas = Matcha.get_matcha_name(matcha_name)
     user = User.get_by_id(session["user_id"])
-    return render_template('see_review.html', review=review, user=user)
+    return render_template('see_review.html', review=review, user=user, matchas = matchas)
 
 
-# @app.route('/matchas')
-# def matchas_page():
-#     user = User.get_by_id(session["user_id"])
-#     matcha = Matcha.get_by_id
-#     return render_template('matcha.html', user=user)
+@app.route('/leave_review', methods = ['POST'])
+def leave_review_page():
+    valid_review = Review.leave_a_review(request.form)
+    if valid_review:
+        return redirect(f'/home')
+    return redirect('/leave_review')
+
+
+
+
+@app.route('/item/<matcha_name>')
+def matchas_page(matcha_name):
+    review = Review.get_all_reviews()
+    user = User.get_all()
+    matcha = Matcha.get_matcha_name(matcha_name)
+    return render_template('matcha.html', user=user)

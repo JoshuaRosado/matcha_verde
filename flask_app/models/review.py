@@ -22,7 +22,7 @@ class Review:
         
 # =================== LEAVE REVIEW ==========================
 @classmethod
-def create_review(cls, review_dict):
+def leave_a_review(cls, review_dict):
     if not cls.is_valid(review_dict):
         return False
     
