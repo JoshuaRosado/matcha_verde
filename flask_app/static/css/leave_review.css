@@ -1,0 +1,24 @@
+
+.review_container{
+    height: 100svh;
+    color: rgba(255, 255, 255, 0.675);
+    width: 100svw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(21, 13, 0);
+}
+
+.leave_review_title{
+    text-align: center;
+    margin-top: 5rem;
+}
+form h4
+{ margin: 3svh;
+    font-size: 1.1rem;
+}
+
+form{
+    width: 100svw;
+    padding: 1rem;
+}

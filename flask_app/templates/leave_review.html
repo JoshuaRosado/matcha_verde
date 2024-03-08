@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/leave_review.css') }}">
+    <title>Leave a review</title>
+</head>
+<body>
+    <div class="review_container">
+        <form action="leave_review" method="post" class="review_input" name="review_input">
+            <h2 class="leave_review_title">Leave a review </h2>
+            <div class="review_input_block">
+                <h4>How would you rate it?</h4>
+    
+                <h4>Title your review</h4>
+                <input type="text" name="review_title" id="review_title" placeholder="title">
+                <h4>Write your review</h4>
+                <textarea name="review" id="review" cols="30" rows="12" placeholder="What do you think about the product..."></textarea>
+            </div>
+            <div class="leave_review_btns_block">
+                <input type="hidden" name="user_id" value="{{session['user_id']}}"> 
+                <button type="submit" value="leave_review" class="submit_review_btn" >Submit</button>
+
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
+
+{% endblock %}

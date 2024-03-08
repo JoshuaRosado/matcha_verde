@@ -11,19 +11,19 @@ from flask import flash
 
 # ======================= VIEW ITEM ========================
 
-@app.route('/see_review/<int:review_id>')
-def see_review(review_id, matcha_name):
-    review = Review.get_by_id(review_id)
-    matchas = Matcha.get_matcha_name(matcha_name)
+@app.route('/leave_review')
+def create_review():
+    # review = Review.get_by_id(review_id)
+    # matchas = Matcha.get_matcha_name(matcha_name)
     user = User.get_by_id(session["user_id"])
-    return render_template('see_review.html', review=review, user=user, matchas = matchas)
+    return render_template('leave_review.html', user=user)
 
 
 @app.route('/leave_review', methods = ['POST'])
 def leave_review_page():
     valid_review = Review.leave_a_review(request.form)
     if valid_review:
-        return redirect(f'/home')
+        return redirect(f'/see_review/<int:review_id>')
     return redirect('/leave_review')
 
 
