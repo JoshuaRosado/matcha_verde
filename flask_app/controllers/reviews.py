@@ -34,4 +34,4 @@ def matchas_page(matcha_name):
     review = Review.get_all_reviews()
     user = User.get_all()
     matcha = Matcha.get_matcha_name(matcha_name)
-    return render_template('matcha.html', user=user)
+    return render_template('matcha.html', user=user, review = review)
