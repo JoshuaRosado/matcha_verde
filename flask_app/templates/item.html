@@ -63,10 +63,11 @@
                     </div>
                     <p>4.92 out of 5 based on 59 reviews</p>
                 </div>
+                {% for review in reviews:  %}
                 <div class="review_blocks">
                     <div class="info">
-                        <h5 class="user_name">John Doe</h5>
-                        <p class="date_posted">Dec 27, 2023</p>
+                        <h5 class="user_name">{{review.user.first_name.title()}}</h5>
+                        <p class="date_posted">{{review.created_at.strftime('%b %d, %Y')}}</p>
                         <div class="stars_rate">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -76,31 +77,13 @@
                         </div>
                     </div>
                     <div class="message">
-                        <h5 class="msg_title">Nice product</h5>
+                        <h5 class="msg_title">{{review.review_title.title()}}</h5>
                         <p class="msg_content">
-                            Great flavor, not too strong and goes so well with almond milk. Absolutely love it
+                            {{review.message.title()}}
                         </p>
                     </div>
                 </div>
-                <div class="review_blocks">
-                    <div class="info">
-                        <h5 class="user_name">John Doe</h5>
-                        <p class="date_posted">Dec 27, 2023</p>
-                        <div class="stars_rate">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="message">
-                        <h5 class="msg_title">Nice product</h5>
-                        <p class="msg_content">
-                            Great flavor, not too strong and goes so well with almond milk. Absolutely love it
-                        </p>
-                    </div>
-                </div>
+                {% endfor %}
                 <div class="leave_review_btn_container">
                     <button type="submit" class="leave_review_btn">Leave a review<button>
                 </div>

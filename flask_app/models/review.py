@@ -18,8 +18,8 @@ class Review:
         self.message = review["message"]
         self.created_at = review["created_at"]
         self.updated_at = review["updated_at"]
-        self.user = None
-        self.matcha = None
+        # self.user = None
+        # self.matcha = None
         
         
 # =================== LEAVE REVIEW ==========================
