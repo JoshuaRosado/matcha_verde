@@ -1,16 +1,15 @@
 
 .review_container{
-    height: 100svh;
+    height: auto;
     color: rgba(255, 255, 255, 0.875);
     width: 100svw;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-bottom: 4svh;
     background: rgb(21, 13, 0);
 }
 form{
     width: 100svw;
-    padding-top: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +17,7 @@ form{
 }
 
 form h3{
-    margin-bottom: 6svh;
+    margin-bottom: 3svh;
     text-align: center;
 
 }
@@ -29,4 +28,27 @@ form h4{
 #review_title, textarea{
     width: 90svw;
     padding: 1svh;
+}
+
+.matcha_name_img_container{
+    display: flex;
+    height: 25svh;
+    margin-top: 15svh;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#leave_review_img{
+    height: 15svh;
+    object-fit: contain;
+    margin-bottom: 2svh;
+}
+
+.submit_review_btn{
+    font-size: 1rem;
+    border: .2rem solid rgba(104, 104, 104, 0.6);
+    background-color: rgba(255, 255, 255, 0.8) ;
+    border-radius: 4rem;
+    width: 30svh;
+    height: 5svh;
+    margin: 1rem;
 }

@@ -24,7 +24,7 @@ def create_review(matcha_name):
 def leave_review_page():
     valid_review = Review.leave_a_review(request.form)
     if valid_review:
-        return redirect(f'/item/<matcha_name>')
+        return redirect(item_page())
     return redirect('/leave_review')
 
 

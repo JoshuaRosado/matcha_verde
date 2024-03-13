@@ -12,7 +12,10 @@
     <div class="review_container">
         <form action="leave_review" method="post" class="review_input" name="review_input">
             <div class="review_input_block">
-                <h3>matcha.matcha_name</h3>
+                <div class="matcha_name_img_container">
+                    <h3>{{matchas.matcha_name.title()}}</h3>
+                    <img id="leave_review_img" src="../static/imgs/{{matchas.img}} " alt="matcha_img">
+                </div>
                 <h4>How would you rate it?</h4>
     
                 <h4>Title your review</h4>
