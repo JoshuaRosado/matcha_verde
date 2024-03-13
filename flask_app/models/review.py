@@ -18,7 +18,7 @@ class Review:
         self.message = review["message"]
         self.created_at = review["created_at"]
         self.updated_at = review["updated_at"]
-        # self.user = None
+        self.user = None
         # self.matcha = None
         
         
@@ -145,21 +145,18 @@ class Review:
 
     # =================== VALIDATE REVIEW'S INPUT ==========================
     @staticmethod
-    def is_valid(matcha_dict):
+    def is_valid(review_dict):
         valid = True
-        if len(matcha_dict["name"])< 1 :
-            flash("Name should be at least 2 characters")
+            
+        if len(review_dict["stars"])< 0:
+            flash("Item rating required")
             valid = False
             
-        if len(matcha_dict["stars"])< 0:
-            flash("Choose a star rate")
-            valid = False
-            
-        if len(matcha_dict["review_title"]) < 3:
+        if len(review_dict["review_title"]) < 3:
             flash ("Review title should be at least 3 characters")
             valid = False
             
-        if len(matcha_dict["message"]) < 10:
+        if len(review_dict["message"]) < 10:
             flash("Review content should be at least 10 characters")
             valid = False
         

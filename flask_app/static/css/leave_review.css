@@ -28,6 +28,7 @@ form h4{
 #review_title, textarea{
     width: 90svw;
     padding: 1svh;
+    border-radius: 1svh;
 }
 
 .matcha_name_img_container{
@@ -51,4 +52,19 @@ form h4{
     width: 30svh;
     height: 5svh;
     margin: 1rem;
+}
+
+@media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
+
+body{
+    background: rgb(21, 13, 0);
+}
+.matcha_name_img_container{
+    padding-top: 40svh;
+}
+.submit_review_btn{
+    height: 8svh;
+}
+
+
 }
