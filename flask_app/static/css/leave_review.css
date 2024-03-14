@@ -13,7 +13,7 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 
 form h3{
@@ -56,15 +56,29 @@ form h4{
 
 @media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
 
-body{
-    background: rgb(21, 13, 0);
-}
-.matcha_name_img_container{
-    padding-top: 40svh;
-}
-.submit_review_btn{
-    height: 8svh;
+    body{
+        background: rgb(21, 13, 0);
+    }
+    .matcha_name_img_container{
+        padding-top: 50svh;
+    }
+    .submit_review_btn{
+        height: 10svh;
+        width: 50svh
+    }
+
+    #leave_review_img{
+        height: 25svh;
+    }
 }
 
+@media screen and (min-device-width: 850px){
+
+    #review_title, textarea{
+        width: 75dvw;
+    }
+    form h3{
+        font-size: 3dvh;
+    }
 
 }

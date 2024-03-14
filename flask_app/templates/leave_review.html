@@ -10,6 +10,19 @@
 </head>
 <body>
     <div class="review_container">
+        <div class="error_share  mx-auto ">
+            {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+
+            {% for message in messages %}
+
+            <p class="error_sharing text-center">{{message}}</p> 
+            {% endfor %}
+            {% endif %}
+
+            {% endwith %}
+        </div>
         <form action="/create_review" method="post" class="review_input" name="review_input">
             <div class="review_input_block">
                 <div class="matcha_name_img_container">
@@ -17,11 +30,13 @@
                     <img id="leave_review_img" src="../static/imgs/{{matchas.img}} " alt="matcha_img">
                 </div>
                 <h4>How would you rate it?</h4>
+                <input type="number" name="stars" id="stars">
+                <input type="text" name="name" id="name" placeholder="name">
     
                 <h4>Title your review</h4>
                 <input type="text" name="review_title" id="review_title" placeholder="What's most important to know?">
                 <h4>Write your review</h4>
-                <textarea name="review" id="review" cols="30" rows="10" placeholder="What did you like or dislike?"></textarea>
+                <textarea name="message" id="review" cols="30" rows="10" placeholder="What did you like or dislike?"></textarea>
             </div>
             <div class="leave_review_btns_block">
                 <input type="hidden" name="user_id" value="{{session['user_id']}}"> 

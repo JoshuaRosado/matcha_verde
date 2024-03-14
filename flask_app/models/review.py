@@ -19,7 +19,7 @@ class Review:
         self.created_at = review["created_at"]
         self.updated_at = review["updated_at"]
         self.user = None
-        # self.matcha = None
+        self.matcha = None
         
         
 # =================== LEAVE REVIEW ==========================
@@ -92,8 +92,8 @@ class Review:
                 matchas.created_at,
                 matchas.updated_at
                 FROM reviews
-                JOIN users ON users.id = reviews.user_id
-                JOIN matchas ON matchas.id = reviews.matcha_id; """
+                INNER JOIN users ON users.id = reviews.user_id
+                INNER JOIN matchas ON matchas.id = reviews.matcha_id; """
         review_data = connectToMySQL(DB).query_db(query)
         
         reviews = []
