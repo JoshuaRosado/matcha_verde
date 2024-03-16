@@ -4,6 +4,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 from flask_bcrypt import Bcrypt
 from flask_app.models import user
+from flask_app.models import review
 
 
 DB = "matcha_verde"
@@ -27,6 +28,8 @@ class Matcha:
         self.reviews = []
         self.user = None
 
+
+
     @classmethod
     def get_matcha_name(cls, matcha_dict):
         data = {"matcha_name": matcha_dict}
@@ -49,7 +52,6 @@ class Matcha:
         )
         return matcha
     
-
     @classmethod
     def get_all_matchas(cls):
         query = """ SELECT 

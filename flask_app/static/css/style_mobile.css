@@ -129,16 +129,14 @@ details[open] > #bag_summary{
 #bag_summary span::after{
     content: 'x';
     opacity: 0;
-    transform: translateY(150svh);
     
 
 }
 details[open] >  #bag_summary span::after{
     content: 'x';
-    transform: translateY(0);
     font-size: 2rem;
     opacity: 1;
-    transition: transform 1.3s ease-in-out;
+    transition: opacity 1.3s ease-in-out;
     color: rgba(219, 217, 217, 0.990);
 }
 details[open] >  #bag_summary span::before{

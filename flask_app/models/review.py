@@ -18,8 +18,8 @@ class Review:
         self.message = review["message"]
         self.created_at = review["created_at"]
         self.updated_at = review["updated_at"]
-        self.user = None
-        self.matcha = None
+        self.user = user
+        self.matcha = matcha
         
         
 # =================== LEAVE REVIEW ==========================
@@ -92,11 +92,37 @@ class Review:
                 matchas.created_at,
                 matchas.updated_at
                 FROM reviews
-                INNER JOIN users ON users.id = reviews.user_id
-                INNER JOIN matchas ON matchas.id = reviews.matcha_id; """
+                INNER JOIN users 
+                ON users.id = reviews.user_id
+                INNER JOIN matchas 
+                ON matchas.id = matcha_id; """
         review_data = connectToMySQL(DB).query_db(query)
-        
-        reviews = []
+        review_users = []
+        # review_matchas = []
+        # for review in review_data:
+            
+        #     review_obj = cls(review)
+            
+        #     review_obj.matcha = matcha.Matcha(
+        #     {
+        #         "id": review["id"],
+        #         "matcha_name": review["matcha_name"],
+        #         "matcha_qty": review["matcha_qty"],
+        #         "matcha_short_description": review["matcha_short_description"],
+        #         "taste_description": review["taste_description"],
+        #         "taste_notes": review["taste_notes"],
+        #         "price": review["price"],
+        #         "img": review["img"],
+        #         "created_at": review["created_at"],
+        #         "updated_at": review["updated_at"],
+        #         "small_img_one": review["small_img_one"],
+        #         "small_img_two": review["small_img_two"],
+        #         "small_img_three": review["small_img_three"],
+        #         "small_img_four": review["small_img_four"]
+                
+        #     }
+        # )
+        #     review_matchas.append(review_obj)
         
         for review in review_data:
             
@@ -114,8 +140,14 @@ class Review:
                 
             }
         )
-            reviews.append(review_obj)
-        return reviews
+            review_users.append(review_obj)
+        return review_users
+
+
+
+
+
+
 
 
     # =================== GET REVIEW BY ID ==========================

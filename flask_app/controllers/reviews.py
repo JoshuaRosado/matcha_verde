@@ -25,7 +25,7 @@ def create_review():
     valid_review = Review.leave_a_review(request.form)
     if valid_review:
         return redirect('/home')
-    return redirect('/home')
+    return redirect('/faq')
 
 
 @app.route('/item/<matcha_name>')
