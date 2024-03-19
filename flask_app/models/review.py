@@ -19,7 +19,7 @@ class Review:
         self.created_at = review["created_at"]
         self.updated_at = review["updated_at"]
         self.user = user
-        self.matcha = matcha
+        self.matcha = matcha.Matcha
         
         
 # =================== LEAVE REVIEW ==========================
@@ -29,7 +29,7 @@ class Review:
             return False
         
         query = """ INSERT INTO reviews (name, stars, review_title, message, user_id, matcha_id)
-        VALUES (%(name)s, %(stars)s, %(review_title)s, %(message)s, %(user_id)s, %(matcha_id)s);"""
+        VALUES (%(id)s,%(name)s, %(stars)s, %(review_title)s, %(message)s, %(user_id)s, %(matcha_id)s);"""
         
         review = connectToMySQL(DB).query_db(query, review_dict)
         return review
@@ -147,7 +147,50 @@ class Review:
 
 
 
-
+# ============================GET MATCHA'S USER WITH REVIEWS=======
+    @classmethod
+    def get_matcha_user_review(cls,big_data):
+        data = {"matcha_name": big_data}
+        query = """ SELECT * FROM reviews
+        JOIN users on users.id = reviews.user_id
+        JOIN matchas on matchas.id = reviews.matcha_id
+        WHERE matchas.matchas_name = %(matcha_name)s;"""
+        
+        results = connectToMySQL(DB).query_db(query,data)
+        results = results[0]
+        review = cls(results)
+        
+        review.user = user.User(
+            {"id": results["user_id"],
+                "first_name": results["first_name"],
+                "last_name": results["last_name"],
+                "email": results["email"],
+                "password": False,
+                "created_at": results["created_at"],
+                "updated_at": results["updated_at"]
+                }
+        )
+        review.matcha = matcha.Matcha(
+            {
+                "id": results["matcha_id"],
+                "matcha_name": results["matcha_name"],
+                "matcha_qty": results["matcha_qty"],
+                "matcha_short_description": results ["matcha_short_description"],
+                "taste_description": results["taste_description"],
+                "taste_notes": results["taste_notes"],
+                "price": results["price"],
+                "img": results["img"],
+                "small_img_one": results["small_img_one"],
+                "small_img_two": results["small_img_two"],
+                "small_img_three": results["small_img_three"],
+                "small_img_four": results["small_img_four"],
+                "created_at": results["created_at"],
+                "updated_at": results["updated_at"],
+                
+                
+            }
+        )
+        return review
 
 
     # =================== GET REVIEW BY ID ==========================
@@ -175,6 +218,47 @@ class Review:
         return review
 
 
+
+# ============================ GET REVIEW BY MATCHA ============
+
+    @classmethod
+    def get_reviews_by_matcha(cls, reviews_dict):
+        data =  {"id" : reviews_dict}
+        query  =""" SELECT * FROM reviews
+        JOIN matchas on matchas.id = reviews.matcha_id
+        WHERE reviews.id = %(id)s;"""
+        
+        result = connectToMySQL(DB).query_db(query, data)
+        print("result of query:")
+        print(result)
+        result = result[0]
+        print(result)
+        review = cls(result)
+        
+        
+        
+        
+        review.matcha = matcha.Matcha(
+            {
+                "id": result["user_id"],
+                "matcha_name": result["matcha_name"],
+                "matcha_qty": result["matcha_qty"],
+                "matcha_short_description": result ["matcha_short_description"],
+                "taste_description": result["taste_description"],
+                "taste_notes": result["taste_notes"],
+                "price": result["price"],
+                "img": result["img"],
+                "small_img_one": result["small_img_one"],
+                "small_img_two": result["small_img_two"],
+                "small_img_three": result["small_img_three"],
+                "small_img_four": result["small_img_four"],
+                "created_at": result["created_at"],
+                "updated_at": result["updated_at"],
+                
+                
+            }
+        )
+        return review
     # =================== VALIDATE REVIEW'S INPUT ==========================
     @staticmethod
     def is_valid(review_dict):

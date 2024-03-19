@@ -15,7 +15,8 @@ def home_page():
         return redirect('/')
     user = User.get_by_id(session["user_id"])
     matchas = Matcha.get_all_matchas()
-    return render_template('home.html', user = user, matchas=matchas)
+    review = Review.get_all_reviews()
+    return render_template('home.html', user = user, matchas=matchas, review =review)
         
 @app.route('/about')
 def about_page():
@@ -33,7 +34,8 @@ def faq_page():
 def matchas_page():
     user = User.get_by_id(session["user_id"])
     matchas = Matcha.get_all_matchas()
-    return render_template('matcha.html', user=user, matchas= matchas)
+    review = Review.get_all_reviews()
+    return render_template('matcha.html', user=user, matchas= matchas, review = review)
 
 @app.route('/recipes')
 def recipes_page():
@@ -44,4 +46,5 @@ def recipes_page():
 def organic_page():
     user = User.get_by_id(session["user_id"])
     matchas = Matcha.get_all_matchas()
-    return render_template('organic.html', user=user, matchas =matchas)
+    review = Review.get_all_reviews()
+    return render_template('organic.html', user=user, matchas =matchas, review=review)

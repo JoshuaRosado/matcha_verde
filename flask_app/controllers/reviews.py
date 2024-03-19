@@ -31,6 +31,6 @@ def create_review():
 @app.route('/item/<matcha_name>')
 def item_page(matcha_name):
     user = User.get_by_id(session['user_id'])
-    matchas = Matcha.get_matcha_name(matcha_name)
     reviews = Review.get_all_reviews()
-    return render_template('item.html', user=user, matchas = matchas, reviews = reviews)
+    review = Review.get_matcha_user_review(matcha_name)
+    return render_template('item.html', user=user,review=review, reviews = reviews)
