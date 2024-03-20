@@ -157,6 +157,8 @@ class Review:
         WHERE matchas.matcha_name = %(matcha_name)s;"""
         
         results = connectToMySQL(DB).query_db(query,data)
+        if len(results) == 0:
+            return results
         results = results[0]
         review = cls(results)
         
