@@ -154,7 +154,7 @@ class Review:
         query = """ SELECT * FROM reviews
         JOIN users on users.id = reviews.user_id
         JOIN matchas on matchas.id = reviews.matcha_id
-        WHERE matchas.matchas_name = %(matcha_name)s;"""
+        WHERE matchas.matcha_name = %(matcha_name)s;"""
         
         results = connectToMySQL(DB).query_db(query,data)
         results = results[0]
@@ -185,7 +185,7 @@ class Review:
                 "small_img_three": results["small_img_three"],
                 "small_img_four": results["small_img_four"],
                 "created_at": results["created_at"],
-                "updated_at": results["updated_at"],
+                "updated_at": results["updated_at"]
                 
                 
             }

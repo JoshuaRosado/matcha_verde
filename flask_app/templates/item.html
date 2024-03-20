@@ -12,21 +12,21 @@
         <div class="container item_page_container">
             <div class="header_container">
                 <h5 class="type"> Matcha </h5>
-                <h5 class="matcha_small_name"> -{{matchas.matcha_qty}} </h5>
+                <h5 class="matcha_small_name"> -{{review.matcha.matcha_qty}} </h5>
             </div>
             <div class="item_container">
                 <div class="item_img_block">
-                    <img src="../static/imgs/{{matchas.img}}" alt="main_img" class="main_img" id="main_img">
+                    <img src="../static/imgs/{{review.matcha.img}}" alt="main_img" class="main_img" id="main_img">
                     <div class="row_img_group">
-                        <img src="../static/imgs/{{matchas.img}}" alt="small_matcha_img" class="small_img">
-                        <img src="../static/imgs/{{matchas.small_img_one}}" alt="small_matcha_img" class="small_img">
-                        <img src="../static/imgs/{{matchas.small_img_two}}" alt="small_matcha_img" class="small_img">
-                        <img src="../static/imgs/{{matchas.small_img_three}}" alt="small_matcha_img" class="small_img">
+                        <img src="../static/imgs/{{review.matcha.img}}" alt="small_matcha_img" class="small_img">
+                        <img src="../static/imgs/{{review.matcha.small_img_one}}" alt="small_matcha_img" class="small_img">
+                        <img src="../static/imgs/{{review.matcha.small_img_two}}" alt="small_matcha_img" class="small_img">
+                        <img src="../static/imgs/{{review.matcha.small_img_three}}" alt="small_matcha_img" class="small_img">
                     </div>
                 </div>
                 <div class="item_description_block">
-                    <p class="taste_description">{{matchas.matcha_short_description}}</p>
-                    <h2 class="matcha_name">{{matchas.matcha_name.title()}} - {{matchas.matcha_qty}}</h2>
+                    <p class="taste_description">{{review.matcha.matcha_short_description}}</p>
+                    <h2 class="matcha_name">{{review.matcha.matcha_name.title()}} - {{review.matcha.matcha_qty}}</h2>
                     <p class="review_stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -34,7 +34,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     <span class="review_count">(59)</span></p>
-                    <p class="item_price"> ${{matchas.price}} </p>
+                    <p class="item_price"> ${{review.matcha.price}} </p>
                     <div class="btn_options_row">
                         <div class="counter">
                             <button id="minus" onclick="decreaseBtn(event, this)">-</button>
@@ -43,10 +43,10 @@
                         </div>
                         <button class="item_add_to_bag_btn" type="submit">Add to bag</button>
                     </div>
-                    <p class="below_item_description">{{matchas.taste_description}}</p>
+                    <p class="below_item_description">{{review.matcha.taste_description}}</p>
                     <details class=" item_details taste_notes">
                         <summary class="item_summary"> Taste Notes <span></span></summary>
-                            <h6 class="details_info">{{matchas.taste_notes}}</h6>
+                            <h6 class="details_info">{{review.matcha.taste_notes}}</h6>
                             
                     </details>
                 </div>
@@ -79,13 +79,13 @@
                     <div class="message">
                         <h5 class="msg_title">{{review.review_title.title()}}</h5>
                         <p class="msg_content">
-                            {{matchas.review.message.title()}}
+                            {{review.message.title()}}
                         </p>
                     </div>
                 </div>
                 {% endfor %}
                 <div class="leave_review_btn_container">
-                    <a href="/leave_review/{{matchas.matcha_name}}">
+                    <a href="/leave_review/{{review.matcha.matcha_name}}">
                     <button type="submit" class="leave_review_btn">Leave a review<button>
                     </a>
                 </div>
