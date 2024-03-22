@@ -29,7 +29,7 @@ class Review:
             return False
         
         query = """ INSERT INTO reviews (name, stars, review_title, message, user_id, matcha_id)
-        VALUES (%(id)s,%(name)s, %(stars)s, %(review_title)s, %(message)s, %(user_id)s, %(matcha_id)s);"""
+        VALUES (%(name)s, %(stars)s, %(review_title)s, %(message)s, %(user_id)s, %(matcha_id)s);"""
         
         review = connectToMySQL(DB).query_db(query, review_dict)
         return review

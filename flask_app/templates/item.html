@@ -63,9 +63,6 @@
                     </div>
                     <p>4.92 out of 5 based on 59 reviews</p>
                 </div>
-                {% for review in reviews:  %}
-                    {% if review.matcha.matcha_id == 3:%}
-                    
                     <div class="review_blocks">
                         <div class="info">
                             <h5 class="user_name">{{review.user.first_name.title()}}</h5>
@@ -85,8 +82,6 @@
                             </p>
                         </div>
                     </div>
-                    {% endif %}
-                {% endfor %}
                 <div class="leave_review_btn_container">
                     <a href="/leave_review/{{review.matcha.matcha_name}}">
                     <button type="submit" class="leave_review_btn">Leave a review<button>
