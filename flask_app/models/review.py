@@ -98,7 +98,7 @@ class Review:
                 ON matchas.id = matcha_id; """
         review_data = connectToMySQL(DB).query_db(query)
         review_users = []
-        # review_matchas = []
+        review_matchas = []
         # for review in review_data:
             
         #     review_obj = cls(review)
@@ -157,9 +157,12 @@ class Review:
         WHERE matchas.matcha_name = %(matcha_name)s;"""
         
         results = connectToMySQL(DB).query_db(query,data)
-        if len(results) == 0:
-            return results
-        results = results[0]
+        # NEED TO RETURN ALL REVIEWS from the each matcha_name
+        for result in results:
+            print(f"$$$$$$$$$$$$$$$$$$$$$$$$$${result}")
+        results= result
+        
+        
         review = cls(results)
         
         review.user = user.User(
@@ -193,6 +196,8 @@ class Review:
             }
         )
         return review
+
+
 
 
     # =================== GET REVIEW BY ID ==========================
