@@ -1,16 +1,29 @@
 
+// ======================================
+// FUNC to HAVE ONE DETAILS TAG OPEN AT A TIME
+
+if (document.querySelector('details')) {
+    const details = document.querySelectorAll('details');
+
+    details.forEach((targetDetail) => {
+        targetDetail.addEventListener("click", () => {
+            // CLOSE ALL DETAILS THAT ARE NOT TARGET BY THE USER(targetDetail)
+            // FOR EACH DETAILS
+            details.forEach((detail) => {
+                // THAT IS NOT OPENED OR TARGET
+                if (detail !== targetDetail) {
+                    // CLOSE TAG
+                    detail.removeAttribute("open");
+                }
+            });
+        });
+    });
+}
+// ======================================
+
+// ====== landing page title anim ======
 var mainTitle = document.querySelector('.main_title');
 var matchaLogo = document.querySelector('.matcha_logo');
-
-// function to close bag and account window when clicking elsewhere
-let details = [...document.getElementsByClassName('.account_details')];
-document.addEventListener('click', function(e){
-    if(details.some(f => f.contains(e.target))){
-    details.forEach(f => f.removeAttribute('open'));
-    }
-})
-
-// ======================================
     function TitleColorAnim(){
         mainTitle.classList.add("main_title_anim");
     }
@@ -36,6 +49,7 @@ current = 0
     //     slider.classList.add("fade_in");
     // }
 
+    // RESET FUNC
     function reset(){
         for (let i = 0; i < slider.length; i++) {
             slider[i].style.display = "none";
