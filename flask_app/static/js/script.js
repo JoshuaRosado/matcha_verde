@@ -2,9 +2,15 @@
 var mainTitle = document.querySelector('.main_title');
 var matchaLogo = document.querySelector('.matcha_logo');
 
+// function to close bag and account window when clicking elsewhere
+let details = [...document.getElementsByClassName('.account_details')];
+document.addEventListener('click', function(e){
+    if(details.some(f => f.contains(e.target))){
+    details.forEach(f => f.removeAttribute('open'));
+    }
+})
 
-
-
+// ======================================
     function TitleColorAnim(){
         mainTitle.classList.add("main_title_anim");
     }

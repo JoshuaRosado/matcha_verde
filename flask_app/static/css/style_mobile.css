@@ -110,7 +110,68 @@ html,.home_container, body{
 .nav_toggle_label:has(input:checked) + .nav_block{
     translate: 0;
 }
+/* ================================================================= */
 
+
+/* ============ ACCOUNT BLOCK WINDOW =========== */
+details[open] > #account_summary{
+    position: relative;
+    top: 0rem;
+    right: 0rem;
+    transition: 5s ease-in-out;
+}
+#account_summary span::after{
+    content: 'x';
+    opacity: 0;
+    
+
+}
+details[open] >  #account_summary span::after{
+    content: 'x';
+    font-size: 2rem;
+    opacity: 1;
+    transition: opacity 1.3s ease-in-out;
+    color: rgba(219, 217, 217, 0.990);
+}
+details[open] >  #account_summary span::before{
+    content: '';
+}
+
+
+#account_summary span::after{
+    position: absolute;
+    top: 4rem ;
+    right: 65svw;
+    z-index: 50;
+}
+
+.account_container{
+    z-index: -10;
+    border-bottom: 2px solid rgba(219, 217, 217, 0.3);
+    color:rgba(219, 217, 217, 0.98) ;
+    display: flex;
+    background: rgb(21, 13, 0);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3.5rem;
+    right: 0rem;
+    width: 100svw;
+    height: auto;
+    transform: translateX(-120svh);
+    transform-origin: top;
+}
+
+
+details[open] > .account_container{
+    transform: translateX(0svh);
+    transition: transform 1s ease ;
+}
+
+#account_details[open] > .bag_container{
+    opacity: 0;
+}
 /* ================================================================= */
 /*  ========== BAG BLOCK WINDOW ============*/
 details{
