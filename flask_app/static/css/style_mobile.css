@@ -130,7 +130,7 @@ details[open] >  #account_summary span::after{
     content: 'x';
     font-size: 2rem;
     opacity: 1;
-    right: 29.5svw;
+    right: 36.5svw;
     top: 7svh;
     transition: opacity 1.3s ease-in-out;
     color: rgba(219, 217, 217, 0.990);
@@ -164,15 +164,31 @@ details[open] >  #account_summary span::before{
     display: flex;
     background: rgb(21, 13, 0);
     flex-direction: column;
-    padding-top: 10svh;
+    padding-top: 6svh;
     align-items: center;
     border-radius : 0% 0% 5% 5%;
-    width: 40svw;
+    width: 50svw;
     height: 60svh;
 }
-.account_container_title{
+.account_inner_block h3{
     font-size: 1.2rem;
+    margin: 1.5rem 0rem;
 }
+
+.account_inner_block a {
+    font-weight:lighter;
+}
+
+#theme_btn{
+    border: 2px solid rgba(166, 166, 166, 0.279);
+    border-radius: 40rem;
+    width: 35svw;
+    height: 5svh;
+}
+
+#slide_theme_btn
+
+
 
 /* ================================================================= */
 /*  ========== BAG BLOCK WINDOW ============*/
