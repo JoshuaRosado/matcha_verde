@@ -24,10 +24,10 @@
 /* ======================== HEADER CONTAINER=============================== */
 .header_container{
     height: 10svh;
-    margin-top: 7svh;
+
     margin-bottom: -3svh;
     width: 100svw;
-    padding-top: 5.5rem;
+    padding-top: 8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -310,13 +310,12 @@ details span::before, details span::after{
     }
 
     .header_container{
-        padding-top: 20dvh;
+        padding-top: 30dvh;
     }
     .item_container{
         height: auto;
         display: flex;
         flex-direction: row;
-        /* align-items: center; */
         justify-content: space-evenly;
     }
     
@@ -384,7 +383,7 @@ details span::before, details span::after{
     }
 
     .header_container{
-        padding-top: 3dvh;
+        padding-top: 18dvh;
         height: 4dvh;
         margin-bottom: -15dvh;
         

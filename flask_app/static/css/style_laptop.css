@@ -1,6 +1,6 @@
 @media screen and (min-device-width: 850px){
     .nav{
-        position: relative;
+        position: fixed;
         width: 100svw;
         justify-content: space-around;
         flex-direction: row;
@@ -11,7 +11,7 @@
     }
     .special_announcement_bar{
         display: flex;
-        position: absolute;
+        position: fixed;
     }
     #home_matcha_logo{
         display: none;
@@ -95,7 +95,28 @@
     }
 
     /* ================================================================= */
-    
+    /* ========== BTN HOVER EFFECT =========== */
+    button{
+        transition: .4s ease-in-out;
+    }
+    button:hover{
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: .6s ease-in-out;
+    }
+    /* ============ ACCOUNT DROPDOWN WINDOW ===============*/
+    .account_inner_block{
+        width: 20dvw;
+    }
+    #theme_btn{
+        width: 15dvw;
+    }
+    #slide_theme_btn{
+        height: 4.3dvh;
+        width: 6.5dvw;
+    }
+
+
+    /* ======================================================= */
     /* ============================= SLIDE AREA ================================= */
     .slide_info {
         width: 100svw;
@@ -110,7 +131,7 @@
     }
 
     .slide{
-        margin-top: 0rem;
+        margin-top: 5rem;
     }
 
     .slide_item_description_main{
@@ -133,6 +154,8 @@
         display: flex;
         flex-direction: column;
         text-align: center;
+        padding-top: 6.5dvh;
+        height: 40dvh;
     }
     .slide_img_container{
         height: 60svh;
@@ -172,15 +195,11 @@
     #sayaka_img{
         height: 16rem;
     }
-
-
-    .slide_imgs_container{
-        background: linear-gradient(to left, black, rgba(255, 255, 255, 0.218));
+    .slide_add_to_bag_btn{
+        padding: .4rem;
     }
-
      /* ================================================================= */
-
-     /* ============================HELP CONTAINER AREA ========================= */
+    /* ============================HELP CONTAINER AREA ========================= */
 
     .help_container{
         height: 65svh;

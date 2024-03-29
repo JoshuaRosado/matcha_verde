@@ -186,7 +186,13 @@ details[open] >  #account_summary span::before{
     height: 5svh;
 }
 
-#slide_theme_btn
+#slide_theme_btn{
+    border: 2px solid rgba(93, 92, 92, 0.289);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.422);
+    width: 16dvw;
+    height: 4svh;
+    border-radius: 25rem;
+}
 
 
 

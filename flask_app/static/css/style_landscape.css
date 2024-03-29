@@ -29,8 +29,16 @@
         height: 70dvh;
     }
     #theme_btn{
-        width: 26dvw;
-        height: 6dvh;
+        width: 18dvw;
+        height: 8dvh;
+    }
+    
+    #slide_theme_btn{
+        border: 2px solid rgba(93, 92, 92, 0.289);
+        box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.422);
+        width: 8dvw;
+        height: 7dvh;
+        border-radius: 25rem;
     }
 
     /* ======================================================== */

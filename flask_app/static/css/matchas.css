@@ -150,7 +150,9 @@ body{
         margin-top: -15dvh;
         padding: 0;
     }
-
+    .matcha_info_block{
+        margin-top: 20dvh;
+    }
 
     .header_bg{
         height: 60dvh;
