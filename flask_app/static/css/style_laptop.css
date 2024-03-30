@@ -99,14 +99,39 @@
     button{
         transition: .4s ease-in-out;
     }
-    button:hover{
-        background-color: rgba(255, 255, 255, 0.5);
+    .btn_light:hover{
+
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.078);
+        color: white;
         transition: .6s ease-in-out;
+    }
+
+    .btn_dark:hover{
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 2px solid rgba(255, 255, 255, 0.078);
+        color: black;
     }
     /* ============ ACCOUNT DROPDOWN WINDOW ===============*/
     .account_inner_block{
         width: 20dvw;
     }
+
+    .account_inner_block h3{
+        font-size: 1.3rem;
+        margin: 1.5rem 0rem;
+    }
+    
+    .account_inner_block a {
+        font-weight:lighter;
+    }
+
+    details[open] >  #account_summary span::after{
+        right: 10dvw;
+        top: 5dvh;
+        font-size: 2.5rem;
+    }
+
     #theme_btn{
         width: 15dvw;
     }

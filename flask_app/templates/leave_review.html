@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/leave_review.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Leave a review</title>
 </head>
-<body>
+<body class="leave_review_body">
     <div class="review_container">
         <div class="error_share  mx-auto ">
             {% with messages = get_flashed_messages() %}
@@ -30,9 +31,15 @@
                     <img id="leave_review_img" src="../static/imgs/{{matchas.img}} " alt="matcha_img">
                 </div>
                 <h4>How would you rate it?</h4>
-                <input type="number" name="stars" id="stars">
-                <input type="text" name="name" id="name" placeholder="name">
-    
+                <div class="rating-wrapper">
+                    <i class="fa-solid fa-star star" id="1"></i>
+                    <i class="fa-solid fa-star star" id="2"></i>
+                    <i class="fa-solid fa-star star" id="3"></i>
+                    <i class="fa-solid fa-star star" id="4"></i>
+                    <i class="fa-solid fa-star star" id="5"></i>
+                </div>
+                <input type="hidden" value="">
+
                 <h4>Title your review</h4>
                 <input type="text" name="review_title" id="review_title" placeholder="What's most important to know?">
                 <h4>Write your review</h4>
@@ -42,12 +49,12 @@
                 
                 <input type="hidden" name="user_id" value="{{session['user_id']}}"> 
                 <input type="hidden" name="matcha_id" value="{{matchas.id}}">
-                <button type="submit" value="leave_review" class="submit_review_btn" >Submit</button>
+                <button type="submit" value="leave_review" class="submit_review_btn btn_light" >Submit</button>
 
             </div>
         </form>
     </div>
-    
+    <script src="{{url_for('static', filename='js/leave_review.js')}}"></script>
 </body>
 </html>
 

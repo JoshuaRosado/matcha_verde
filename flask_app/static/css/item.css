@@ -202,10 +202,9 @@ details span::before, details span::after{
     font-size: 1.4rem;
 }
 
-.stars i.active{
+/* .stars i.active{
     color: rgb(183, 223, 158);
-
-}
+} */
 
 /* ===================================================================== */
 

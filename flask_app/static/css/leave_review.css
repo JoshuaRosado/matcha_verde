@@ -8,6 +8,16 @@
     padding-bottom: 4svh;
     background: rgb(21, 13, 0);
 }
+
+.rating-checked { 
+    filter: none !important;
+    color: rgb(183, 223, 158);
+}
+.star{
+    filter: invert(85%) sepia(1%) saturate(0%) hue-rotate(161deg) brightness(101%) contrast(104%);
+    padding-right: 3px;
+    font-size: 3dvh;
+}
 form{
     width: 100svw;
     display: flex;
@@ -56,7 +66,7 @@ form h4{
 
 @media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
 
-    body{
+    .leave_review_body{
         background: rgb(21, 13, 0);
     }
     .matcha_name_img_container{
@@ -74,11 +84,26 @@ form h4{
 
 @media screen and (min-device-width: 850px){
 
+    .review_container{
+        padding-top: 15dvh;
+    }
     #review_title, textarea{
         width: 75dvw;
     }
     form h3{
         font-size: 3dvh;
     }
+    .btn_light:hover{
 
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.078);
+        color: white;
+        transition: .6s ease-in-out;
+    }
+    #leave_review_img{
+        height: 30dvh;
+    }
+    .submit_review_btn{
+        margin-top: 5dvh;
+    }
 }

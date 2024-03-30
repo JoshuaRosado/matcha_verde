@@ -7,6 +7,9 @@
         text-decoration: none;
         box-sizing: border-box;
     }
+    /* html,.home_container,.footer_container, body{
+        background:rgb(75, 171, 15);
+    } */
     /* ======================= BAG COUNTER =================== */
     details[open] > .bag_container{
         overflow: scroll;
