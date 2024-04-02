@@ -369,6 +369,10 @@ input::-webkit-inner-spin-button {
     text-decoration: none;
 }
 
+#account_summary, #bag_summary{
+    font-weight: 600;
+}
+
 .account_section_icons{
     color: rgba(219, 217, 217, 0.3);
 }
@@ -377,7 +381,7 @@ input::-webkit-inner-spin-button {
     font-weight: 600;
     transition: .5s ease-in-out;
 }
-.nav_account_section a:hover, #bag_summary:hover{
+#account_summary:hover, #bag_summary:hover{
     color: white;
     transition: .2s ease-in-out;
 }
