@@ -48,3 +48,14 @@ def organic_page():
     matchas = Matcha.get_all_matchas()
     review = Review.get_all_reviews()
     return render_template('organic.html', user=user, matchas =matchas, review=review)
+
+@app.route('/_ajax_user_input')
+def ajax_user_input():
+    global user_input
+    user_input = request.args.get('user_input', 0, type=int)
+    return 'ok'
+
+@app.route("/quiz")
+def quiz():
+    quiz_dict = Matcha.start_quiz(user_input)
+    return render_template('quiz.html', quiz_dict = quiz_dict)

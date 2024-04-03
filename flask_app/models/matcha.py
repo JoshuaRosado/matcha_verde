@@ -81,5 +81,23 @@ class Matcha:
             
             matchas.append(matcha_obj)
         return matchas
-            
     
+    
+    # ==================== USER QUIZ FUNCTION (retrieving) ==============
+    user_input = None
+
+    @classmethod 
+    def start_quiz(user_input):
+        quiz = []
+        questions = {"question_1": "I like my product to be...",
+                    "question_2": "With is your preferred flavor",
+                    }
+        quiz.append(questions)
+        options = { "options_for_q1": ["regular","organic"],
+                "options_for_q2":["strong / rich", "light / smooth"]}
+        quiz.append(options)
+        return quiz
+        
+
+        
+        
