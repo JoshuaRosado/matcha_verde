@@ -84,20 +84,32 @@ class Matcha:
     
     
     # ==================== USER QUIZ FUNCTION (retrieving) ==============
-    user_input = None
-
-    @classmethod 
-    def start_quiz(user_input):
-        quiz = []
-        questions = {"question_1": "I like my product to be...",
-                    "question_2": "With is your preferred flavor",
-                    }
-        quiz.append(questions)
-        options = { "options_for_q1": ["regular","organic"],
-                "options_for_q2":["strong / rich", "light / smooth"]}
-        quiz.append(options)
-        return quiz
+    @classmethod
+    def start_quiz():
+        print("Get to know your type of matcha")
+        q1 = input("Matcha type, regular or organic?")
+        options_q1 = ["regular", "organic"]
+        if q1 == options_q1[0]:
+            q1_regular = input("Do you prefer strong rich flavor or light smooth?")
+            options_q1_regular = ["strong rich","light smooth"]
+            if q1_regular == options_q1_regular[0]:
+                print("Sayaka and Ummon")
+            elif q1_regular == options_q1_regular[1]:
+                print("Hatsu")
+            else:
+                False
+                
+        elif q1 == options_q1[1]:
+            q1_organic = input("Do you prefer a light and snappy flavor or more robust?")
+            options_q1_organic = ["light and snappy", "robust"]
+            if q1_organic == options_q1_organic[0]:
+                print("Organic Matcha")
+            elif q1_organic == options_q1_organic[1]:
+                print("Premium Organic Matcha")
+            else: 
+                False
+        else:
+            False
         
-
         
         
