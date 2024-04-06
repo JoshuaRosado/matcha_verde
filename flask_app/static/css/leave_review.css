@@ -18,6 +18,9 @@
     padding-right: 3px;
     font-size: 3dvh;
 }
+input[type="radio"]{
+    display: none;
+}
 form{
     width: 100svw;
     display: flex;

@@ -28,8 +28,8 @@ class Review:
         if not cls.is_valid(review_dict):
             return False
         
-        query = """ INSERT INTO reviews (name, stars, review_title, message, user_id, matcha_id)
-        VALUES (%(name)s, %(stars)s, %(review_title)s, %(message)s, %(user_id)s, %(matcha_id)s);"""
+        query = """ INSERT INTO reviews (stars, review_title, message, user_id, matcha_id)
+        VALUES (%(stars)s, %(review_title)s, %(message)s, %(user_id)s, %(matcha_id)s);"""
         
         review = connectToMySQL(DB).query_db(query, review_dict)
         return review
@@ -271,9 +271,9 @@ class Review:
     def is_valid(review_dict):
         valid = True
             
-        if len(review_dict["stars"])< 0:
-            flash("Item rating required")
-            valid = False
+        # if len(review_dict["stars"])< 0:
+        #     flash("Item rating required")
+        #     valid = False
             
         if len(review_dict["review_title"]) < 3:
             flash ("Review title should be at least 3 characters")

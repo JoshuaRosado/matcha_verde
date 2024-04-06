@@ -10,5 +10,4 @@ function updateStarRating(evt){
         }
     }
     document.querySelector('#rating').value = evt.target.id;
-    console.log("CLICKKKKKKKed")
 }
