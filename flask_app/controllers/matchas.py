@@ -17,7 +17,7 @@ def home_page():
     matchas = Matcha.get_all_matchas()
     review = Review.get_all_reviews()
     return render_template('home.html', user = user, matchas=matchas, review =review)
-        
+
 @app.route('/about')
 def about_page():
     user = User.get_by_id(session["user_id"])
