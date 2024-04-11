@@ -3,6 +3,7 @@ from flask_app import app
 from flask_app.models.user import User
 from flask_app.models.matcha import Matcha
 from flask_app.models.review import Review
+from flask_app.models.bag import Bag
 from flask import flash
 
 # ======================= HOME PAGE ========================
@@ -16,7 +17,8 @@ def home_page():
     user = User.get_by_id(session["user_id"])
     matchas = Matcha.get_all_matchas()
     review = Review.get_all_reviews()
-    return render_template('home.html', user = user, matchas=matchas, review =review)
+    bag = Bag.get_items_in_bag()
+    return render_template('home.html',bag = bag, user = user, matchas=matchas, review =review)
 
 @app.route('/about')
 def about_page():
@@ -35,7 +37,8 @@ def matchas_page():
     user = User.get_by_id(session["user_id"])
     matchas = Matcha.get_all_matchas()
     review = Review.get_all_reviews()
-    return render_template('matcha.html', user=user, matchas= matchas, review = review)
+    bag = Bag.get_items_in_bag()
+    return render_template('matcha.html',bag =bag, user=user, matchas= matchas, review = review)
 
 @app.route('/recipes')
 def recipes_page():
