@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bag</title>
+</head>
+<body>
+    <div class="shopping_bag_container">
+        <div class="shopping_bag_block_header">
+            <h2>Shopping Bag</h2>
+            <h6>Free Shipping</h6>
+        </div>
+        <table class="item_block">
+            <tr class="tr_header">
+                <th id="product_th" >Product</th>
+                <th>QTY</th>
+                <th>Price</th>
+            </tr>
+            <tr class="each_item">
+                <td id="product_td">
+                    <section class="product_section">
+                        <img src="../static/imgs/matcha_types_im/hatsu.png" alt="item_img" class="bag_item_img" name = "item_img">
+                        <div class="item_name_container">
+                            <h6><b>{{bags.matcha_name}} - {{bags.matcha_qty}}</b></h6>
+                            <a href="/remove_item"><p>Remove</p></a>
+                        </div>
+                    </section>
+                </td>
+                <td>
+                    <section class="left_section">
+                        <div class="bag_counter">
+                            <button class="bag_minus" onclick="minusBtn(event, this)">-</button>
+                            <input type="number" class="bag_count" name="count" value="1">
+                            <button class="bag_plus" onclick="plusBtn(event, this)">+</button>
+                        </div>
+                    </section>
+                </td>
+                <td>
+                    <section class="right_section">
+                        <p>$ 40.00</p>
+                    </section>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+{% endblock %}
