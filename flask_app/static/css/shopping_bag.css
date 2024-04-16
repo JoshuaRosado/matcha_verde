@@ -33,8 +33,9 @@ body{
     padding-top: 10rem;
 }
 
-#product_th_SB{
-    padding-left: 10svw;
+.tr_header_SB th{
+    text-align: center;
+    width: 30svw;
 }
 
 #product_td_SB{
@@ -46,23 +47,82 @@ body{
 .product_section_SB{
     display: flex;
     flex-direction: column;
-    border: 2px solid red;
-    width: 35svw;
-    padding: 3svh 0;
+    width: 30svw;
+    padding: 2svh 0 0;
     justify-content: center;
     align-items: center;
 }
 
+.item_name_container_SB a {
+    text-decoration: none;
+    font-size: 1.8svh;
+    color: rgba(219, 217, 217, 0.6);
+    font-weight: 600;
+}
+
+.left_section_SB, .right_section_SB{
+    text-align: center;
+    width: 30svw;
+}
+
 .left_section_SB{
-    border: 2px solid red;
     width: 35svw;
+    display: flex;
+    justify-content: center;
+}
+
+.bag_counter{
+    padding: 2svh;
+    width: 30svw;
+}
+
+.bag_count_SB,.bag_minus_SB,.bag_plus_SB{
+    padding-bottom: .2rem;
+    margin: 2svw;
+
 }
 
 .product_section_SB img{
     height: 3rem;
     margin-bottom: 1rem;
 }
+.total_price_container{
+    width: 100svw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-/* .each_item{
-    background-color: red;
-} */
+.total_price, .total{
+    width: 34svw;
+    margin-top: 2svh;
+    text-align: center;
+    
+}
+
+@media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
+    body{
+        background: rgb(21, 13, 0);
+    }
+
+    .shopping_bag_container{
+        padding-top: 25dvh;
+    }
+}
+
+@media screen and (min-device-width: 850px){
+    .product_section_SB img{
+        height: 12dvh;
+    }
+
+    .product_section_SB{
+        width: 33dvw;
+        padding: 4dvh 0 0;
+    }
+
+    .left_section_SB, .right_section_SB{
+        width: 33dvw;
+    }
+
+
+}

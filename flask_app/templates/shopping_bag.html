@@ -15,7 +15,7 @@
             <h6>Free Shipping</h6>
         </div>
         <table id="table">
-            <tr class="tr_header">
+            <tr class="tr_header_SB">
                 <th id="product_th_SB" >Product</th>
                 <th>QTY</th>
                 <th>Price</th>
@@ -24,7 +24,7 @@
                 <td id="product_td_SB">
                     <section class="product_section_SB">
                         <img src="../static/imgs/{{bags.img}}" alt="item_img" class="bag_item_img" name = "item_img">
-                        <div class="item_name_container">
+                        <div class="item_name_container_SB">
                             <h6><b>{{bags.matcha_name.title()}} - {{bags.matcha_qty}}</b></h6>
                             <a href="/remove_item"><p>Remove</p></a>
                         </div>
@@ -33,19 +33,23 @@
                 <td>
                     <section class="left_section_SB">
                         <div class="bag_counter">
-                            <button class="bag_minus" onclick="minusBtn(event, this)">-</button>
-                            <input type="number" class="bag_count" name="count" value="1">
-                            <button class="bag_plus" onclick="plusBtn(event, this)">+</button>
+                            <button class="bag_minus bag_minus_SB" onclick="minusBtn(event, this)">-</button>
+                            <input type="number" class="bag_count bag_count_SB" name="count" value="1">
+                            <button class="bag_plus bag_plus_SB" onclick="plusBtn(event, this)">+</button>
                         </div>
                     </section>
                 </td>
                 <td>
-                    <section class="right_section">
+                    <section class="right_section_SB">
                         <p>$ 40.00</p>
                     </section>
                 </td>
             </tr>
         </table>
+        <div class="total_price_container">
+            <p class="total">Total</p>
+            <p class="total_price">$ 40.00</p>
+        </div>
     </div>
 </div>
 </body>
