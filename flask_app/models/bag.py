@@ -26,6 +26,7 @@ class Bag:
         self.small_img_two = bag["small_img_two"]
         self.small_img_three = bag["small_img_three"]
         self.small_img_four = bag["small_img_four"]
+        self.item_qty = 0
         self.user = None
         
         
@@ -33,8 +34,8 @@ class Bag:
     @classmethod 
     def add_to_bag(cls, item_id):
         
-        query = """INSERT INTO bags SELECT * FROM matchas WHERE id = %(id)s;"""
-        connectToMySQL(DB).query_db(query)
+        query = """INSERT   INTO bags SELECT * FROM matchas WHERE id = %(id)s;"""
+        results = connectToMySQL(DB).query_db(query)
         
         return item_id
     
@@ -47,10 +48,8 @@ class Bag:
         
         query = """SELECT * FROM bags;"""
         bag_data = connectToMySQL(DB).query_db(query)
-        bag_data = bag_data[0]
-        bag = cls(bag_data)
         
-        return bag
+        return bag_data
         
         # bags = []
         
@@ -85,4 +84,6 @@ class Bag:
         
         return item_id
     
-    
+    @classmethod
+    def price_total(cls, price):
+        pass
