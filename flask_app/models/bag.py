@@ -34,45 +34,26 @@ class Bag:
     @classmethod 
     def add_to_bag(cls, item_id):
         
-        query = """INSERT   INTO bags SELECT * FROM matchas WHERE id = %(id)s;"""
+        query = """INSERT INTO bags(matcha_name, matcha_qty, matcha_short_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, users_id) SELECT matcha_name, matcha_qty, matcha_short_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM matchas WHERE id = %(id)s;"""
         results = connectToMySQL(DB).query_db(query)
+        print(results)
         
-        return item_id
+        return results
     
     @classmethod
     def get_items_in_bag(cls):
-        # query = """ SELECT 
-        #             bags.id, bags.created_at, bags.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
-        #             FROM bags
-        #             JOIN users on users.id = bags.user_id;"""
-        
         query = """SELECT * FROM bags;"""
         bag_data = connectToMySQL(DB).query_db(query)
         
         return bag_data
         
-        # bags = []
         
-        # for bag in bag_data:
-        #     print(bag)
-            
-        #     bag_obj = cls(bag)
-            
-        #     bag_obj.user = user.User(
-        #         {
-        #             "id": bag["user_item_id"],
-        #             "first_name": bag["first_name"],
-        #             "last_name": bag["last_name"],
-        #             "email": bag["email"],
-        #             "password":False,
-        #             "created_at": bag["created_at"],
-        #             "updated_at": bag["updated_at"]
-                    
-        #         }
-        #     )
-            
-        #     bags.append(bag_obj)
-        # return bags
+        
+    @classmethod
+    def calculate_total_price(cls, price):
+        query = """SELECT price FROM bags;"""
+        items_price_data = connectToMySQL(DB).query_db(query)
+        
         
         
     @classmethod
