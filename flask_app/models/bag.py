@@ -1,7 +1,7 @@
 from unittest import result
 from flask_app import app
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask import flash
+from flask import flash, request
 from flask_app.models import matcha
 from flask_app.models import bag
 from flask_app.models import user
@@ -32,10 +32,12 @@ class Bag:
         
         
     @classmethod 
-    def add_to_bag(cls, item_id):
-        
-        query = """INSERT INTO bags(matcha_name, matcha_qty, matcha_short_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, users_id) SELECT matcha_name, matcha_qty, matcha_short_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM matchas WHERE id = %(id)s;"""
-        results = connectToMySQL(DB).query_db(query)
+    def add_to_bag(cls, id):
+        data = {
+            'id':['id']
+        }
+        query = """INSERT INTO bags(matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, users_id) SELECT matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM matchas WHERE id = %(matcha_id)s ;"""
+        results = connectToMySQL(DB).query_db(query,data)
         print(results)
         
         return results
