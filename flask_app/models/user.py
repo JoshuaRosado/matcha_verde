@@ -4,6 +4,7 @@ from flask import flash
 from flask_bcrypt import Bcrypt
 from flask_app.models import matcha
 from flask_app.models import user
+from flask_app.models import bag
 import re
 
 bcrypt = Bcrypt(app)
@@ -23,6 +24,7 @@ class User:
         self.created_at = user["created_at"]
         self.updated_at = user["updated_at"]
         self.matcha = []
+        self.bag = bag
         
     @classmethod
     # Find user by the email------

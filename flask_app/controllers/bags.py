@@ -31,4 +31,4 @@ def add_item():
 @app.route("/matcha/delete/<int:matcha_id>")
 def remove_item(matcha_id):
     Bag.remove_from_bag(matcha_id)
-    return redirect("/home")
+    return redirect("/bag")
