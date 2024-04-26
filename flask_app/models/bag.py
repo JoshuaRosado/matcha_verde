@@ -34,9 +34,9 @@ class Bag:
     @classmethod 
     def add_to_bag(cls, matcha_id):
 
-        query = """INSERT INTO bags(matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_bag_id) SELECT matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM matchas WHERE id = %(id)s ;"""
+        query = """INSERT INTO bags(matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_bag_id) SELECT matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM matchas WHERE id = %(bag_id)s ;"""
         results = connectToMySQL(DB).query_db(query,matcha_id)
-        print(results)
+        print(f"****************************************{results}")
         
         return results
     
