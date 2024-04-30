@@ -20,7 +20,7 @@ def shopping_bag():
     return render_template("shopping_bag.html", bag=bag, user=user)
     
     
-@app.route('/add_item', methods = ["POST"])
+@app.route("/add_item", methods = ["POST"])
 def add_item():
     added = Bag.add_to_bag(request.form)
     if added:

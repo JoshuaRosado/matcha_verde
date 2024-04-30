@@ -4,6 +4,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash, request
 from flask_app.models import matcha
 from flask_app.models import bag
+from flask_app.models import review
 from flask_app.models import user
 from flask_bcrypt import Bcrypt
 import re
@@ -32,11 +33,11 @@ class Bag:
         
         
     @classmethod 
-    def add_to_bag(cls, matcha_id):
+    def add_to_bag(cls, matcha_name):
 
-        query = """INSERT INTO bags(matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_bag_id) SELECT matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM matchas WHERE id = %(bag_id)s ;"""
-        results = connectToMySQL(DB).query_db(query,matcha_id)
-        print(f"****************************************{results}")
+        query = """INSERT INTO bags(matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_bag_id) SELECT matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM matchas WHERE matcha_name = %(matcha_name)s ;"""
+        results = connectToMySQL(DB).query_db(query,matcha_name)
+        
         
         return results
     
