@@ -13,13 +13,13 @@ def shopping_bag():
         flash("You must be logged in to access the dashboard.")
         return redirect('/')
     user = User.get_by_id(session["user_id"])
-    bag = Bag.get_items_in_bag()
+    bag = Bag.get_all_matchas_in_bag()
     # matchas = Matcha.get_all_matchas()
     # review = Review.get_all_reviews()
     
     return render_template("shopping_bag.html", bag=bag, user=user)
     
-    
+
 @app.route("/add_item", methods = ["POST"])
 def add_item():
     added = Bag.add_to_bag(request.form)

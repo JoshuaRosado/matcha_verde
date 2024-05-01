@@ -29,7 +29,7 @@
                 <div class="top_rank_first_row">
                     <!-- ======================= BEST SELLER INDIVIDUAL ITEM SECTION  ======== -->
                     {%for matcha in matchas:%}
-                    {%if (matcha.id < 4)%}
+                    {%if matcha.id < 4:%}
                     <div class="top_rank_item_container">
                         <a href="item/{{matcha.matcha_name}}">
                         <img src="../static/imgs/{{matcha.img}}" alt="top_rank_item_pic" class="top_rank_imgs">
@@ -41,12 +41,8 @@
                             <button class="add_to_bag_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="add_to_bag_icon" viewBox="0 0 16 16">
                             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5      3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2      5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
                             </svg> Add to bag</button>
-                            <input type="hidden" name="user_id" value="{{session['user_id']}}"> 
-                            {% for matcha in matchas %}
-                            
+                            <input type="hidden" name="user_id" value="{{session['user_id']}}">
                             <input type="hidden" name="matcha_name" value="{{matcha.matcha_name}}">
-                            
-                            {% endfor %}
                         </div>
                     </div>
                     {% endif %}

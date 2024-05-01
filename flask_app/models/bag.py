@@ -12,21 +12,21 @@ import re
 DB = "matcha_verde"
 
 class Bag:
-    def __init__(self, matcha_bag):
-        self.id = matcha_bag["id"]
-        self.matcha_name = matcha_bag["matcha_name"]
-        self.matcha_qty = matcha_bag["matcha_qty"]
-        self.matcha_short_description = matcha_bag["matcha_short_description"]
-        self.taste_description = matcha_bag["taste_description"]
-        self.taste_notes = matcha_bag["taste_notes"]
-        self.price = matcha_bag["price"]
-        self.img = matcha_bag["img"]
-        self.created_at = matcha_bag["created_at"]
-        self.updated_at = matcha_bag["updated_at"]
-        self.small_img_one = matcha_bag["small_img_one"]
-        self.small_img_two = matcha_bag["small_img_two"]
-        self.small_img_three = matcha_bag["small_img_three"]
-        self.small_img_four = matcha_bag["small_img_four"]
+    def __init__(self, bag):
+        self.id = bag["id"]
+        self.matcha_name = bag["matcha_name"]
+        self.matcha_qty = bag["matcha_qty"]
+        self.matcha_short_description = bag["matcha_short_description"]
+        self.taste_description = bag["taste_description"]
+        self.taste_notes = bag["taste_notes"]
+        self.price = bag["price"]
+        self.img = bag["img"]
+        self.created_at = bag["created_at"]
+        self.updated_at = bag["updated_at"]
+        self.small_img_one = bag["small_img_one"]
+        self.small_img_two = bag["small_img_two"]
+        self.small_img_three = bag["small_img_three"]
+        self.small_img_four = bag["small_img_four"]
         self.item_qty = 0
         self.user = None
         
@@ -40,6 +40,32 @@ class Bag:
         
         
         return results
+
+    @classmethod
+    def get_bag_by_id(cls, bag_user_id):
+        data ={"id": bag_user_id}
+        query = """ SELECT bags.id matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, users.id as user_bag_id, first_name, last_name, email, created_at, updated_at
+        FROM bags
+        JOIN users on users.id = bags.user_bag_id
+        WHERE bags.id = %(id)s"""
+        
+        result = connectToMySQL(DB).query_db(query,data)
+        print("result of query:")
+        print(result)
+        result = result[0]
+        bags = cls(result)
+    
+        bag.user = user.User({
+            
+            "id": result["user_bag_id"],
+            "first_name": result["firs_name"],
+            "last_name": result["last_name"],
+            "email": result["email"],
+            "created_at": result["created_at"],
+            "updated_at":result["updated_at"]
+            }
+        )
+        return bags
     
     @classmethod
     def get_items_in_bag(cls):
@@ -51,26 +77,26 @@ class Bag:
     @classmethod
     def get_all_matchas_in_bag(cls):
         query = """ SELECT 
-                    bags.id, bags.created_at, bags.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+                    bags.id, bags.created_at, bags.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_bag_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM bags
                     JOIN users on users.id = bags.user_bag_id;"""
         bag_data = connectToMySQL(DB).query_db(query)
         
         bags = []
         
-        for matcha_bag in bag_data:
+        for bag in bag_data:
             
             bag_obj = cls(bag)
             
             bag_obj.user = user.User(
                 {
-                    "id": matcha_bag["user_id"],
-                    "first_name": matcha_bag["first_name"],
-                    "last_name": matcha_bag["last_name"],
-                    "email": matcha_bag["email"],
+                    "id": bag["user_bag_id"],
+                    "first_name": bag["first_name"],
+                    "last_name": bag["last_name"],
+                    "email": bag["email"],
                     "password":False,
-                    "created_at": matcha_bag["created_at"],
-                    "updated_at": matcha_bag["updated_at"]
+                    "created_at": bag["created_at"],
+                    "updated_at": bag["updated_at"]
                     
                 }
             )

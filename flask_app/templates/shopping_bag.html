@@ -23,6 +23,8 @@
                     <th>Price</th>
                 </tr>
                     {% for b in bag %}
+                    {% if b.user.id == user.id %}
+                    
                     <tr class="each_item">
                         <td id="product_td_SB">
                             <section class="product_section_SB">
@@ -48,10 +50,11 @@
                             </section>
                         </td>
                     </tr>
+                    {% endif %}
                     {% endfor %}
-            </table>
-            <div class="total_price_container">
-                <p class="total">Total</p>
+                </table>
+                <div class="total_price_container">
+                    <p class="total">Total</p>
                 <p class="total_price">$ 40.00</p>
             </div>
         </div>
