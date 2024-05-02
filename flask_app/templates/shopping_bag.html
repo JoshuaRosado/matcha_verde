@@ -22,16 +22,16 @@
                     <th>QTY</th>
                     <th>Price</th>
                 </tr>
-                    {% for b in bag %}
-                    {% if b.user.id == user.id %}
+                    {% for bag in bags: %}
+
                     
                     <tr class="each_item">
                         <td id="product_td_SB">
                             <section class="product_section_SB">
-                                <img src="../static/imgs/{{b.img}}" alt="item_img" class="bag_item_img" name = "item_img">
+                                <img src="../static/imgs/{{bag.img}}" alt="item_img" class="bag_item_img" name = "item_img">
                                 <div class="item_name_container_SB">
-                                    <h6><b>{{b.matcha_name.title()}} - {{b.matcha_qty}}</b></h6>
-                                    <a href="/matcha/delete/{{b.id}}"><p>Remove</p></a>
+                                    <h6><b>{{bag.matcha_name.title()}} - {{bag.matcha_qty}}</b></h6>
+                                    <a href="/matcha/delete/{{bag.id}}"><p>Remove</p></a>
                                 </div>
                             </section>
                         </td>
@@ -46,11 +46,10 @@
                         </td>
                         <td>
                             <section class="right_section_SB">
-                                <p>${{b.price}}.00</p>
+                                <p>${{bag.price}}.00</p>
                             </section>
                         </td>
                     </tr>
-                    {% endif %}
                     {% endfor %}
                 </table>
                 <div class="total_price_container">

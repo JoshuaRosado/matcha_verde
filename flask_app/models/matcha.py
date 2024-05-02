@@ -79,7 +79,8 @@ class Matcha:
         query = """ SELECT 
                     matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM matchas
-                    JOIN users on users.id = matchas.user_id;"""
+                    JOIN users on users.id = matchas.user_id
+                    WHERE matchas.id < 4;"""
         matcha_data = connectToMySQL(DB).query_db(query)
         
         matchas = []

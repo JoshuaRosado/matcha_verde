@@ -29,24 +29,30 @@ class Bag:
         self.small_img_four = bag["small_img_four"]
         self.item_qty = 0
         self.user = None
+        self.matcha = []
         
         
         
     @classmethod 
-    def add_to_bag(cls, matcha_name):
+    def add_to_bag(cls, matcha_data):
 
-        query = """INSERT INTO bags(matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_bag_id) SELECT matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM matchas WHERE matcha_name = %(matcha_name)s ;"""
-        results = connectToMySQL(DB).query_db(query,matcha_name)
+        query = """INSERT INTO bags(matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
+        
+        SELECT matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM matchas WHERE matcha_name = %(matcha_name)s ;"""
+        
+        # VALUES(%(bag_id)s,%(matcha_name)s, %(matcha_qty)s, %(matcha_short_description)s, %(taste_description)s, %(taste_notes)s, %(price)s, %(img)s, %(created_at)s, %(updated_at)s, %(small_img_one)s, %(small_img_two)s, %(small_img_three)s, %(small_img_four)s, %(user_id)s);"""
+        
+        results = connectToMySQL(DB).query_db(query, matcha_data)
         
         
         return results
 
     @classmethod
-    def get_bag_by_id(cls, bag_user_id):
-        data ={"id": bag_user_id}
-        query = """ SELECT bags.id matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, users.id as user_bag_id, first_name, last_name, email, created_at, updated_at
+    def get_bag_by_id(cls, user_id):
+        data ={"id": user_id}
+        query = """ SELECT bags.id matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, users.id as user_id, first_name, last_name, email, created_at, updated_at
         FROM bags
-        JOIN users on users.id = bags.user_bag_id
+        JOIN users on users.id = bags.user_id
         WHERE bags.id = %(id)s"""
         
         result = connectToMySQL(DB).query_db(query,data)
@@ -57,7 +63,7 @@ class Bag:
     
         bag.user = user.User({
             
-            "id": result["user_bag_id"],
+            "id": result["user_id"],
             "first_name": result["firs_name"],
             "last_name": result["last_name"],
             "email": result["email"],
@@ -77,9 +83,9 @@ class Bag:
     @classmethod
     def get_all_matchas_in_bag(cls):
         query = """ SELECT 
-                    bags.id, bags.created_at, bags.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_bag_id,first_name,last_name,email, users.created_at, users.updated_at
+                    bags.id, bags.created_at, bags.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM bags
-                    JOIN users on users.id = bags.user_bag_id;"""
+                    JOIN users on users.id = bags.user_id;"""
         bag_data = connectToMySQL(DB).query_db(query)
         
         bags = []
@@ -89,17 +95,17 @@ class Bag:
             bag_obj = cls(bag)
             
             bag_obj.user = user.User(
-                {
-                    "id": bag["user_bag_id"],
-                    "first_name": bag["first_name"],
-                    "last_name": bag["last_name"],
-                    "email": bag["email"],
-                    "password":False,
-                    "created_at": bag["created_at"],
-                    "updated_at": bag["updated_at"]
-                    
-                }
-            )
+            {
+                "id": bag["user_id"],
+                "first_name": bag["first_name"],
+                "last_name": bag["last_name"],
+                "email": bag["email"],
+                "password":False,
+                "created_at": bag["created_at"],
+                "updated_at": bag["updated_at"]
+                
+            }
+        )
             
             bags.append(bag_obj)
         return bags
@@ -108,6 +114,7 @@ class Bag:
     def calculate_total_price(cls, price):
         query = """SELECT price FROM bags;"""
         items_price_data = connectToMySQL(DB).query_db(query)
+        pass
         
         
         
