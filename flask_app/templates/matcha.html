@@ -30,7 +30,7 @@
                     <!-- ======================= BEST SELLER INDIVIDUAL ITEM SECTION  ======== -->
                     {%for matcha in matchas:%}
                     <div class="top_rank_item_container">
-                        <input type="hidden" name="matcha_name" value="{{matcha.matcha_name}}">
+                        <input type="hidden" name="id" value="{{matcha.id}}">
                         <a href="item/{{matcha.matcha_name}}">
                         <img src="../static/imgs/{{matcha.img}}" alt="top_rank_item_pic" class="top_rank_imgs">
                         </a>

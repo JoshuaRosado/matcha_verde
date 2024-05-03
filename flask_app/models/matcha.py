@@ -74,13 +74,82 @@ class Matcha:
         )
         return matcha
     
+    # ========== RETRIEVE ONLY REGULAR MATCHA ITEMS ====================
+    
     @classmethod
-    def get_all_matchas(cls):
+    def get_regular_matchas(cls):
         query = """ SELECT 
                     matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM matchas
                     JOIN users on users.id = matchas.user_id
                     WHERE matchas.id < 4;"""
+        matcha_data = connectToMySQL(DB).query_db(query)
+        
+        matchas = []
+        
+        for matcha in matcha_data:
+            
+            matcha_obj = cls(matcha)
+            
+            matcha_obj.user = user.User(
+                {
+                    "id": matcha["user_id"],
+                    "first_name": matcha["first_name"],
+                    "last_name": matcha["last_name"],
+                    "email": matcha["email"],
+                    "password":False,
+                    "created_at": matcha["created_at"],
+                    "updated_at": matcha["updated_at"]
+                    
+                }
+            )
+            
+            matchas.append(matcha_obj)
+        return matchas
+    
+    
+    # ============= RETRIEVE ONLY ORGANIC MATCHA ITEMS ===========
+    
+    @classmethod
+    def get_organic_matchas(cls):
+        query = """ SELECT 
+                    matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+                    FROM matchas
+                    JOIN users on users.id = matchas.user_id
+                    WHERE matchas.id > 3;"""
+        matcha_data = connectToMySQL(DB).query_db(query)
+        
+        matchas = []
+        
+        for matcha in matcha_data:
+            
+            matcha_obj = cls(matcha)
+            
+            matcha_obj.user = user.User(
+                {
+                    "id": matcha["user_id"],
+                    "first_name": matcha["first_name"],
+                    "last_name": matcha["last_name"],
+                    "email": matcha["email"],
+                    "password":False,
+                    "created_at": matcha["created_at"],
+                    "updated_at": matcha["updated_at"]
+                    
+                }
+            )
+            
+            matchas.append(matcha_obj)
+        return matchas
+
+    # ============ RETRIEVE ALL MATCHA ITEMS ==================
+    
+    @classmethod
+    def get_all_matchas(cls):
+        query = """ SELECT 
+                    matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+                    FROM matchas
+                    JOIN users on users.id = matchas.user_id;"""
+                    
         matcha_data = connectToMySQL(DB).query_db(query)
         
         matchas = []

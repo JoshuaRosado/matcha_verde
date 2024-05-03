@@ -35,10 +35,11 @@ def faq_page():
 @app.route('/matchas')
 def matchas_page():
     user = User.get_by_id(session["user_id"])
-    matchas = Matcha.get_all_matchas()
+    matchas = Matcha.get_regular_matchas()
+    all_matchas = Matcha.get_all_matchas()
     review = Review.get_all_reviews()
     bag = Bag.get_items_in_bag()
-    return render_template('matcha.html',bag =bag, user=user, matchas= matchas, review = review)
+    return render_template('matcha.html',all_matchas=all_matchas,bag =bag, user=user, matchas= matchas, review = review)
 
 @app.route('/recipes')
 def recipes_page():
@@ -48,12 +49,14 @@ def recipes_page():
 @app.route('/organic')
 def organic_page():
     user = User.get_by_id(session["user_id"])
-    matchas = Matcha.get_all_matchas()
+    matchas = Matcha.get_organic_matchas()
+    all_matchas = Matcha.get_all_matchas()
     review = Review.get_all_reviews()
-    return render_template('organic.html', user=user, matchas =matchas, review=review)
+    return render_template('organic.html',all_matchas= all_matchas, user=user, matchas =matchas, review=review)
 
 
 @app.route("/quiz")
 def quiz():
-    quiz_dict = Matcha.start_quiz(user_input)
-    return render_template('quiz.html', quiz_dict = quiz_dict)
+    pass
+    # quiz_dict = Matcha.start_quiz(user_input)
+    # return render_template('quiz.html', quiz_dict = quiz_dict)
