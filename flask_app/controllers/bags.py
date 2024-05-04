@@ -24,6 +24,9 @@ def shopping_bag():
 def add_item():
     if not Bag.add_to_bag(request.form):
         return redirect('/faq')
+    print(request.form)
+    id = request.form['id']
+    print(id)
     return redirect('/home')
 
 

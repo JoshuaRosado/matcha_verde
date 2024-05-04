@@ -4,6 +4,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 from flask_bcrypt import Bcrypt
 from flask_app.models import user
+from flask_app.models import bag
 from flask_app.models import review
 
 
@@ -26,6 +27,7 @@ class Matcha:
         self.small_img_three = matcha["small_img_three"]
         self.small_img_four = matcha["small_img_four"]
         self.reviews = review
+        self.bag = bag
         self.user = None
 
 
