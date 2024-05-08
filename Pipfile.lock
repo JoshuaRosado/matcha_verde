@@ -5,6 +5,7 @@
         },
         "pipfile-spec": 6,
         "requires": {
+            "connexion": "2.6.0",
             "python_version": "3.11"
         },
         "sources": [

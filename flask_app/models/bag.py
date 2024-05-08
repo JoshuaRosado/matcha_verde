@@ -46,10 +46,15 @@ class Bag:
         # VALUES(%(bag_id)s,%(matcha_name)s, %(matcha_qty)s, %(matcha_short_description)s, %(taste_description)s, %(taste_notes)s, %(price)s, %(img)s, %(created_at)s, %(updated_at)s, %(small_img_one)s, %(small_img_two)s, %(small_img_three)s, %(small_img_four)s, %(user_id)s);"""
         
         results = connectToMySQL(DB).query_db(query, id)
-        print(f"************{id}")
+        print(f"************{results}")
+        
+        result = results
+        print(result.getlist(0))
         
         
-        return result
+        
+        
+        return results
 
     @classmethod
     def get_bag_by_id(cls, user_id):
