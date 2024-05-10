@@ -17,18 +17,20 @@ def home_page():
     user = User.get_by_id(session["user_id"])
     matchas = Matcha.get_all_matchas()
     review = Review.get_all_reviews()
-    bag = Bag.get_all_matchas_in_bag()
-    return render_template('home.html',bag = bag, user = user, matchas=matchas, review =review)
+    bags = Bag.get_all_matchas_in_bag()
+    return render_template('home.html',bags = bags, user = user, matchas=matchas, review =review)
 
 @app.route('/about')
 def about_page():
     user = User.get_by_id(session["user_id"])
-    return render_template('about.html', user = user)
+    bags = Bag.get_all_matchas_in_bag()
+    return render_template('about.html', bags=bags, user = user)
 
 @app.route('/faq')
 def faq_page():
     user = User.get_by_id(session["user_id"])
-    return render_template('faq.html', user = user)
+    bags = Bag.get_all_matchas_in_bag()
+    return render_template('faq.html', bags=bags, user = user)
 
 
 
@@ -38,13 +40,14 @@ def matchas_page():
     matchas = Matcha.get_regular_matchas()
     all_matchas = Matcha.get_all_matchas()
     review = Review.get_all_reviews()
-    bag = Bag.get_items_in_bag()
-    return render_template('matcha.html',all_matchas=all_matchas,bag =bag, user=user, matchas= matchas, review = review)
+    bags = Bag.get_items_in_bag()
+    return render_template('matcha.html',all_matchas=all_matchas,bags =bags, user=user, matchas= matchas, review = review)
 
 @app.route('/recipes')
 def recipes_page():
     user = User.get_by_id(session["user_id"])
-    return render_template('recipes.html', user=user)
+    bags = Bag.get_all_matchas_in_bag()
+    return render_template('recipes.html', bags=bags, user=user)
 
 @app.route('/organic')
 def organic_page():
@@ -52,7 +55,8 @@ def organic_page():
     matchas = Matcha.get_organic_matchas()
     all_matchas = Matcha.get_all_matchas()
     review = Review.get_all_reviews()
-    return render_template('organic.html',all_matchas= all_matchas, user=user, matchas =matchas, review=review)
+    bags = Bag.get_all_matchas_in_bag()
+    return render_template('organic.html',bags=bags, all_matchas= all_matchas, user=user, matchas =matchas, review=review)
 
 
 @app.route("/quiz")
