@@ -75,9 +75,11 @@
         justify-content: center;
         align-items: center;
         flex-direction: row-reverse;
-        height: 60dvh;
+        height: 58dvh;
         padding: 0;
-        margin: 0;
+        margin:0;
+        margin-bottom: 5dvh;
+        padding-top: 12dvh;
 
     }
 

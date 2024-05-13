@@ -45,6 +45,13 @@ class Bag:
         
         # VALUES(%(bag_id)s,%(matcha_name)s, %(matcha_qty)s, %(matcha_short_description)s, %(taste_description)s, %(taste_notes)s, %(price)s, %(img)s, %(created_at)s, %(updated_at)s, %(small_img_one)s, %(small_img_two)s, %(small_img_three)s, %(small_img_four)s, %(user_id)s);"""
         
+        
+        #************************************ RETURNS A IMMUTABLEMULTIDICT (TUPLE INSIDE OF A LIST INSIDE OF A TUPLE)
+        # NEED TO ACCESS AND RETRIEVE THE INNER DATA TO BE ABLE TO DISPLAY IT IN THE SHOPPING BAG AS THE CORRECT ITEM ADDED
+        
+        
+        
+        
         results = connectToMySQL(DB).query_db(query, id)
         print(f"************{results}")
         
