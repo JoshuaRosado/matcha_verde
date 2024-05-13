@@ -34,14 +34,14 @@ class Bag:
         
         
     @classmethod 
-    def add_to_bag(cls, id):
+    def add_to_bag(cls, matcha_names):
 
         query= """INSERT INTO
         bags(matcha_id,matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
         
         SELECT
         id, matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM 
-        matchas WHERE id = %(id)s;"""
+        matchas WHERE matcha_name = %(matcha_name)s;"""
         
         # VALUES(%(bag_id)s,%(matcha_name)s, %(matcha_qty)s, %(matcha_short_description)s, %(taste_description)s, %(taste_notes)s, %(price)s, %(img)s, %(created_at)s, %(updated_at)s, %(small_img_one)s, %(small_img_two)s, %(small_img_three)s, %(small_img_four)s, %(user_id)s);"""
         
@@ -52,14 +52,8 @@ class Bag:
         
         
         
-        results = connectToMySQL(DB).query_db(query, id)
-        print(f"************{results}")
-        
-        result = results
-        print(result.getlist(0))
-        
-        
-        
+        results = connectToMySQL(DB).query_db(query, matcha_names)
+        print(f"************{matcha_names}")
         
         return results
 

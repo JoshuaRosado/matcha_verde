@@ -12,7 +12,11 @@
     } */
     /* ======================= BAG COUNTER =================== */
     details[open] > .bag_container{
-        overflow: scroll;
+        overflow:scroll;
+    }
+
+    .bag_container{
+        height: auto;
     }
     details:focus{
         overflow: scroll;

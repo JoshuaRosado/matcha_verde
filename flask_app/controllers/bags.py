@@ -25,8 +25,10 @@ def add_item():
     if not Bag.add_to_bag(request.form):
         return redirect('/faq')
     print(request.form)
-    id = request.form['id']
-    print(id)
+    matcha_name = request.form['matcha_name']
+    matcha_names = matcha_name[2][0]
+    
+    print(f'{matcha_names}***************+++++++++')
     return redirect('/home')
 
 

@@ -30,12 +30,12 @@
                     <!-- ======================= BEST SELLER INDIVIDUAL ITEM SECTION  ======== -->
                     {%for matcha in matchas:%}
                     <div class="top_rank_item_container">
-                        <input type="hidden" id="id" name="id" value={{matcha.id}}>
+                        <input type="hidden" id="matcha_names" name="matcha_name" value={{matcha.matcha_name}}>
                         <a href="item/{{matcha.matcha_name}}">
                         <img src="../static/imgs/{{matcha.img}}" alt="top_rank_item_pic" class="top_rank_imgs">
-                        </a>
                         <div class="top_rank_item_info_section">
                             <h4 class="top_rank_title">{{matcha.matcha_name.title()}}</h4>
+                        </a>
                             <p class="top_rank_subtitle">{{matcha.matcha_short_description}}</p>
                             <p class="top_rank_item_price">${{matcha.price}}</p>
                             <button class="add_to_bag_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="add_to_bag_icon" viewBox="0 0 16 16">

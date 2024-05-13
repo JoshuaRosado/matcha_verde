@@ -260,6 +260,10 @@ details[open] >  #bag_summary span::before{
     height: auto;
 }
 
+.bag_item_img{
+    margin: 0 2dvw 4dvh;
+}
+
 details[open] > .bag_container{
     opacity: 1;
     transition: opacity .7s ease-in-out ;
@@ -741,6 +745,11 @@ input::-webkit-inner-spin-button {
 .top_rank_item_container{
     height: 18rem;
     padding: .5rem ;
+}
+
+.top_rank_container a {
+    text-decoration: none;
+    color:rgba(255, 255, 255, 0.8) ;
 }
 
 .top_rank_imgs{

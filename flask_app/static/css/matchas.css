@@ -61,6 +61,10 @@ body{
     margin: .5rem;
 }
 
+.top_rank_item_container a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+}
 /*  ===================== LANDSCAPE VIEW ================== */
 @media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
     body{
