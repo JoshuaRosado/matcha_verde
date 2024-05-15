@@ -8,6 +8,7 @@ from flask_app.models import review
 from flask_app.models import user
 from flask_bcrypt import Bcrypt
 import re
+from werkzeug.datastructures import ImmutableDict
 
 DB = "matcha_verde"
 
@@ -34,13 +35,16 @@ class Bag:
         
         
     @classmethod 
-    def add_to_bag(cls, matcha_names):
+    def add_to_bag(cls, matcha_names_list):
+        data ={'matcha_name': matcha_names_list}
 
-        query= """INSERT INTO
-        bags(matcha_id,matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
+        query= """
+        INSERT INTO
+        bags (matcha_id, bags.matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
         
         SELECT
-        id, matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id FROM 
+        id, matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id 
+        FROM 
         matchas WHERE matcha_name = %(matcha_name)s;"""
         
         # VALUES(%(bag_id)s,%(matcha_name)s, %(matcha_qty)s, %(matcha_short_description)s, %(taste_description)s, %(taste_notes)s, %(price)s, %(img)s, %(created_at)s, %(updated_at)s, %(small_img_one)s, %(small_img_two)s, %(small_img_three)s, %(small_img_four)s, %(user_id)s);"""
@@ -51,9 +55,10 @@ class Bag:
         
         
         
-        
-        results = connectToMySQL(DB).query_db(query, matcha_names)
-        print(f"************{matcha_names}")
+        results = connectToMySQL(DB).query_db(query, data)
+        print(f"{matcha_names_list}))))))))))))))))")
+
+        print(f"===========+XXXXXX{matcha_names_list}")
         
         return results
 

@@ -25,12 +25,13 @@
             <img src="../static/imgs/matcha_logo/Matcha_Verde_Official_Logo copy/matcha_logo_no_title_noBG.png" alt="matcha_logo" class="about_logo matchas_logo">
         </div>
         <div class="top_rank_items_main_container">
+            {%for matcha in matchas:%}
             <form action="/add_item" method='post' class="add_item_to_bag" name="add_item">
                 <div class="top_rank_first_row">
                     <!-- ======================= BEST SELLER INDIVIDUAL ITEM SECTION  ======== -->
-                    {%for matcha in matchas:%}
+                    <input type="hidden" id="matcha_name" name="matcha_name" value={{matcha.matcha_name}}>
+                    <input type="hidden" id="user_id" name="user_id" value={{matcha.user.id}}>
                     <div class="top_rank_item_container">
-                        <input type="hidden" id="matcha_names" name="matcha_name" value={{matcha.matcha_name}}>
                         <a href="item/{{matcha.matcha_name}}">
                         <img src="../static/imgs/{{matcha.img}}" alt="top_rank_item_pic" class="top_rank_imgs">
                         <div class="top_rank_item_info_section">
@@ -43,9 +44,9 @@
                             </svg> Add to bag</button>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
             </form>
+            {% endfor %}
         </div>
 
         </div>

@@ -5,6 +5,7 @@ from flask_app.models.matcha import Matcha
 from flask_app.models.review import Review
 from flask_app.models.bag import Bag
 from flask import flash
+from werkzeug.datastructures import ImmutableMultiDict
 
 
 @app.route("/bag")
@@ -22,13 +23,19 @@ def shopping_bag():
 
 @app.route("/add_item", methods = ["POST"])
 def add_item():
+    # imd = ImmutableMultiDict(request.form)
+    # imd_list = imd.getlist('Hatsu')
+    # if imd_list == "ummon":
+    #     Bag.add_to_bag(imd_list[0])
+    # elif imd_list == "hatsu":
+    #     Bag.add_to_bag(imd_list[1])
+    # elif imd_list == "sayaka":
+    #     Bag.add_to_bag(imd_list[2])
+    # else:
+        
     if not Bag.add_to_bag(request.form):
         return redirect('/faq')
-    print(request.form)
-    matcha_name = request.form['matcha_name']
-    matcha_names = matcha_name[2][0]
-    
-    print(f'{matcha_names}***************+++++++++')
+    print(f"=====++++++======{request.form}")
     return redirect('/home')
 
 

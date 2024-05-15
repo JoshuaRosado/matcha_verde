@@ -65,6 +65,12 @@ body{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
 }
+
+.top_rank_items_main_container{
+    display: flex;
+    flex-direction: column;
+    border: 10rem solid yellow;
+}
 /*  ===================== LANDSCAPE VIEW ================== */
 @media (orientation: landscape) and (max-height: 450px) and (max-width: 932px) {
     body{
@@ -80,6 +86,10 @@ body{
         align-items: center;
         justify-content: center;
     
+    }
+    .top_rank_items_main_container{
+        display: flex;
+        align-items: center;
     }
 
     .matchas_top_info_container{
@@ -115,6 +125,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+
     }
     .top_container{
         display: flex;
@@ -122,6 +133,22 @@ body{
         justify-content: center;
         align-items: center;
     }
+
+    .top_rank_items_main_container{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100dvw;
+    }
+    .add_item_to_bag{
+        border: green 2px solid;
+        width: 30dvw;
+        margin: 0;
+        padding: 0;
+    }
+
 
     .nav_space{
         display: none;
