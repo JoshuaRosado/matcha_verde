@@ -20,6 +20,11 @@ def home_page():
     bags = Bag.get_all_matchas_in_bag()
     return render_template('home.html',bags = bags, user = user, matchas=matchas, review =review)
 
+@app.route("/delete/<int:matcha_id>")
+def remove_item_from_bag(matcha_id):
+    Bag.remove_from_bag(matcha_id)
+    return redirect("/bag")
+
 @app.route('/about')
 def about_page():
     user = User.get_by_id(session["user_id"])
@@ -42,6 +47,7 @@ def matchas_page():
     review = Review.get_all_reviews()
     bags = Bag.get_items_in_bag()
     return render_template('matcha.html',all_matchas=all_matchas,bags =bags, user=user, matchas= matchas, review = review)
+
 
 @app.route('/recipes')
 def recipes_page():

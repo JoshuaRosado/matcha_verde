@@ -206,4 +206,11 @@ class Matcha:
             False
         
         
+    @classmethod
+    def remove_from_bag(cls, item_id):
         
+        data = {"id": item_id}
+        query = """DELETE FROM bags WHERE id = %(id)s;"""
+        connectToMySQL(DB).query_db(query, data)
+        
+        return item_id
