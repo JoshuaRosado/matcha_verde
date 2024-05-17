@@ -48,12 +48,11 @@ class Bag:
         FROM 
         matchas WHERE id = %(matcha_id)s;"""
         
-        
         results = connectToMySQL(DB).query_db(query, new_data)
-
-        print(f"{id}******* AFTER")
         
         return id
+
+
 
     @classmethod
     def get_bag_by_id(cls, user_id):
@@ -130,7 +129,7 @@ class Bag:
     def remove_from_bag(cls, item_id):
         
         data = {"id": item_id}
-        query = """DELETE FROM shopping_bags WHERE id = %(id)s;"""
+        query = """DELETE FROM bags WHERE id = %(id)s;"""
         connectToMySQL(DB).query_db(query, data)
         
         return item_id

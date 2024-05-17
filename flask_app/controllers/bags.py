@@ -28,7 +28,7 @@ def add_item():
         return redirect('/faq')
     
     print(f"=====++++++======{request.form}")
-    return redirect('/home')
+    return redirect('/matchas')
 
 
 @app.route("/matcha/delete/<int:matcha_id>")
