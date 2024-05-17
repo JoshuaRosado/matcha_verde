@@ -8,7 +8,7 @@ from flask_app.models import review
 from flask_app.models import user
 from flask_bcrypt import Bcrypt
 import re
-from werkzeug.datastructures import ImmutableDict
+from werkzeug.datastructures import ImmutableMultiDict
 
 DB = "matcha_verde"
 
@@ -35,8 +35,9 @@ class Bag:
         
         
     @classmethod 
-    def add_to_bag(cls, matcha_names_list):
-        data ={'matcha_name': matcha_names_list}
+    def add_to_bag(cls, matcha_id_list):
+        id = matcha_id_list.getlist('matcha_id')
+        new_data = {'matcha_id': int(id[0])}
 
         query= """
         INSERT INTO
@@ -45,22 +46,14 @@ class Bag:
         SELECT
         id, matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id 
         FROM 
-        matchas WHERE matcha_name = %(matcha_name)s;"""
-        
-        # VALUES(%(bag_id)s,%(matcha_name)s, %(matcha_qty)s, %(matcha_short_description)s, %(taste_description)s, %(taste_notes)s, %(price)s, %(img)s, %(created_at)s, %(updated_at)s, %(small_img_one)s, %(small_img_two)s, %(small_img_three)s, %(small_img_four)s, %(user_id)s);"""
+        matchas WHERE id = %(matcha_id)s;"""
         
         
-        #************************************ RETURNS A IMMUTABLEMULTIDICT (TUPLE INSIDE OF A LIST INSIDE OF A TUPLE)
-        # NEED TO ACCESS AND RETRIEVE THE INNER DATA TO BE ABLE TO DISPLAY IT IN THE SHOPPING BAG AS THE CORRECT ITEM ADDED
-        
-        
-        
-        results = connectToMySQL(DB).query_db(query, data)
-        print(f"{matcha_names_list}))))))))))))))))")
+        results = connectToMySQL(DB).query_db(query, new_data)
 
-        print(f"===========+XXXXXX{matcha_names_list}")
+        print(f"{id}******* AFTER")
         
-        return results
+        return id
 
     @classmethod
     def get_bag_by_id(cls, user_id):

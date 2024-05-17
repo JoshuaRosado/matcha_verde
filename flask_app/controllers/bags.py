@@ -23,18 +23,10 @@ def shopping_bag():
 
 @app.route("/add_item", methods = ["POST"])
 def add_item():
-    # imd = ImmutableMultiDict(request.form)
-    # imd_list = imd.getlist('Hatsu')
-    # if imd_list == "ummon":
-    #     Bag.add_to_bag(imd_list[0])
-    # elif imd_list == "hatsu":
-    #     Bag.add_to_bag(imd_list[1])
-    # elif imd_list == "sayaka":
-    #     Bag.add_to_bag(imd_list[2])
-    # else:
         
     if not Bag.add_to_bag(request.form):
         return redirect('/faq')
+    
     print(f"=====++++++======{request.form}")
     return redirect('/home')
 
