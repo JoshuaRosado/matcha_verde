@@ -1,7 +1,7 @@
 let count = 0;
 
 
-function plusBtn(a, b) {
+function addBtn(a, b) {
     var input = b.previousElementSibling;
     var value = parseInt(input.value,10);
     value = isNaN(value) ? 0 : value;
@@ -9,7 +9,7 @@ function plusBtn(a, b) {
     input.value = value;
 }
 
-function minusBtn(a, b) {
+function subtractBtn(a, b) {
     var input = b.nextElementSibling;
     var value = parseInt(input.value, 10);
     if (value > 1) {

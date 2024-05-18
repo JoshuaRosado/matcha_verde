@@ -15,10 +15,11 @@ def shopping_bag():
         return redirect('/')
     user = User.get_by_id(session["user_id"])
     bags = Bag.get_all_matchas_in_bag()
+    totals = Bag.price_total()
     # matchas = Matcha.get_all_matchas()
     # review = Review.get_all_reviews()
     
-    return render_template("shopping_bag.html", bags=bags, user=user)
+    return render_template("shopping_bag.html", totals= totals, bags=bags, user=user)
     
 
 @app.route("/add_item", methods = ["POST"])

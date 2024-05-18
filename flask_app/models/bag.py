@@ -9,6 +9,7 @@ from flask_app.models import user
 from flask_bcrypt import Bcrypt
 import re
 from werkzeug.datastructures import ImmutableMultiDict
+from werkzeug.datastructures import ImmutableDict
 
 DB = "matcha_verde"
 
@@ -51,7 +52,6 @@ class Bag:
         results = connectToMySQL(DB).query_db(query, new_data)
         
         return id
-
 
 
     @classmethod
@@ -117,11 +117,6 @@ class Bag:
             bags.append(bag_obj)
         return bags
         
-    @classmethod
-    def calculate_total_price(cls, price):
-        query = """SELECT price FROM bags;"""
-        items_price_data = connectToMySQL(DB).query_db(query)
-        pass
         
         
         
@@ -135,5 +130,14 @@ class Bag:
         return item_id
     
     @classmethod
-    def price_total(cls, price):
-        pass
+    def price_total(cls):
+        query = """SELECT price FROM bags"""
+        price = connectToMySQL(DB).query_db(query)
+        total_prices = []
+        for p in price:
+            data = ImmutableMultiDict(p)
+            total_prices.append(p["price"])
+            total = sum(total_prices)
+        return total
+        
+        
