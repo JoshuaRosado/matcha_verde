@@ -29,12 +29,19 @@ class Bag:
         self.small_img_two = bag["small_img_two"]
         self.small_img_three = bag["small_img_three"]
         self.small_img_four = bag["small_img_four"]
-        self.item_qty = 0
+        self.item_qty = bag["item_qty"]
         self.user = None
         self.matcha = []
         
         
+    @staticmethod
+    def item_amount(item, item_amount):
+        if item == True:
+            item_amount +=1
+        else:
+            return False
         
+            
     @classmethod 
     def add_to_bag(cls, matcha_id_list):
         id = matcha_id_list.getlist('matcha_id')
@@ -50,7 +57,6 @@ class Bag:
         matchas WHERE id = %(matcha_id)s;"""
         
         results = connectToMySQL(DB).query_db(query, new_data)
-        
         return id
 
 
@@ -90,7 +96,7 @@ class Bag:
     @classmethod
     def get_all_matchas_in_bag(cls):
         query = """ SELECT 
-                    bags.id, bags.created_at, bags.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+                    bags.id, bags.created_at, bags.updated_at,matcha_name,item_qty, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM bags
                     JOIN users on users.id = bags.user_id;"""
         bag_data = connectToMySQL(DB).query_db(query)

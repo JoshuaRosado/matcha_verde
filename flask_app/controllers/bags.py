@@ -26,10 +26,13 @@ def shopping_bag():
 def add_item():
         
     if not Bag.add_to_bag(request.form):
+        
         return redirect('/faq')
     
     print(f"=====++++++======{request.form}")
+    
     return redirect('/matchas')
+
 
 
 @app.route("/matcha/delete/<int:matcha_id>")
