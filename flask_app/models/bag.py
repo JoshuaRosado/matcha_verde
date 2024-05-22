@@ -36,7 +36,7 @@ class Bag:
         
     @staticmethod
     def item_amount(item, item_amount):
-        if item == True:
+        if item not in Bag:
             item_amount +=1
         else:
             return False
@@ -57,8 +57,20 @@ class Bag:
         matchas WHERE id = %(matcha_id)s;"""
         
         results = connectToMySQL(DB).query_db(query, new_data)
+        
         return id
 
+    @classmethod
+    def each_item_amount(cls, matcha_id_dict):
+        id = matcha_id_dict.getlist('matcha_id')
+        new_data = {'matcha_id': int(id[0])}
+        query = """SELECT item_qty FROM bags
+                WHERE id = %(matcha_id)s"""
+        
+        result = connectToMySQL(DB).query_db(query, new_data)
+        total_qty = []
+        
+        return id
 
     @classmethod
     def get_bag_by_id(cls, user_id):
@@ -135,6 +147,7 @@ class Bag:
         
         return item_id
     
+        
     @classmethod
     def price_total(cls):
         query = """SELECT price FROM bags"""

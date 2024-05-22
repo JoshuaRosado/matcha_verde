@@ -161,6 +161,7 @@ class Review:
         # NEED TO RETURN ALL REVIEWS from the each matcha_name
         
         results = result[0]
+        print(f"{results}")
         review = cls(results)
         
         review.user = user.User(
@@ -193,6 +194,7 @@ class Review:
                 
             }
         )
+        
         return review
 
 
