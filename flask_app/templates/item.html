@@ -12,7 +12,8 @@
         <div class="container item_page_container">
             <div class="header_container">
                 <h5 class="type"> Matcha </h5>
-                <h5 class="matcha_small_name"> - </h5>
+                <h5 class="matcha_small_name"> {{review.matcha.matcha_name.title()}}
+                </h5>
             </div>
             <div class="item_container">
                 <div class="item_img_block">
@@ -62,10 +63,12 @@
                         <i class="fa-solid fa-star"></i>
                     </div>
                     <p>{{review.stars}} out of 5</p>
+                    {% for review in reviews: %}
+                    {% if review.matcha.id == matcha_id: %}
                 </div>
                     <div class="review_blocks">
                         <div class="info">
-                            <h5 class="user_name">{{review.user.first_name.title()}}</h5>
+                            <h5 class="user_name">{{review.user.first_name}}</h5>
                             <p class="date_posted">{{review.created_at.strftime('%b %d, %Y')}}</p>
                             <div class="stars_rate">
                                 {% if review.stars == 1: %}
@@ -89,13 +92,15 @@
                                 {% endif %}
                             </div>
                         </div>
-
+                        
                         <div class="message">
                             <h5 class="msg_title">{{review.review_title.title()}}</h5>
                             <p class="msg_content">
                                 {{review.message.title()}}
                             </p>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 <div class="leave_review_btn_container">
                     <a href="/leave_review/{{review.matcha.matcha_name}}">
