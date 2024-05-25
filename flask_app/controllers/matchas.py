@@ -9,16 +9,6 @@ from flask import flash
 # ======================= HOME PAGE ========================
 
 
-@app.route('/home')
-def home_page():
-    if 'user_id' not in session:
-        flash("You must be logged in to access the dashboard.")
-        return redirect('/')
-    user = User.get_by_id(session["user_id"])
-    matchas = Matcha.get_all_matchas()
-    review = Review.get_all_reviews()
-    bags = Bag.get_all_matchas_in_bag()
-    return render_template('home.html',bags = bags, user = user, matchas=matchas, review =review)
 
 @app.route("/delete/<int:matcha_id>")
 def remove_item_from_bag(matcha_id):

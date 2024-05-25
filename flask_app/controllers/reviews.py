@@ -34,7 +34,8 @@ def create_review():
 def item_page(matcha_name):
     user = User.get_by_id(session['user_id'])
     reviews = Review.get_all_reviews()
+    matcha = Matcha.get_matcha_name(matcha_name)
     bags = Bag.get_all_matchas_in_bag()
     review = Review.get_matcha_user_review(matcha_name)
-    return render_template('item.html',bags=bags, user=user,review=review,reviews=reviews)
+    return render_template('item.html',bags=bags,matcha=matcha, user=user,review=review,reviews=reviews)
 

@@ -64,7 +64,7 @@
                     </div>
                     <p>{{review.stars}} out of 5</p>
                     {% for review in reviews: %}
-                    {% if review.matcha.id == matcha_id: %}
+                    {% if review.matcha_review == review.matcha.id: %}
                 </div>
                     <div class="review_blocks">
                         <div class="info">
