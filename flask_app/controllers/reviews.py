@@ -33,9 +33,10 @@ def create_review():
 @app.route('/item/<matcha_name>')
 def item_page(matcha_name):
     user = User.get_by_id(session['user_id'])
-    reviews = Review.get_all_reviews()
+    reviews = Review.get_matcha_reviews(matcha_name)
     matcha = Matcha.get_matcha_name(matcha_name)
     bags = Bag.get_all_matchas_in_bag()
     review = Review.get_matcha_user_review(matcha_name)
-    return render_template('item.html',bags=bags,matcha=matcha, user=user,review=review,reviews=reviews)
+    review_id = Review.get_review_by_user_id()
+    return render_template('item.html',bags=bags,matcha=matcha, user=user,review=review, reviews=reviews, review_id=review_id)
 

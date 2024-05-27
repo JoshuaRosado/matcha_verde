@@ -64,11 +64,10 @@
                     </div>
                     <p>{{review.stars}} out of 5</p>
                     {% for review in reviews: %}
-                    {% if review.matcha_review == review.matcha.id: %}
                 </div>
-                    <div class="review_blocks">
-                        <div class="info">
-                            <h5 class="user_name">{{review.user.first_name}}</h5>
+                <div class="review_blocks">
+                    <div class="info">
+                            <h5 class="user_name"></h5>
                             <p class="date_posted">{{review.created_at.strftime('%b %d, %Y')}}</p>
                             <div class="stars_rate">
                                 {% if review.stars == 1: %}
@@ -99,8 +98,7 @@
                                 {{review.message.title()}}
                             </p>
                         </div>
-                        {% endif %}
-                        {% endfor %}
+                    {% endfor %}
                     </div>
                 <div class="leave_review_btn_container">
                     <a href="/leave_review/{{review.matcha.matcha_name}}">

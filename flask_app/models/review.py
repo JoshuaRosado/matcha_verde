@@ -62,7 +62,8 @@ class Review:
         
     # =================== GET ALL REVIEWS ==========================
     @classmethod
-    def get_all_reviews(cls):
+    def get_matcha_reviews(cls, matcha_name):
+        data = {"matcha_name": matcha_name}
         query = """SELECT
                 reviews.id,
                 reviews.created_at,
@@ -92,18 +93,33 @@ class Review:
                 matchas.created_at,
                 matchas.updated_at
                 FROM reviews
+                INNER JOIN matchas 
+                ON matchas.id = matcha_id
                 INNER JOIN users 
                 ON users.id = reviews.user_id
-                INNER JOIN matchas 
-                ON matchas.id = matcha_id; """
-        review_data = connectToMySQL(DB).query_db(query)
-        review_users = []
+                WHERE matcha_name = %(matcha_name)s; """
+        review_data = connectToMySQL(DB).query_db(query,data)
+        print(f"{review_data}&&&&&&&&&&&&&")
+        
+        return review_data
+
+
+
+# ============================GET MATCHA'S USER WITH REVIEWS=======
+    @classmethod
+    def get_matcha_user_review(cls,big_data):
+        data = {"matcha_name": big_data}
+        query = """ SELECT * FROM reviews
+        JOIN matchas on matchas.id = reviews.matcha_id
+        WHERE matcha_name = %(matcha_name)s;"""
+        
+        review_data = connectToMySQL(DB).query_db(query,data)
         review_matchas = []
         for review in review_data:
             
-            review_obj2 = cls(review)
+            review_obj_matcha = cls(review)
             
-            review_obj2.matcha = matcha.Matcha(
+            review_obj_matcha.matcha = matcha.Matcha(
             {
                 "id": review["id"],
                 "matcha_name": review["matcha_name"],
@@ -122,7 +138,31 @@ class Review:
                 
             }
         )
-            review_matchas.append(review_obj2)
+            review_matchas.append(review_obj_matcha)
+        return review_obj_matcha
+    # =================== GET REVIEW BY ID ==========================
+    @classmethod
+    def get_review_by_user_id(cls):
+        query = """SELECT
+                reviews.id,
+                reviews.created_at,
+                reviews.updated_at,
+                reviews.name,
+                reviews.stars,
+                reviews.review_title,
+                reviews.message,
+                users.id as user_id,
+                users.first_name,
+                users.last_name,
+                users.email,
+                users.created_at,
+                users.updated_at
+                FROM reviews
+                JOIN users on users.id = reviews.user_id;"""
+                
+        review_data = connectToMySQL(DB).query_db(query)
+        
+        revs = []
         
         for review in review_data:
             
@@ -130,96 +170,20 @@ class Review:
             
             review_obj.user = user.User(
             {
-                "id": review["id"],
+                "id": review["user_id"],
                 "first_name": review["first_name"],
                 "last_name": review["last_name"],
                 "email": review["email"],
-                "password": False,
+                "password":False,
                 "created_at": review["created_at"],
                 "updated_at": review["updated_at"]
                 
             }
         )
-            review_users.append(review_obj)
-            review_users.append(review_obj2)
-        return review_users
+            
+            revs.append(review_obj)
 
-
-
-
-# ============================GET MATCHA'S USER WITH REVIEWS=======
-    @classmethod
-    def get_matcha_user_review(cls,big_data):
-        data = {"matcha_name": big_data}
-        query = """ SELECT * FROM reviews
-        JOIN users on users.id = reviews.user_id
-        JOIN matchas on matchas.id = reviews.matcha_id
-        WHERE matchas.matcha_name = %(matcha_name)s;"""
-        
-        result = connectToMySQL(DB).query_db(query,data)
-        # NEED TO RETURN ALL REVIEWS from the each matcha_name
-        
-        results = result[0]
-        review = cls(results)
-        
-        review.user = user.User(
-            {"id": results["user_id"],
-                "first_name": results["first_name"],
-                "last_name": results["last_name"],
-                "email": results["email"],
-                "password": False,
-                "created_at": results["created_at"],
-                "updated_at": results["updated_at"]
-                }
-        )
-        review.matcha = matcha.Matcha(
-            {
-                "id": results["matcha_id"],
-                "matcha_name": results["matcha_name"],
-                "matcha_qty": results["matcha_qty"],
-                "matcha_short_description": results ["matcha_short_description"],
-                "taste_description": results["taste_description"],
-                "taste_notes": results["taste_notes"],
-                "price": results["price"],
-                "img": results["img"],
-                "small_img_one": results["small_img_one"],
-                "small_img_two": results["small_img_two"],
-                "small_img_three": results["small_img_three"],
-                "small_img_four": results["small_img_four"],
-                "created_at": results["created_at"],
-                "updated_at": results["updated_at"]
-                
-                
-            }
-        )
-        return review
-
-
-
-
-    # =================== GET REVIEW BY ID ==========================
-    @classmethod
-    def get_review_by_id(cls, review_dict):
-        data = {"id": review_dict}
-        query = """SELECT * FROM reviews
-                JOIN users on users.id = reviews.user_id
-                WHERE  reviews.id = %(id)s;"""
-                
-        result = connectToMySQL(DB).query_db(query, data)
-        review = cls(result)
-        
-        review.user = user.User(
-            {
-                "id": result["user_id"],
-                "first_name": result["first_name"],
-                "last_name": result["last_name"],
-                "email": result["email"],
-                "password": False,
-                "created_at": result["created_at"],
-                "updated_at": result["updated_at"]
-            }
-        )
-        return review
+        return revs
 
 
 

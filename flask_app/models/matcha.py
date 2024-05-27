@@ -35,23 +35,14 @@ class Matcha:
     @classmethod
     def get_matcha_name(cls, matcha_dict):
         data = {"matcha_name": matcha_dict}
-        query = """ SELECT * FROM matchas JOIN users on users.id = matchas.user_id WHERE matchas.matcha_name = %(matcha_name)s;"""
+        query = """ SELECT * FROM matchas WHERE matchas.matcha_name = %(matcha_name)s;"""
         
         results = connectToMySQL(DB).query_db(query,data)
         results = results[0]
+        print(f"{results}((((((((((()))))))))))")
         matcha = cls(results)
         
-        matcha.user = user.User(
-            {
-                "id": results["user_id"],
-                "first_name":results["first_name"],
-                "last_name": results["last_name"],
-                "email": results["email"],
-                "password": results["password"],
-                "created_at": results["created_at"],
-                "updated_at": results["updated_at"],
-            }
-        )
+        
         return matcha
     
     @classmethod
