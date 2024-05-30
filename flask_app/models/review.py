@@ -59,8 +59,52 @@ class Review:
         result = connectToMySQL(DB).query_db(query, review_dict)
         
         return review
+    
+    # ==================== GET ALL REVIEWS =====================
+    
+    @classmethod
+    def get_all_reviews(cls):
+        query = """SELECT
+                reviews.id,
+                reviews.created_at,
+                reviews.updated_at,
+                reviews.name,
+                reviews.stars,
+                reviews.review_title,
+                reviews.message,
+                users.id as user_id,
+                users.first_name,
+                users.last_name,
+                users.email,
+                users.created_at,
+                users.updated_at,
+                matchas.id as matcha_id,
+                matchas.matcha_name,
+                matchas.matcha_qty,
+                matchas.matcha_short_description,
+                matchas.taste_description,
+                matchas.taste_notes,
+                matchas.price,
+                matchas.img,
+                matchas.small_img_one,
+                matchas.small_img_two,
+                matchas.small_img_three,
+                matchas.small_img_four,
+                matchas.created_at,
+                matchas.updated_at
+                FROM reviews
+                INNER JOIN matchas 
+                ON matchas.id = matcha_id
+                INNER JOIN users 
+                ON users.id = reviews.user_id;"""
+                
+        review_data = connectToMySQL(DB).query_db(query)
+
         
-    # =================== GET ALL REVIEWS ==========================
+        return review_data
+                
+                
+    # =================== GET ALL REVIEWS FROM THE MATCHA SELECTED ==========================
     @classmethod
     def get_matcha_reviews(cls, matcha_name):
         data = {"matcha_name": matcha_name}
@@ -99,7 +143,7 @@ class Review:
                 ON users.id = reviews.user_id
                 WHERE matcha_name = %(matcha_name)s; """
         review_data = connectToMySQL(DB).query_db(query,data)
-        print(f"{review_data}&&&&&&&&&&&&&")
+        print(f"&&&&&&&&&&&&{review_data}&&&&&&&&&&&&&")
         
         return review_data
 
@@ -140,93 +184,7 @@ class Review:
         )
             review_matchas.append(review_obj_matcha)
         return review_obj_matcha
-    # =================== GET REVIEW BY ID ==========================
-    @classmethod
-    def get_review_by_user_id(cls):
-        query = """SELECT
-                reviews.id,
-                reviews.created_at,
-                reviews.updated_at,
-                reviews.name,
-                reviews.stars,
-                reviews.review_title,
-                reviews.message,
-                users.id as user_id,
-                users.first_name,
-                users.last_name,
-                users.email,
-                users.created_at,
-                users.updated_at
-                FROM reviews
-                JOIN users on users.id = reviews.user_id;"""
-                
-        review_data = connectToMySQL(DB).query_db(query)
-        
-        revs = []
-        
-        for review in review_data:
-            
-            review_obj = cls(review)
-            
-            review_obj.user = user.User(
-            {
-                "id": review["user_id"],
-                "first_name": review["first_name"],
-                "last_name": review["last_name"],
-                "email": review["email"],
-                "password":False,
-                "created_at": review["created_at"],
-                "updated_at": review["updated_at"]
-                
-            }
-        )
-            
-            revs.append(review_obj)
 
-        return revs
-
-
-
-# ============================ GET REVIEW BY MATCHA ============
-
-    @classmethod
-    def get_reviews_by_matcha(cls, reviews_dict):
-        data =  {"id" : reviews_dict}
-        query  =""" SELECT * FROM reviews
-        JOIN matchas on matchas.id = reviews.matcha_id
-        WHERE reviews.id = %(id)s;"""
-        
-        result = connectToMySQL(DB).query_db(query, data)
-        print("result of query:")
-        print(result)
-        result = result[0]
-        print(result)
-        review = cls(result)
-        
-        
-        
-        
-        review.matcha = matcha.Matcha(
-            {
-                "id": result["user_id"],
-                "matcha_name": result["matcha_name"],
-                "matcha_qty": result["matcha_qty"],
-                "matcha_short_description": result ["matcha_short_description"],
-                "taste_description": result["taste_description"],
-                "taste_notes": result["taste_notes"],
-                "price": result["price"],
-                "img": result["img"],
-                "small_img_one": result["small_img_one"],
-                "small_img_two": result["small_img_two"],
-                "small_img_three": result["small_img_three"],
-                "small_img_four": result["small_img_four"],
-                "created_at": result["created_at"],
-                "updated_at": result["updated_at"],
-                
-                
-            }
-        )
-        return review
     # =================== VALIDATE REVIEW'S INPUT ==========================
     @staticmethod
     def is_valid(review_dict):

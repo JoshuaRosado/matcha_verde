@@ -15,11 +15,12 @@ from flask import flash
 
 @app.route('/leave_review/<matcha_name>')
 def leave_review(matcha_name):
-    reviews = Review.get_all_reviews()
+    all_reviews = Review.get_all_reviews()
+    reviews = Review.get_matcha_reviews(matcha_name)
     matchas = Matcha.get_matcha_name(matcha_name)
     user = User.get_by_id(session["user_id"])
     bags = Bag.get_all_matchas_in_bag()
-    return render_template('leave_review.html',bags = bags, user=user, matchas=matchas, reviews=reviews)
+    return render_template('leave_review.html',bags = bags, user=user, matchas=matchas, reviews=reviews, all_reviews=all_reviews)
 
 
 @app.route('/create_review', methods = ["POST"])
@@ -37,6 +38,5 @@ def item_page(matcha_name):
     matcha = Matcha.get_matcha_name(matcha_name)
     bags = Bag.get_all_matchas_in_bag()
     review = Review.get_matcha_user_review(matcha_name)
-    review_id = Review.get_review_by_user_id()
-    return render_template('item.html',bags=bags,matcha=matcha, user=user,review=review, reviews=reviews, review_id=review_id)
+    return render_template('item.html',bags=bags,matcha=matcha, user=user,review=review, reviews=reviews)
 

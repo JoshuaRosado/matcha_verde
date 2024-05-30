@@ -67,7 +67,7 @@
                 </div>
                 <div class="review_blocks">
                     <div class="info">
-                            <h5 class="user_name"></h5>
+                            <h5 class="user_name">{{review.first_name.title()}}</h5>
                             <p class="date_posted">{{review.created_at.strftime('%b %d, %Y')}}</p>
                             <div class="stars_rate">
                                 {% if review.stars == 1: %}
