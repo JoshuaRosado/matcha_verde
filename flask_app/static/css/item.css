@@ -78,6 +78,7 @@
 .small_img{
     height: 3.8rem;
     width: 3.8rem;
+    cursor: pointer;
     border-radius: .3rem;
 }
 
@@ -219,8 +220,8 @@ details span::before, details span::after{
 }
 
 .review_header{
-    height: 15svh;
-    font-size: 1.1rem;
+    height: 20svh;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -234,7 +235,6 @@ details span::before, details span::after{
     display: flex ;
     justify-content: center;
     height: auto;
-    padding: 1rem 0rem;
     border-top: 2px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -331,6 +331,7 @@ details span::before, details span::after{
     }
     .small_img{
         min-height: 15dvh;
+        cursor: pointer;
         min-width: 8dvw;
         padding: .2rem;
         border-radius: .4rem;
@@ -348,7 +349,8 @@ details span::before, details span::after{
     }
 
     .review_header{
-        padding: 5rem;
+        padding: 5dvh;
+        margin-bottom: 15dvh;
     }
     .user_name{
         font-size: 1.8rem;

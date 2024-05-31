@@ -29,7 +29,7 @@ class Bag:
         self.small_img_two = bag["small_img_two"]
         self.small_img_three = bag["small_img_three"]
         self.small_img_four = bag["small_img_four"]
-        self.item_qty = bag["item_qty"]
+        self.item_qty = 1
         self.user = None
         self.matcha = []
         

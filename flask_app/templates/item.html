@@ -36,14 +36,18 @@
                         <i class="fa-solid fa-star"></i>
                     <span class="review_count">(59)</span></p>
                     <p class="item_price"> ${{review.matcha.price}} </p>
-                    <div class="btn_options_row">
-                        <div class="counter">
-                            <button id="minus" onclick="decreaseBtn(event, this)">-</button>
-                            <input type="number" id="count" name="count" value="1">
-                            <button id="plus" onclick="increaseBtn(event, this)">+</button>
+                    <form action="/add_item" method='post' class="add_item_to_bag" name="add_item">
+                        <div class="btn_options_row">
+                            <div class="counter">
+                                <input type="hidden" id="matcha_id" name="matcha_id" value={{matcha.id}}>
+                                <input type="hidden" id="user_id" name="user_id" value={{matcha.user.id}}>
+                                <button type="button" id="minus" onclick="decreaseBtn(event, this)">-</button>
+                                <input type="number" id="count" name="count" value="{{bags.item_qty}} "placeholder="0" >
+                                <button type="button" id="plus" onclick="increaseBtn(event, this)">+</button>
+                            </div>
+                            <button class="item_add_to_bag_btn" type="submit">Add to bag</button>
                         </div>
-                        <button class="item_add_to_bag_btn" type="submit">Add to bag</button>
-                    </div>
+                    </form>
                     <p class="below_item_description">{{review.matcha.taste_description}}</p>
                     <details class=" item_details taste_notes">
                         <summary class="item_summary"> Taste Notes <span></span></summary>
@@ -67,31 +71,30 @@
                 </div>
                 <div class="review_blocks">
                     <div class="info">
-                            <h5 class="user_name">{{review.first_name.title()}}</h5>
-                            <p class="date_posted">{{review.created_at.strftime('%b %d, %Y')}}</p>
-                            <div class="stars_rate">
-                                {% if review.stars == 1: %}
-                                    <i class="fa-solid fa-star"></i>
-                                {% elif review.stars == 2: %}
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                {% elif review.stars == 3: %}
+                        <h5 class="user_name">{{review.first_name.title()}}</h5>
+                        <p class="date_posted">{{review.created_at.strftime('%b %d, %Y')}}</p>
+                        <div class="stars_rate">
+                            {% if review.stars == 1: %}
                                 <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                {% elif review.stars == 4: %}
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                {% elif review.stars == 5: %}
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                {% else %}
-                                {% endif %}
-                            </div>
+                            {% elif review.stars == 2: %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            {% elif review.stars == 3: %}
+                            <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            {% elif review.stars == 4: %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            {% elif review.stars == 5: %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            {% else %}
+                            {% endif %}
                         </div>
-                        
+                    </div>
                         <div class="message">
                             <h5 class="msg_title">{{review.review_title.title()}}</h5>
                             <p class="msg_content">
@@ -107,6 +110,7 @@
                 </div>
             </div>
         </div>
+        <script src="{{url_for('static', filename='js/item.js')}}"></script>
         <script src="{{url_for('static', filename='js/script.js')}}"></script>
     </body>
     </html>
