@@ -28,6 +28,7 @@ def shopping_bag():
     user = User.get_by_id(session["user_id"])
     bags = Bag.get_all_matchas_in_bag()
     totals = Bag.price_total()
+    qty = Bag.item_qty()
     # matchas = Matcha.get_all_matchas()
     # review = Review.get_all_reviews()
     

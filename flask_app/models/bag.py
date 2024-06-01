@@ -58,6 +58,7 @@ class Bag:
         
         results = connectToMySQL(DB).query_db(query, new_data)
         
+        
         return id
 
     @classmethod
@@ -148,15 +149,24 @@ class Bag:
         return item_id
     
         
+    # @classmethod 
+    # def item_qty(cls):
+    #     qty_query = """SELECT item_qty FROM bags;"""
+    #     qty = connectToMySQL(DB).query_db(qty_query)
+    #     print(f"{qty}^^^&&&&&&&&")
     @classmethod
     def price_total(cls):
-        query = """SELECT price FROM bags"""
-        price = connectToMySQL(DB).query_db(query)
+        price_query = """SELECT price FROM bags;"""
+        price = connectToMySQL(DB).query_db(price_query)
         total_prices = []
+        empty = 0
         for p in price:
             data = ImmutableMultiDict(p)
             total_prices.append(p["price"])
             total = sum(total_prices)
-        return total
+        if total_prices == []:
+            return empty
+        else:
+            return total
         
         
