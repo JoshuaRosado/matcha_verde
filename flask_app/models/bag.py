@@ -33,15 +33,7 @@ class Bag:
         self.user = None
         self.matcha = []
         
-        
-    @staticmethod
-    def item_amount(item, item_amount):
-        if item not in Bag:
-            item_amount +=1
-        else:
-            return False
-        
-            
+
     @classmethod 
     def add_to_bag(cls, matcha_id_list):
         id = matcha_id_list.getlist('matcha_id')
@@ -49,18 +41,31 @@ class Bag:
 
         query= """
         INSERT INTO
-        bags (matcha_id, bags.matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
+        bags (matcha_id, item_qty, bags.matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
         
         SELECT
-        id, matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id 
+        id, matcha_name, matcha_qty, item_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id 
         FROM 
         matchas WHERE id = %(matcha_id)s;"""
         
         results = connectToMySQL(DB).query_db(query, new_data)
-        
-        
+
+# ============== CONVERT NONETYPE INTO INTO ("ITEM QTY")===========
+
+        query_for_amount = """SELECT item_qty from bags;"""
+        result_of_item_amount = connectToMySQL(DB).query_db(query_for_amount)
+        for res in result_of_item_amount:
+            n = res['item_qty']
+            if n is None:
+                n = 1 
+        return n
         return id
 
+
+    # @classmethod
+    # def convert_none_into_int(cls):
+    
+    
     @classmethod
     def each_item_amount(cls, matcha_id_dict):
         id = matcha_id_dict.getlist('matcha_id')

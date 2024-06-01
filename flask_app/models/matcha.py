@@ -26,6 +26,7 @@ class Matcha:
         self.small_img_two = matcha["small_img_two"]
         self.small_img_three = matcha["small_img_three"]
         self.small_img_four = matcha["small_img_four"]
+        self.item_qty = matcha["item_qty"]
         self.reviews = review
         self.bag = bag
         self.user = None
@@ -72,7 +73,7 @@ class Matcha:
     @classmethod
     def get_regular_matchas(cls):
         query = """ SELECT 
-                    matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+                    matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty,item_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM matchas
                     JOIN users on users.id = matchas.user_id
                     WHERE matchas.id < 4;"""
@@ -106,7 +107,7 @@ class Matcha:
     @classmethod
     def get_organic_matchas(cls):
         query = """ SELECT 
-                    matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+                    matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, item_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM matchas
                     JOIN users on users.id = matchas.user_id
                     WHERE matchas.id > 3;"""
@@ -139,7 +140,7 @@ class Matcha:
     @classmethod
     def get_all_matchas(cls):
         query = """ SELECT 
-                    matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+                    matchas.id, matchas.created_at, matchas.updated_at,matcha_name, matcha_qty, item_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM matchas
                     JOIN users on users.id = matchas.user_id;"""
                     
