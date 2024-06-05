@@ -26,20 +26,18 @@ def shopping_bag():
         flash("You must be logged in to access the dashboard.")
         return redirect('/')
     user = User.get_by_id(session["user_id"])
-    amount = Bag.convert_none_into_int()
     bags = Bag.get_all_matchas_in_bag()
     totals = Bag.price_total()
     # matchas = Matcha.get_all_matchas()
     # review = Review.get_all_reviews()
     
-    return render_template("shopping_bag.html", amount = amount, totals= totals, bags=bags, user=user)
+    return render_template("shopping_bag.html", totals= totals, bags=bags, user=user)
     
 
 @app.route("/add_item", methods = ["POST"])
 def add_item():
         
     if not Bag.add_to_bag(request.form):
-        
         return redirect('/faq')
     
     print(f"=====++++++======{request.form}")

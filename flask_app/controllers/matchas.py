@@ -34,9 +34,9 @@ def matchas_page():
     user = User.get_by_id(session["user_id"])
     matchas = Matcha.get_regular_matchas()
     all_matchas = Matcha.get_all_matchas()
-
+    review = Review.get_all_reviews()
     bags = Bag.get_items_in_bag()
-    return render_template('matcha.html',all_matchas=all_matchas,bags =bags, user=user, matchas= matchas)
+    return render_template('matcha.html',all_matchas=all_matchas,bags =bags, user=user, matchas= matchas, review = review)
 
 
 @app.route('/recipes')

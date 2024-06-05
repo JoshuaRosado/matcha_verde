@@ -50,22 +50,10 @@ class Bag:
         
         results = connectToMySQL(DB).query_db(query, new_data)
 
-# ============== CONVERT NONETYPE INTO INTO ("ITEM QTY")===========
-
-        query_for_amount = """SELECT item_qty from bags;"""
-        result_of_item_amount = connectToMySQL(DB).query_db(query_for_amount)
-        for res in result_of_item_amount:
-            n = res['item_qty']
-            if n is None:
-                n = 1 
-        return n
         return id
 
 
-    # @classmethod
-    # def convert_none_into_int(cls):
-    
-    
+        
     @classmethod
     def each_item_amount(cls, matcha_id_dict):
         id = matcha_id_dict.getlist('matcha_id')
