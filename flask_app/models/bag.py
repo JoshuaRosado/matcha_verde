@@ -33,7 +33,6 @@ class Bag:
         self.user = None
         self.matcha = []
         
-
     @classmethod 
     def add_to_bag(cls, matcha_id_list):
         id = matcha_id_list.getlist('matcha_id')
@@ -54,17 +53,18 @@ class Bag:
 
 
         
-    @classmethod
-    def each_item_amount(cls, matcha_id_dict):
-        id = matcha_id_dict.getlist('matcha_id')
-        new_data = {'matcha_id': int(id[0])}
-        query = """SELECT item_qty FROM bags
-                WHERE id = %(matcha_id)s"""
+    # @classmethod
+    # def add_item(cls, matcha_id_dict):
+    #     matcha = matcha_id_dict.getlist('matcha_name')
+    #     new_data = {'matcha_name': int(id[0])}
+    #     query = """SELECT item_qty FROM bags
+    #             WHERE name = %(matcha_name)s"""
         
-        result = connectToMySQL(DB).query_db(query, new_data)
-        total_qty = []
+    #     result = connectToMySQL(DB).query_db(query, new_data)
         
-        return id
+    #     total_qty = []
+        
+    #     return matcha
 
     @classmethod
     def get_bag_by_id(cls, user_id):
@@ -163,3 +163,12 @@ class Bag:
             return total
         
         
+        
+    @staticmethod
+    def is_valid(matcha_item):
+        list = matcha_item.getlist('matcha_id')[0]
+        valid = True
+        if list == 1:
+            return False
+        
+        return valid

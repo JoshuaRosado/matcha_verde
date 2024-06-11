@@ -36,14 +36,12 @@ def shopping_bag():
 
 @app.route("/add_item", methods = ["POST"])
 def add_item():
-        
-    if not Bag.add_to_bag(request.form):
-        return redirect('/faq')
-    
-    print(f"=====++++++======{request.form}")
-    
-    return redirect('/matchas')
 
+    if not Bag.add_to_bag(request.form):
+        
+        return redirect('/faq')
+    print(f"=====++++++======{request.form.getlist('matcha_id')[0]}")
+    return redirect('/matchas')
 
 
 @app.route("/matcha/delete/<int:matcha_id>")
