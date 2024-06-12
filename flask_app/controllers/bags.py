@@ -37,8 +37,9 @@ def shopping_bag():
 @app.route("/add_item", methods = ["POST"])
 def add_item():
 
+    if Bag.verifying_item_in_bag(request.form):
+        return redirect('about')
     if not Bag.add_to_bag(request.form):
-        
         return redirect('/faq')
     print(f"=====++++++======{request.form.getlist('matcha_id')[0]}")
     return redirect('/matchas')

@@ -98,9 +98,32 @@ class Bag:
         bag_data = connectToMySQL(DB).query_db(query)
         
         return bag_data
+    @classmethod
+    def verifying_item_in_bag(cls, matcha_name):
+        id = matcha_name.getlist('matcha_name')
+        new_data = {'matcha_name': int(id[0])}
+        query = """ SELECT 
+                    bags.id, bags.created_at, bags.updated_at,matcha_name,item_qty, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+                    FROM bags
+                    
+                    JOIN users on users.id = bags.user_id;"""
+                    
+        bag_data = connectToMySQL(DB).query_db(query, new_data)
+        for bag in bag_data:
+            if bag['matcha_name'] == new_data:
+                print(f"********{new_data}****")
+                return False
+            return Bag.add_to_bag(matcha_name)
+            
+            
+            
         
+            
+            
+            
     @classmethod
     def get_all_matchas_in_bag(cls):
+        
         query = """ SELECT 
                     bags.id, bags.created_at, bags.updated_at,matcha_name,item_qty, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM bags
@@ -108,7 +131,9 @@ class Bag:
         bag_data = connectToMySQL(DB).query_db(query)
         
         bags = []
-        
+        # for bag in bag_data:
+        #     if matcha_id == bag:
+        #         print(f"***********")
         for bag in bag_data:
             
             bag_obj = cls(bag)
@@ -127,6 +152,7 @@ class Bag:
         )
             
             bags.append(bag_obj)
+            print(f"888888888{bag['matcha_name']}88888888888")
         return bags
         
         
