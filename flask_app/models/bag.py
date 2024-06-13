@@ -98,22 +98,22 @@ class Bag:
         bag_data = connectToMySQL(DB).query_db(query)
         
         return bag_data
-    @classmethod
-    def verifying_item_in_bag(cls, matcha_name):
-        id = matcha_name.getlist('matcha_name')
-        new_data = {'matcha_name': int(id[0])}
-        query = """ SELECT 
-                    bags.id, bags.created_at, bags.updated_at,matcha_name,item_qty, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
-                    FROM bags
+    # @classmethod
+    # def verifying_item_in_bag(cls, matcha_name):
+    #     id = matcha_name.getlist('matcha_name')
+    #     new_data = {'matcha_name': int(id[0])}
+    #     query = """ SELECT 
+    #                 bags.id, bags.created_at, bags.updated_at,matcha_name,item_qty, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+    #                 FROM bags
                     
-                    JOIN users on users.id = bags.user_id;"""
+    #                 JOIN users on users.id = bags.user_id;"""
                     
-        bag_data = connectToMySQL(DB).query_db(query, new_data)
-        for bag in bag_data:
-            if bag['matcha_name'] == new_data:
-                print(f"********{new_data}****")
-                return False
-            return Bag.add_to_bag(matcha_name)
+    #     bag_data = connectToMySQL(DB).query_db(query, new_data)
+    #     for bag in bag_data:
+    #         if bag['matcha_name'] == new_data:
+    #             print(f"********{new_data}****")
+    #             return False
+    #         return Bag.add_to_bag(matcha_name)
             
             
             

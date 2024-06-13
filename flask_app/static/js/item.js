@@ -30,7 +30,7 @@ let count = 0;
 
 function increaseBtn(a, b) {
     var input = b.previousElementSibling;
-    var value = parseInt(input.value,10);
+    var value = parseInt(input.value, 10);
     value = isNaN(value) ? 0 : value;
     value++;
     input.value = value;

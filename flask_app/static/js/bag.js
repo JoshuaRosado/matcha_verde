@@ -2,9 +2,12 @@ let count = 0;
 
 
 function addBtn(a, b) {
+    var price = document.getElementById("bag_item_price")
     var input = b.previousElementSibling;
     var value = parseInt(input.value,10);
     value = isNaN(value) ? 0 : value;
+    
+    // price.innerText = price.innerText * 2
     value++;
     input.value = value;
 }
