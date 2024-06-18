@@ -7,7 +7,6 @@ function addBtn(a, b) {
     var value = parseInt(input.value,10);
     value = isNaN(value) ? 0 : value;
     
-    // price.innerText = price.innerText * 2
     value++;
     input.value = value;
 }

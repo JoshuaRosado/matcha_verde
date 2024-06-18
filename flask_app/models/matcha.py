@@ -26,7 +26,7 @@ class Matcha:
         self.small_img_two = matcha["small_img_two"]
         self.small_img_three = matcha["small_img_three"]
         self.small_img_four = matcha["small_img_four"]
-        self.item_qty = 1
+        self.item_qty = matcha["item_qty"]
         self.reviews = review
         self.bag = bag
         self.user = None

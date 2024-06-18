@@ -1,6 +1,6 @@
 INSERT INTO MATCHAS ( matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img,small_img_one, small_img_two, small_img_three, small_img_four,created_at, updated_at,user_id)
 
-VALUES ("Organic Mathca", "20g", "Light & Snappy", "Our organic matcha has a green, snappy character with more astringency than sweetness.", "This organic matcha has a crisp, astringent character with an aroma like a breeze through a field. As usucha, pair this brisk matcha with sweets at teatime. Or, add milk and use it for your daily matcha latte. This tea is great for everyday, light-hearted matcha use.
+VALUES ("Organic Matcha", "20g", "Light & Snappy", "Our organic matcha has a green, snappy character with more astringency than sweetness.", "This organic matcha has a crisp, astringent character with an aroma like a breeze through a field. As usucha, pair this brisk matcha with sweets at teatime. Or, add milk and use it for your daily matcha latte. This tea is great for everyday, light-hearted matcha use.
 
 Ranking outside of our regular lineup, this limited tea changes character with every release.", 18.00, "/item_imgs/org_matcha_small_imgs/org_big_img.webp", "/item_imgs/org_matcha_small_imgs/org_small2.avif", "/item_imgs/org_matcha_small_imgs/org_small3.avif", "/item_imgs/org_matcha_small_imgs/org_small4.avif", "/item_imgs/org_matcha_small_imgs/org_small5.avif",NOW(), NOW(),4 )
 

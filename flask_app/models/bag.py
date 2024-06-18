@@ -17,6 +17,7 @@ class Bag:
     def __init__(self, bag):
         self.id = bag["id"]
         self.matcha_name = bag["matcha_name"]
+        self.item_qty = bag["item_qty"]
         self.matcha_qty = bag["matcha_qty"]
         self.matcha_short_description = bag["matcha_short_description"]
         self.taste_description = bag["taste_description"]
@@ -29,7 +30,6 @@ class Bag:
         self.small_img_two = bag["small_img_two"]
         self.small_img_three = bag["small_img_three"]
         self.small_img_four = bag["small_img_four"]
-        self.item_qty = 1
         self.user = None
         self.matcha = []
         
@@ -40,10 +40,10 @@ class Bag:
 
         query= """
         INSERT INTO
-        bags (matcha_id ,bags.matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
+        bags (matcha_id ,bags.matcha_name, item_qty, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
         
         SELECT
-        id, matcha_name, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id 
+        id, matcha_name, item_qty, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id 
         FROM 
         matchas WHERE id = %(matcha_id)s;"""
         
@@ -69,7 +69,7 @@ class Bag:
     @classmethod
     def get_bag_by_id(cls, user_id):
         data ={"id": user_id}
-        query = """ SELECT bags.id matcha_name, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, users.id as user_id, first_name, last_name, email, created_at, updated_at
+        query = """ SELECT bags.id matcha_name, item_qty, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, users.id as user_id, first_name, last_name, email, created_at, updated_at
         FROM bags
         JOIN users on users.id = bags.user_id
         WHERE bags.id = %(id)s"""
@@ -125,7 +125,7 @@ class Bag:
     def get_all_matchas_in_bag(cls):
         
         query = """ SELECT 
-                    bags.id, bags.created_at, bags.updated_at,matcha_name,item_qty, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
+                    bags.id, bags.created_at, bags.updated_at,matcha_name, item_qty, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, small_img_one,small_img_two, small_img_three, small_img_four, users.id as user_id,first_name,last_name,email, users.created_at, users.updated_at
                     FROM bags
                     JOIN users on users.id = bags.user_id;"""
         bag_data = connectToMySQL(DB).query_db(query)
@@ -183,11 +183,26 @@ class Bag:
             data = ImmutableMultiDict(p)
             total_prices.append(p["price"])
             total = sum(total_prices)
+            
+            
         if total_prices == []:
             return empty
         else:
+            # if p["item_qty"] == p["item_qty"] + 1:
             return total
         
+        
+    @classmethod
+    def adding_item_amount(cls):
+        query = """SELECT price, item_qty FROM bags;"""
+        results = connectToMySQL(DB).query_db(query)
+        
+        for item in results:
+            if item['item_qty'] == item['item_qty'] + 1:
+                item['price'] + item['price']
+            print(item)
+                
+            return item
         
         
     @staticmethod

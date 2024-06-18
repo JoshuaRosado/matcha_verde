@@ -28,17 +28,15 @@ def shopping_bag():
     user = User.get_by_id(session["user_id"])
     bags = Bag.get_all_matchas_in_bag()
     totals = Bag.price_total()
+    item = Bag.adding_item_amount()
     # matchas = Matcha.get_all_matchas()
     # review = Review.get_all_reviews()
     
-    return render_template("shopping_bag.html", totals= totals, bags=bags, user=user)
+    return render_template("shopping_bag.html",item=item, totals= totals, bags=bags, user=user)
     
 
 @app.route("/add_item", methods = ["POST"])
 def add_item():
-
-    # if Bag.verifying_item_in_bag(request.form):
-    #     return redirect('about')
     if not Bag.add_to_bag(request.form):
         return redirect('/faq')
     print(f"=====++++++======{request.form.getlist('matcha_id')[0]}")

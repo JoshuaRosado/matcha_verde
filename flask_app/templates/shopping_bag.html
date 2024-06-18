@@ -47,7 +47,7 @@
                         </td>
                         <td>
                             <section class="right_section_SB">
-                                <p id="bag_item_price">${{bag.price}}.00</p>
+                                <p>$ <b id="bag_item_price">{{bag.price}}</b></p>
                             </section>
                         </td>
                     </tr>
@@ -64,6 +64,7 @@
     </form>
 </div>
 <script src="{{url_for('static', filename='js/bag.js')}}"></script>
+
 </body>
 </html>
 {% endblock %}
