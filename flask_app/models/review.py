@@ -183,6 +183,7 @@ class Review:
             }
         )
             review_matchas.append(review_obj_matcha)
+            print(f"^^^^^^{review_obj_matcha}")
         return review_obj_matcha
 
     # =================== VALIDATE REVIEW'S INPUT ==========================

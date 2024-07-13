@@ -240,19 +240,6 @@
         </div>
         <div class="recipe_footer"></div>
         <script src="{{url_for('static', filename='js/script.js')}}"></script>
-        <script>
-            $(document).ready(function(){
-                $('.quiz').bind('click', function(){
-                    $.getJSON($SCRIPT_ROOT + '_ajax_user_input',{
-                        user_input: $('#input').val(),
-                    }, function(){
-                        window.open('http://127.0.0.1:5000/quiz','_blank');
-                        console.log("HERERERERERERER")
-                    });
-                    return false;
-                });
-            });
-        </script>
 </body>
 </html>
 {%endblock%}
