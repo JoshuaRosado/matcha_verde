@@ -159,32 +159,36 @@ class Review:
         
         review_data = connectToMySQL(DB).query_db(query,data)
         review_matchas = []
+        print(f"*****%%%%%% {data}$$$$")
         for review in review_data:
-            
-            review_obj_matcha = cls(review)
-            
-            review_obj_matcha.matcha = matcha.Matcha(
-            {
-                "id": review["id"],
-                "matcha_name": review["matcha_name"],
-                "matcha_qty": review["matcha_qty"],
-                "matcha_short_description": review["matcha_short_description"],
-                "taste_description": review["taste_description"],
-                "taste_notes": review["taste_notes"],
-                "price": review["price"],
-                "img": review["img"],
-                "created_at": review["created_at"],
-                "updated_at": review["updated_at"],
-                "small_img_one": review["small_img_one"],
-                "small_img_two": review["small_img_two"],
-                "small_img_three": review["small_img_three"],
-                "small_img_four": review["small_img_four"]
                 
-            }
-        )
-            review_matchas.append(review_obj_matcha)
-            print(f"^^^^^^{review_obj_matcha}")
-        return review_obj_matcha
+                print(f"####{review}")
+                
+                review_obj_matcha = cls(review)
+                
+                review_obj_matcha.matcha = matcha.Matcha(
+                {
+                    "id": review["id"],
+                    "matcha_name": review["matcha_name"],
+                    "matcha_qty": review["matcha_qty"],
+                    "item_qty":review ["item_qty"],
+                    "matcha_short_description": review["matcha_short_description"],
+                    "taste_description": review["taste_description"],
+                    "taste_notes": review["taste_notes"],
+                    "price": review["price"],
+                    "img": review["img"],
+                    "created_at": review["created_at"],
+                    "updated_at": review["updated_at"],
+                    "small_img_one": review["small_img_one"],
+                    "small_img_two": review["small_img_two"],
+                    "small_img_three": review["small_img_three"],
+                    "small_img_four": review["small_img_four"]
+                    
+                }
+            )
+                review_matchas.append(review_obj_matcha)
+                print(f"^^^^^^{review_obj_matcha}")
+                return review_obj_matcha
 
     # =================== VALIDATE REVIEW'S INPUT ==========================
     @staticmethod
