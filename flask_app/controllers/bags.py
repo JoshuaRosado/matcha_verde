@@ -20,6 +20,7 @@ def home_page():
     bags = Bag.get_all_matchas_in_bag()
     return render_template('home.html',bags = bags, user = user, matchas=matchas, review =review)
 
+
 @app.route("/bag")
 def shopping_bag():
     if 'user_id' not in session:
@@ -29,10 +30,11 @@ def shopping_bag():
     bags = Bag.get_all_matchas_in_bag()
     totals = Bag.price_total()
     item = Bag.adding_item_amount()
+    my_data = {'item_qty': 1}
     # matchas = Matcha.get_all_matchas()
     # review = Review.get_all_reviews()
     
-    return render_template("shopping_bag.html",item=item, totals= totals, bags=bags, user=user)
+    return render_template("shopping_bag.html",item=item,my_data = my_data, totals= totals, bags=bags, user=user)
     
 
 @app.route("/add_item", methods = ["POST"])

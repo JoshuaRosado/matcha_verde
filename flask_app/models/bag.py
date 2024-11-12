@@ -40,7 +40,7 @@ class Bag:
 
         query= """
         INSERT INTO
-        bags (matcha_id ,bags.matcha_name, item_qty, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
+        bags (id,bags.matcha_name, item_qty, matcha_qty, matcha_short_description,taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id)
         
         SELECT
         id, matcha_name, item_qty, matcha_qty, matcha_short_description, taste_description, taste_notes, price, img, created_at, updated_at, small_img_one, small_img_two, small_img_three, small_img_four, user_id 
@@ -48,13 +48,12 @@ class Bag:
         matchas WHERE id = %(matcha_id)s;"""
         
         results = connectToMySQL(DB).query_db(query, new_data)
-
+        print(f"******* {id} *******")
         return id
 
 
-        
     # @classmethod
-    # def add_item(cls, matcha_id_dict):
+    # def get_my_data(cls, matcha_id_dict):
     #     matcha = matcha_id_dict.getlist('matcha_name')
     #     new_data = {'matcha_name': int(id[0])}
     #     query = """SELECT item_qty FROM bags
@@ -152,7 +151,7 @@ class Bag:
         )
             
             bags.append(bag_obj)
-            print(f"888888888{bag['matcha_name']}88888888888")
+            # print(f"888888888{bag['matcha_name']}88888888888")
         return bags
         
         
