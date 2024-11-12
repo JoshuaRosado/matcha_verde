@@ -442,8 +442,8 @@ details span::before, details span::after{
     }
 
     .main_img{
-        height: 50dvh;
-        width: 35dvw;
+        height: 40dvh;
+        width: 25dvw;
         margin-bottom: 2rem;
         object-fit: cover;
     }
